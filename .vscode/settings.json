@@ -1,0 +1,19 @@
+{
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.workingDirectories": ["apps/*", "packages/*"],
+  "jest.autoRun": "off",
+  "jest.virtualFolders": [
+    {
+      "name": "api",
+      "rootPath": "apps/api"
+    }
+  ]
+}
