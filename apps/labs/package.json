@@ -1,0 +1,19 @@
+{
+  "name": "@repo/labs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lab": "tsx src/runner.ts"
+  },
+  "dependencies": {
+    "@dqbd/tiktoken": "^1.0.22",
+    "dotenv": "^16.0.3",
+    "openai": "^4.73.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "5.9.2"
+  }
+}
