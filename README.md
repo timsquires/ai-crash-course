@@ -60,6 +60,8 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 06-tool-calls-expanded
 - Labs: Run 07-temperature
 - Labs: Run 08-abstraction (provider prompt/openai/claude/gemini/grok)
+- Labs: Run 09-prompt-management
+- Labs: Run 09-prompt-management-protected
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
@@ -71,8 +73,10 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 04-rolling-summaries: Use running summaries to compress long threads. Token counts use `@dqbd/tiktoken`.
 - 05-tool-calls: Demonstrate a basic tool/function call round-trip (assistant requests tool → local function runs → tool result → assistant answer).
 - 06-tool-calls-expanded: Show missing-parameter clarification before tool use; then execute tool and produce a grounded answer.
- - 07-temperature: Compare low vs high temperature outputs (same prompt, multiple trials).
- - 08-abstraction: Re-implements tool calling using LangChain with swappable providers (OpenAI, Claude, Gemini, Grok).
+- 07-temperature: Compare low vs high temperature outputs (same prompt, multiple trials).
+- 08-abstraction: Re-implements tool calling using LangChain with swappable providers (OpenAI, Claude, Gemini, Grok).
+- 09-prompt-management: Loads system prompts from .md files, compiles with Handlebars parameters and conditionals, and uses LangChain for the run.
+- 10-prompt-management-protected: Similar to lab 09 but with prompt injection protection.
 
 ### Labs runner
 
