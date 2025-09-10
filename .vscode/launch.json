@@ -231,6 +231,19 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
     }
+    ,
+    {
+      "name": "Labs: Run 11-structured-output",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/11-structured-output"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
   ],
   "inputs": [
     {

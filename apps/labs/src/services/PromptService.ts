@@ -13,6 +13,7 @@ export class PromptService {
     // Register common helpers used in prompt templates
     Handlebars.registerHelper('eq', (a: unknown, b: unknown) => a === b);
     Handlebars.registerHelper('ne', (a: unknown, b: unknown) => a !== b);
+    Handlebars.registerHelper('json', (ctx: unknown) => JSON.stringify(ctx, null, 2));
   }
 
   async load(name: string): Promise<string> {

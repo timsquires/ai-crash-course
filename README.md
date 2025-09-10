@@ -61,7 +61,8 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 07-temperature
 - Labs: Run 08-abstraction (provider prompt/openai/claude/gemini/grok)
 - Labs: Run 09-prompt-management
-- Labs: Run 09-prompt-management-protected
+- Labs: Run 10-prompt-management-protected
+- Labs: Run 11-structured-output
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
@@ -77,6 +78,7 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 08-abstraction: Re-implements tool calling using LangChain with swappable providers (OpenAI, Claude, Gemini, Grok).
 - 09-prompt-management: Loads system prompts from .md files, compiles with Handlebars parameters and conditionals, and uses LangChain for the run.
 - 10-prompt-management-protected: Similar to lab 09 but with prompt injection protection.
+- 11-structured-output: Runs a COA mapping prompt and parses structured JSON output via LangChain.
 
 ### Labs runner
 

@@ -41,9 +41,12 @@ export default async function main() {
   for (let i = 0; i < turns.length; i++) {
     const userTurn = turns[i]!;
     messages.push(new HumanMessage(userTurn));
+    
     console.log(`\n\nTURN ${i + 1}\n--------`);
     console.log('USER:', userTurn);
+    
     const res = (await llm.invoke(messages)) as AIMessage;
+    
     messages.push(res);
     console.log('\nASSISTANT:', String(res.content ?? '').trim());
   }
