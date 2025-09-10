@@ -146,6 +146,66 @@
       "envFile": "${workspaceFolder}/apps/labs/.env",
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs: Run 08-abstraction (provider prompt)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/08-abstraction", "${input:provider}"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs: Run 08-abstraction (openai)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/08-abstraction", "openai"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs: Run 08-abstraction (claude)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/08-abstraction", "claude"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs: Run 08-abstraction (gemini)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/08-abstraction", "gemini"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs: Run 08-abstraction (grok)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/08-abstraction", "grok"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
     }
   ],
   "inputs": [
@@ -154,6 +214,13 @@
       "type": "promptString",
       "description": "Enter script path (e.g. 01-minimal or week-2/02-structured)",
       "default": "01-minimal"
+    },
+    {
+      "id": "provider",
+      "type": "pickString",
+      "description": "Select provider for 08-abstraction",
+      "options": ["openai", "claude", "gemini", "grok"],
+      "default": "openai"
     }
   ]
 }

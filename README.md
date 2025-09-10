@@ -58,7 +58,8 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 04-rolling-summaries
 - Labs: Run 05-tool-calls
 - Labs: Run 06-tool-calls-expanded
- - Labs: Run 07-temperature
+- Labs: Run 07-temperature
+- Labs: Run 08-abstraction (provider prompt/openai/claude/gemini/grok)
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
@@ -71,6 +72,7 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 05-tool-calls: Demonstrate a basic tool/function call round-trip (assistant requests tool → local function runs → tool result → assistant answer).
 - 06-tool-calls-expanded: Show missing-parameter clarification before tool use; then execute tool and produce a grounded answer.
  - 07-temperature: Compare low vs high temperature outputs (same prompt, multiple trials).
+ - 08-abstraction: Re-implements tool calling using LangChain with swappable providers (OpenAI, Claude, Gemini, Grok).
 
 ### Labs runner
 
