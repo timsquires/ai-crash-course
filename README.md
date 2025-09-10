@@ -2,7 +2,6 @@
 
 This monorepo contains a hands-on set of small scripts for training a development team to build with LLMs. The primary focus for now is the Labs app under `apps/labs`. It includes progressively more advanced exercises demonstrating message construction, token usage, context management, summarization, and tool/function calling with OpenAI models.
 
-The API app will be added later; you can ignore it for now.
 
 ### Prerequisites
 
@@ -59,6 +58,7 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 04-rolling-summaries
 - Labs: Run 05-tool-calls
 - Labs: Run 06-tool-calls-expanded
+ - Labs: Run 07-temperature
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
@@ -70,6 +70,7 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 04-rolling-summaries: Use running summaries to compress long threads. Token counts use `@dqbd/tiktoken`.
 - 05-tool-calls: Demonstrate a basic tool/function call round-trip (assistant requests tool → local function runs → tool result → assistant answer).
 - 06-tool-calls-expanded: Show missing-parameter clarification before tool use; then execute tool and produce a grounded answer.
+ - 07-temperature: Compare low vs high temperature outputs (same prompt, multiple trials).
 
 ### Labs runner
 

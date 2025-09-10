@@ -134,6 +134,18 @@
       "envFile": "${workspaceFolder}/apps/labs/.env",
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs: Run 07-temperature",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/07-temperature"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
     }
   ],
   "inputs": [
