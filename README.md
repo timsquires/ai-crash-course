@@ -1,135 +1,82 @@
-# Turborepo starter
+## AI Crash Course Labs
 
-This Turborepo starter is maintained by the Turborepo core team.
+This monorepo contains a hands-on set of small scripts for training a development team to build with LLMs. The primary focus for now is the Labs app under `apps/labs`. It includes progressively more advanced exercises demonstrating message construction, token usage, context management, summarization, and tool/function calling with OpenAI models.
 
-## Using this example
+The API app will be added later; you can ignore it for now.
 
-Run the following command:
+### Prerequisites
+
+- Node.js >= 18
+- An OpenAI API key
+
+### Quick start
+
+1) Install dependencies (from repo root):
 
 ```sh
-npx create-turbo@latest
+npm install
 ```
 
-## What's inside?
+2) Create an env file for Labs:
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```sh
+cp apps/labs/.env.example apps/labs/.env # if present; otherwise create manually
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+Add your credentials to `apps/labs/.env`:
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```ini
+OPENAI_API_KEY=sk-your-key
+# Optional: override the default
+OPENAI_MODEL=gpt-5-mini
 ```
 
-### Develop
+3) Run a lab script from the repo root. The runner defaults to `week-1/` when a bare name is provided.
 
-To develop all apps and packages, run the following command:
+```sh
+# General form
+npm run lab 01-message-basics
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+# Explicit path
+npm run lab week-1/04-rolling-summaries
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+You can also run from within the Labs workspace:
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+```sh
+cd apps/labs
+npm run lab week-1/05-tool-calls
 ```
 
-### Remote Caching
+### VS Code debugging
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- Labs: Run script (prompt)
+- Labs: Run 01-message-basics
+- Labs: Run 02-tokens
+- Labs: Run 03-last-k-messages
+- Labs: Run 04-rolling-summaries
+- Labs: Run 05-tool-calls
+- Labs: Run 06-tool-calls-expanded
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
-```
-cd my-turborepo
+### What’s in Week 1
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
+- 01-message-basics: Build a conversation with a system persona and multiple turns; summarize at the end.
+- 02-tokens: Show API-reported token usage per turn.
+- 03-last-k-messages: Keep only the last K messages plus the system prompt when prompting the model.
+- 04-rolling-summaries: Use running summaries to compress long threads. Token counts use `@dqbd/tiktoken`.
+- 05-tool-calls: Demonstrate a basic tool/function call round-trip (assistant requests tool → local function runs → tool result → assistant answer).
+- 06-tool-calls-expanded: Show missing-parameter clarification before tool use; then execute tool and produce a grounded answer.
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+### Labs runner
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+The Labs runner (`apps/labs/src/runner.ts`) loads `apps/labs/.env`, resolves the script based on the argument you pass, and dynamically imports the corresponding `week-x/<name>.ts` file. Each script exports a default async function and logs its own teaching output.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### Notes
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- These examples make real API calls. Costs may be incurred. Prefer small, affordable models (default is `gpt-5-mini`).
+- Some labs log full message chains and token usage for teaching clarity.
+- If a lab references tools, make sure your environment allows outgoing requests and your API key is valid.
