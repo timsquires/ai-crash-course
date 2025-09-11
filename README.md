@@ -63,6 +63,7 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 09-prompt-management
 - Labs: Run 10-prompt-management-protected
 - Labs: Run 11-structured-output
+ - Labs: Run 12-streaming
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
@@ -79,6 +80,7 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 09-prompt-management: Loads system prompts from .md files, compiles with Handlebars parameters and conditionals, and uses LangChain for the run.
 - 10-prompt-management-protected: Similar to lab 09 but with prompt injection protection.
 - 11-structured-output: Runs a COA mapping prompt and parses structured JSON output via LangChain.
+ - 12-streaming: Streams output two ways (raw iterator and events), plus cancellation, using a menu copy optimizer prompt.
 
 ### Labs runner
 

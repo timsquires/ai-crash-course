@@ -22,7 +22,7 @@ export default async function main() {
     include_budget: true,
   } as const;
 
-  const compiledSystem = await promptService.render('system/food-critic-protected', data);
+  const compiledSystem = await promptService.render('food-critic-protected', data);
 
   // Build a running conversation and demonstrate injection attempts
   const messages: Array<SystemMessage | HumanMessage | AIMessage> = [];

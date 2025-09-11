@@ -244,6 +244,19 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
     }
+    ,
+    {
+      "name": "Labs: Run 12-streaming",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-1/12-streaming"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
   ],
   "inputs": [
     {
