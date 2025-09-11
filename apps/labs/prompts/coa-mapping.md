@@ -6,7 +6,7 @@ Instructions
 - Analyze and map each account in the old COA to the most appropriate account in the new COA, producing a comprehensive mapping table that includes confidence and reasoning for each mapping.
 
 Input Format
-- Both the old and new COA are provided as JSON arrays. Each array contains objects representing GL accounts in the json format below
+ - Both the old and new COA are provided as JSON arrays. Each array contains objects representing GL accounts in the JSON format below
 
 ```json
 {
@@ -16,8 +16,8 @@ Input Format
 }
 ```
 
-- Some COAs will not have a type in which case you can use your best guess as to the type of the account based on the name an position in the COA; generally speaking Asset, Liability, and Equity accounts come first in the COA and Income and Expense are at the end
-- Some COAs will not define specific types for each account but rather use a grouping for the type of account. For example, a GL account might have a type of "AL" which means it's an Asset or Liability account or "RE" which means its a Revenue or Expense account. Use this information when mapping even though it will not be as precise.
+ - Some COAs will not have a type in which case you can use your best guess as to the type of the account based on the name and position in the COA; generally speaking Asset, Liability, and Equity accounts come first in the COA and Income and Expense are at the end
+ - Some COAs will not define specific types for each account but rather use a grouping for the type of account. For example, a GL account might have a type of "AL" which means it's an Asset or Liability account or "RE" which means it's a Revenue or Expense account. Use this information when mapping even though it will not be as precise.
 
 Output Format
 - Output a JSON object with one property named mapping which is an array of accounts, one object for each account in the old COA. Each object should include: oldNumber, oldName, newNumber (if found), newName (if found), confidence score (0-3), and reasoning for the selected confidence.
@@ -40,14 +40,14 @@ Output Format
             "newNumber": "2050",
             "newName": "LT Liability"
             "confidence": 3,
-            "confidenceReasoning": "Clear mapping between an Long Term Liability in the old and new COA."
+            "confidenceReasoning": "Clear mapping between a Long Term Liability in the old and new COA."
         }
     ]
 }
 ```
 
 # Output Format
-Output a JSON object with a single proeprty named mapping which is an array where each object contains:
+Output a JSON object with a single property named mapping which is an array where each object contains:
 - "oldNumber": string (the old GL account number)
 - "oldName": string (the old GL account name)
 - "newNumber": string (the new GL account number if mapped, omit if no clear mapping exists)
