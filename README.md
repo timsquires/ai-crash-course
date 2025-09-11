@@ -7,6 +7,7 @@ This monorepo contains a hands-on set of small scripts for training a developmen
 
 - Node.js >= 18
 - An OpenAI API key
+- Ideally an API key for other foundation models like Gemini, Claude, and Grok
 
 ### Quick start
 
@@ -30,13 +31,9 @@ OPENAI_API_KEY=sk-your-key
 OPENAI_MODEL=gpt-5-mini
 ```
 
-3) Run a lab script from the repo root. The runner defaults to `week-1/` when a bare name is provided.
+3) Run a lab script from the repo root specifying the path to the lab. 
 
 ```sh
-# General form
-npm run lab 01-message-basics
-
-# Explicit path
 npm run lab week-1/04-rolling-summaries
 ```
 
@@ -63,8 +60,8 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 09-prompt-management
 - Labs: Run 10-prompt-management-protected
 - Labs: Run 11-structured-output
- - Labs: Run 12-streaming
- - Labs: Run 13-contact-chatbot
+- Labs: Run 12-streaming
+- Labs: Run 13-contact-chatbot
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
@@ -81,8 +78,8 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 09-prompt-management: Loads system prompts from .md files, compiles with Handlebars parameters and conditionals, and uses LangChain for the run.
 - 10-prompt-management-protected: Similar to lab 09 but with prompt injection protection.
 - 11-structured-output: Runs a COA mapping prompt and parses structured JSON output via LangChain.
- - 12-streaming: Streams output two ways (raw iterator and events), plus cancellation, using a menu copy optimizer prompt.
- - 13-contact-chatbot: Interactive console bot that collects first/last name, email, and phone; uses tools to create a contact or end the conversation.
+- 12-streaming: Streams output two ways (raw iterator and events), plus cancellation, using a menu copy optimizer prompt.
+- 13-contact-chatbot: Interactive console bot that collects first/last name, email, and phone; uses tools to create a contact or end the conversation.
 
 ### Labs runner
 
