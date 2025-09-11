@@ -23,9 +23,9 @@ export default async function main() {
   const messyMenu = `
 Big Ol' Burritoooo!!! — maybe beef?? rice/beans... $10-ish
 Green Chile Queso Fries!! — LOADED!!! $7.5
-Southwest Ceasar(??) wrap — romaine, cotija?, mystery sauce
+Southwest Caesar(??) wrap — romaine, cotija?, mystery sauce
 Street CORN 🥳 — elote-ish, crema?, lime?? add bacon +$2
-`; 
+`;
 
   const messages = [new SystemMessage(compiledSystem), new HumanMessage(messyMenu)];
 
