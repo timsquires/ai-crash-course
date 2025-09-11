@@ -42,7 +42,7 @@ export default async function main() {
     // Generate a response from the assistant passing in the entire conversation
     const res = await client.chat.completions.create({
       model,
-      messages,
+      messages
     });
 
     // Extract the assistant's response and add it to the thread

@@ -10,8 +10,9 @@ import { ChatOpenAI } from '@langchain/openai';
 import { ChatAnthropic } from '@langchain/anthropic';
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import { ChatXAI } from '@langchain/xai';
+import { ProviderService, type Provider as ModelProvider } from '../src/services/ProviderService.js';
 
-type Provider = 'openai' | 'claude' | 'gemini' | 'grok';
+type Provider = ModelProvider;
 type ToolCapable = BaseChatModel & {
   bindTools: (tools: any[], kwargs?: any) => BaseChatModel;
 };
@@ -106,29 +107,6 @@ function resolveProvider(): Provider {
   return 'openai';
 }
 
-// This would be a shared function used by all invokations of a model
-function buildModel(provider: Provider): ToolCapable {
-  switch (provider) {
-    case 'openai': {
-      // Requires OPENAI_API_KEY
-      // Default to a tool-capable model
-      return new ChatOpenAI({ model: process.env.OPENAI_MODEL || 'gpt-5-mini' }) as unknown as ToolCapable;
-    }
-    case 'claude': {
-      // Requires ANTHROPIC_API_KEY
-      return new ChatAnthropic({ model: process.env.CLAUDE_MODEL || 'claude-3-5-sonnet-latest' }) as unknown as ToolCapable;
-    }
-    case 'gemini': {
-      // Requires GOOGLE_API_KEY
-      return new ChatGoogleGenerativeAI({ model: process.env.GEMINI_MODEL || 'gemini-2.5-pro' }) as unknown as ToolCapable;
-    }
-    case 'grok': {
-      // Requires XAI_API_KEY
-      return new ChatXAI({ model: process.env.GROK_MODEL || 'grok-4-latest' } as any) as unknown as ToolCapable;
-    }
-  }
-}
-
 function checkProviderEnv(provider: Provider): { ok: boolean; message?: string } {
   switch (provider) {
     case 'openai':
@@ -160,7 +138,7 @@ export default async function main() {
   }
 
   // Get the llm model based on the parameters passed in
-  const llm = buildModel(provider);
+  const llm = ProviderService.buildModel(provider) as unknown as ToolCapable;
   // Add the tools to the model
   const llmWithTools = llm.bindTools([getRestaurantStatsTool]);
 

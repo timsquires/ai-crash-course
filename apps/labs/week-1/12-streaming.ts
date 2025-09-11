@@ -1,6 +1,6 @@
 import { SystemMessage, HumanMessage, AIMessageChunk } from '@langchain/core/messages';
-import { ChatOpenAI } from '@langchain/openai';
 import { PromptService } from '../src/services/PromptService.js';
+import { ProviderService } from '../src/services/ProviderService.js';
 
 export default async function main() {
   const apiKeyOk = !!process.env.OPENAI_API_KEY;
@@ -9,7 +9,7 @@ export default async function main() {
     return;
   }
 
-  const llm = new ChatOpenAI({ model: 'gpt-4o-mini', streaming: true });
+  const llm = ProviderService.buildModel('openai', { model: 'gpt-4o-mini', streaming: true });
   const promptService = new PromptService();
 
   const compiledSystem = await promptService.render('menu-optimizer-stream', {

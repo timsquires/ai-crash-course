@@ -1,5 +1,5 @@
 import { SystemMessage, HumanMessage, AIMessage } from '@langchain/core/messages';
-import { ChatOpenAI } from '@langchain/openai';
+import { ProviderService } from '../src/services/ProviderService.js';
 import { PromptService } from '../src/services/PromptService.js';
 
 export default async function main() {
@@ -9,8 +9,7 @@ export default async function main() {
     return;
   }
 
-  const provider = 'openai';
-  const llm = new ChatOpenAI({ model: process.env.OPENAI_MODEL || 'gpt-5-mini' });
+  const llm = ProviderService.buildModel('openai');
 
   const promptService = new PromptService();
   const data = {
