@@ -1,6 +1,6 @@
 ## AI Crash Course Labs
 
-This monorepo contains a hands-on set of small scripts for training a development team to build with LLMs. The primary focus for now is the Labs app under `apps/labs`. It includes progressively more advanced exercises demonstrating message construction, token usage, context management, summarization, and tool/function calling with OpenAI models.
+This monorepo contains a hands-on set of small scripts for training a development team to build with LLMs. The primary focus for now is the Labs app under `apps/labs`. It includes progressively more advanced exercises demonstrating message construction, token usage, context management, summarization, and tool/function calling with LLM models.
 
 
 ### Prerequisites
