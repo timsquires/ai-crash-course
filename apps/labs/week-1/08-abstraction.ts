@@ -4,12 +4,6 @@
 import { tool } from '@langchain/core/tools';
 import { AIMessage, HumanMessage, SystemMessage, ToolMessage } from '@langchain/core/messages';
 import type { BaseChatModel } from '@langchain/core/language_models/chat_models';
-
-// Providers
-import { ChatOpenAI } from '@langchain/openai';
-import { ChatAnthropic } from '@langchain/anthropic';
-import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
-import { ChatXAI } from '@langchain/xai';
 import { ProviderService, type Provider as ModelProvider } from '../src/services/ProviderService.js';
 
 type Provider = ModelProvider;

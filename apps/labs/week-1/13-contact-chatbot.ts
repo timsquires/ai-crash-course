@@ -98,7 +98,7 @@ async function processTurn(
 
   const toolCalls = assistant.tool_calls || [];
 
-  // No tool calls, so just rturn with shouldExit = false
+  // No tool calls, so just return with shouldExit = false
   if (toolCalls.length === 0) {
     return { shouldExit: false };
   }

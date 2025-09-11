@@ -44,11 +44,11 @@ export default async function main() {
     'Some fans swear by Chick-fil-A—do you buy the hype or is it overrated?',
     'Between Sweetgreen and CAVA, which is the healthier pick and why?',
     'If you had to crown a winner overall today, which chain and your top item?',
-    'What was the first restuarant I brought up?'
+    'What was the first restaurant I brought up?'
   ];
 
   console.log(`Model: ${model}`);
-  console.log('Strategy: Keep only last K messages (K=3) plus system prompt');
+  console.log('Strategy: Keep only last K messages (K=2) plus system prompt');
 
   for (let i = 0; i < userTurns.length; i++) {
     console.log(`\n\nTURN ${i + 1}`);

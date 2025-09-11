@@ -24,7 +24,7 @@ export default async function main() {
   const userTurns = [
     'I think Chipotle is the best fast casual spot—customizable bowls, fresh salsas. What do you think?',
     'But for value and consistency, it is hard to go wrong with In-n-Out, don\'t you think?',
-    'Then again, there are some crazy fans of Chic-fil-A, even with their sad chicken sandwich with just two little pickles.',
+    'Then again, there are some crazy fans of Chick-fil-A, even with their sad chicken sandwich with just two little pickles.',
   ];
 
   console.log(`Model: ${model}`);

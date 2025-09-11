@@ -31,7 +31,7 @@ export default async function main() {
   const OpenAI = (await import('openai')).default;
   const client = new OpenAI({ apiKey });
 
-  // Note gpt-5 has it's own internal router that sets a number of these knobs on it's own so we
+  // Note gpt-5 has its own internal router that sets a number of these knobs on its own so we
   // have to use a different model for this lab
   const model = 'gpt-4o-mini';
 

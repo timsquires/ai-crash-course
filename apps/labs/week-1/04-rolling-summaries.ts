@@ -93,7 +93,7 @@ export default async function main() {
   const systemMsg: Msg = {
     role: 'system',
     content:
-      "You are an articulate but concise food critic debating the best fast casual restaurant. Make your replies verbose, 5 to 6 sentances, " +
+      "You are an articulate but concise food critic debating the best fast casual restaurant. Make your replies verbose, 5 to 6 sentences, " +
       "cite specific menu items, taste, health, value, and consistency. Be snarky, sarcastic, and a general contrarian.",
   };
   const messages: Msg[] = [systemMsg];
@@ -114,7 +114,7 @@ export default async function main() {
   console.log(`Model: ${model}`);
   console.log('Simulated prompt token target (approx):', TARGET_MAX_PROMPT_TOKENS);
 
-  // Conversation loop: at each turn, check if we should summarize after asking the model in perparation for the next call
+  // Conversation loop: at each turn, check if we should summarize after asking the model in preparation for the next call
   let runningSummary = '';
 
   for (let i = 0; i < userTurns.length; i++) {

@@ -47,7 +47,7 @@ Output Format
 ```
 
 # Output Format
-Output a JSON array where each object contains:
+Output a JSON object with a single proeprty named mapping which is an array where each object contains:
 - "oldNumber": string (the old GL account number)
 - "oldName": string (the old GL account name)
 - "newNumber": string (the new GL account number if mapped, omit if no clear mapping exists)
