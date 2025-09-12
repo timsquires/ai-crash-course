@@ -65,7 +65,38 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
 
+
+### What’s in Week 1
+
+- 01-message-basics: Build a conversation with a system persona and multiple turns; summarize at the end.
+- 02-tokens: Show API-reported token usage per turn.
+- 03-last-k-messages: Keep only the last K messages plus the system prompt when prompting the model.
+- 04-rolling-summaries: Use running summaries to compress long threads. Token counts use `@dqbd/tiktoken`.
+- 05-tool-calls: Demonstrate a basic tool/function call round-trip (assistant requests tool → local function runs → tool result → assistant answer).
+- 06-tool-calls-expanded: Show missing-parameter clarification before tool use; then execute tool and produce a grounded answer.
+- 07-temperature: Compare low vs high temperature outputs (same prompt, multiple trials).
+- 08-abstraction: Re-implements tool calling using LangChain with swappable providers (OpenAI, Claude, Gemini, Grok).
+- 09-prompt-management: Loads system prompts from .md files, compiles with Handlebars parameters and conditionals, and uses LangChain for the run.
+- 10-prompt-management-protected: Similar to lab 09 but with prompt injection protection.
+- 11-structured-output: Runs a COA mapping prompt and parses structured JSON output via LangChain.
+- 12-streaming: Streams output two ways (raw iterator and events), plus cancellation, using a menu copy optimizer prompt.
+- 13-contact-chatbot: Interactive console bot that collects first/last name, email, and phone; uses tools to create a contact or end the conversation.
+
+### Labs runner
+
+The Labs runner (`apps/labs/src/runner.ts`) loads `apps/labs/.env`, resolves the script based on the argument you pass, and dynamically imports the corresponding `week-x/<name>.ts` file. Each script exports a default async function and logs its own teaching output.
+
+### Notes
+
+- These examples make real API calls. Costs may be incurred. Prefer small, affordable models (default is `gpt-5-mini`).
+- Some labs log full message chains and token usage for teaching clarity.
+- If a lab references tools, make sure your environment allows outgoing requests and your API key is valid.
+
+
+
 ### API (Nest.js)
+
+After you run through the labs, you can use the API project to test a more production-like application interacting with an LLM  See below and the README.md file in the api project for more detail
 
 - Location: `apps/api`
 - Purpose: Store chat threads (single aggregate with embedded/JSONB messages) with pluggable persistence (Postgres or Mongo).
@@ -149,29 +180,3 @@ curl -X POST http://localhost:3000/threads/<threadId>/chat \
 ```
 
 The API persists user input, assistant tool_calls (when present), tool results, and the final assistant reply. The `chat` endpoint returns only the last assistant message.
-
-### What’s in Week 1
-
-- 01-message-basics: Build a conversation with a system persona and multiple turns; summarize at the end.
-- 02-tokens: Show API-reported token usage per turn.
-- 03-last-k-messages: Keep only the last K messages plus the system prompt when prompting the model.
-- 04-rolling-summaries: Use running summaries to compress long threads. Token counts use `@dqbd/tiktoken`.
-- 05-tool-calls: Demonstrate a basic tool/function call round-trip (assistant requests tool → local function runs → tool result → assistant answer).
-- 06-tool-calls-expanded: Show missing-parameter clarification before tool use; then execute tool and produce a grounded answer.
-- 07-temperature: Compare low vs high temperature outputs (same prompt, multiple trials).
-- 08-abstraction: Re-implements tool calling using LangChain with swappable providers (OpenAI, Claude, Gemini, Grok).
-- 09-prompt-management: Loads system prompts from .md files, compiles with Handlebars parameters and conditionals, and uses LangChain for the run.
-- 10-prompt-management-protected: Similar to lab 09 but with prompt injection protection.
-- 11-structured-output: Runs a COA mapping prompt and parses structured JSON output via LangChain.
-- 12-streaming: Streams output two ways (raw iterator and events), plus cancellation, using a menu copy optimizer prompt.
-- 13-contact-chatbot: Interactive console bot that collects first/last name, email, and phone; uses tools to create a contact or end the conversation.
-
-### Labs runner
-
-The Labs runner (`apps/labs/src/runner.ts`) loads `apps/labs/.env`, resolves the script based on the argument you pass, and dynamically imports the corresponding `week-x/<name>.ts` file. Each script exports a default async function and logs its own teaching output.
-
-### Notes
-
-- These examples make real API calls. Costs may be incurred. Prefer small, affordable models (default is `gpt-5-mini`).
-- Some labs log full message chains and token usage for teaching clarity.
-- If a lab references tools, make sure your environment allows outgoing requests and your API key is valid.
