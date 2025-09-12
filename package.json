@@ -7,7 +7,12 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "lab": "npm --workspace=@repo/labs run lab"
+    "lab": "npm --workspace=@repo/labs run lab",
+    "api:dev": "npm --workspace=@repo/api run start:dev",
+    "api:build": "npm --workspace=@repo/api run build",
+    "api:start": "npm --workspace=@repo/api run start",
+    "db:up": "docker compose up -d postgres mongo && npm --workspace=@repo/api run migrate",
+    "db:down": "docker compose down"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
