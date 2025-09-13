@@ -58,6 +58,13 @@
               <input id="height" type="number" value="700" />
             </label>
           </div>
+          <div class="form-grid-two" style="margin-top: 0.75rem;">
+            <label>
+              <input id="runInit" type="checkbox" role="switch" checked />
+              Run LLM call on initialization
+            </label>
+            <span></span>
+          </div>
           <label>Parameters (JSON)
             <textarea id="params">{}</textarea>
             <small>e.g. {"foo": "bar"}</small>
@@ -84,6 +91,7 @@
           position: $("position").value,
           width: parseInt($("width").value || '500', 10),
           height: parseInt($("height").value || '700', 10),
+          runLLMCallOnInit: $("runInit").checked,
         });
         widget.open?.();
       });

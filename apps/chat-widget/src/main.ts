@@ -1,6 +1,6 @@
-import './widget';
-import { ChatWidget } from './widget';
-import type { ChatWidgetConfig } from './widget';
+import './widget.ts';
+import { ChatWidget } from './widget.ts';
+import type { ChatWidgetConfig } from './widget.ts';
 
 export { ChatWidget };
 export type { ChatWidgetConfig };
@@ -15,6 +15,7 @@ export function initializeChatWidget(config: ChatWidgetConfig): ChatWidget {
     if (config.position) existing.position = config.position;
     if (config.width) existing.width = config.width;
     if (config.height) existing.height = config.height;
+    if (typeof config.runLLMCallOnInit === 'boolean') existing.runLLMCallOnInit = config.runLLMCallOnInit;
     return existing;
   }
 
@@ -26,6 +27,7 @@ export function initializeChatWidget(config: ChatWidgetConfig): ChatWidget {
   if (config.position) el.position = config.position;
   if (config.width) el.width = config.width;
   if (config.height) el.height = config.height;
+  if (typeof config.runLLMCallOnInit === 'boolean') el.runLLMCallOnInit = config.runLLMCallOnInit;
   document.body.appendChild(el);
   return el;
 }
@@ -46,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     position: (script.getAttribute('data-position') as any) || 'bottom-right',
     width: parseInt(script.getAttribute('data-width') || '400', 10),
     height: parseInt(script.getAttribute('data-height') || '600', 10),
+    runLLMCallOnInit: (script.getAttribute('data-run-llm-init') || 'false') === 'true',
   };
   if (config.apiUrl && config.agent) initializeChatWidget(config);
 });
@@ -57,9 +60,8 @@ declare global {
   }
 }
 
-// @ts-expect-error attach globals for manual use
-window.ChatWidget = customElements.get('chat-widget') || ChatWidget;
-// @ts-expect-error attach globals for manual use
-window.initializeChatWidget = initializeChatWidget;
+// Attach globals for manual use
+(window as any).ChatWidget = customElements.get('chat-widget') || ChatWidget;
+(window as any).initializeChatWidget = initializeChatWidget;
 
 

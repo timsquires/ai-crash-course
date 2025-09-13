@@ -11,6 +11,7 @@ export interface ChatWidgetConfig {
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
   width?: number;
   height?: number;
+  runLLMCallOnInit?: boolean;
 }
 
 type Role = 'user' | 'assistant';
@@ -26,6 +27,7 @@ export class ChatWidget extends LitElement {
   @property({ type: String, reflect: true }) position: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left' = 'bottom-right';
   @property({ type: Number }) width = 400;
   @property({ type: Number }) height = 600;
+  @property({ type: Boolean }) runLLMCallOnInit = false;
 
   @state() private isOpen = true;
   @state() private messages: Array<{ id: string; role: Role; content: string; ts: number }> = [];
@@ -78,6 +80,9 @@ export class ChatWidget extends LitElement {
     this.style.width = `${this.width}px`;
     this.style.height = `${this.height}px`;
     this.api = new ApiService(this.apiUrl);
+    if (this.runLLMCallOnInit && this.messages.length === 0) {
+      void this.fetchGreeting();
+    }
   }
 
   render() {
@@ -91,7 +96,7 @@ export class ChatWidget extends LitElement {
         </div>
         ${this.isOpen ? html`
         <div class="body">
-          ${this.messages.length === 0 ? html`<div class="row assistant"><div class="bubble">Hello! How can I help?</div></div>` : ''}
+          ${this.messages.length === 0 && !this.runLLMCallOnInit ? html`<div class="row assistant"><div class="bubble">Hello! How can I help?</div></div>` : ''}
           ${this.messages.map(m => html`<div class="row ${m.role}"><div class="bubble">${m.content}</div></div>`)}
           ${this.isLoading ? html`<div class="row assistant"><div class="bubble"><span class="typing"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div></div>` : ''}
         </div>
@@ -138,6 +143,19 @@ export class ChatWidget extends LitElement {
 
   private async ensureThread() {
     this.threadId = await this.api!.createThread(this.agent, this.threadParameters || undefined);
+  }
+
+  private async fetchGreeting() {
+    try {
+      this.isLoading = true;
+      if (!this.threadId) await this.ensureThread();
+      const data: AssistantReply = await this.api!.sendMessage(this.threadId!, 'Please greet the user to begin the conversation. Keep it brief and friendly.');
+      this.add('assistant', data?.content || 'Hello! How can I help?');
+    } catch {
+      this.add('assistant', 'Hello! How can I help?');
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   private onClose() {
