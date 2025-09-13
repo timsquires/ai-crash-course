@@ -180,3 +180,65 @@ curl -X POST http://localhost:3000/threads/<threadId>/chat \
 ```
 
 The API persists user input, assistant tool_calls (when present), tool results, and the final assistant reply. The `chat` endpoint returns only the last assistant message.
+
+### Chat Widget (apps/chat-widget)
+
+A lightweight web component that embeds a chat UI on any HTML page and talks to the API.
+
+- Location: `apps/chat-widget`
+- Component: `<chat-widget>` (Lit Web Component)
+- Public helpers: `initializeChatWidget(config)` attaches/updates the widget on the page
+
+Run in dev and try the test page:
+
+```sh
+npm run chat:dev
+# Then open http://localhost:5173/public/test.html
+```
+
+Build for production (outputs to `apps/chat-widget/dist`):
+
+```sh
+npm run chat:build
+```
+
+Embed options:
+
+- Auto‑init via a single script tag using data attributes (recommended):
+
+```html
+<script
+  type="module"
+  src="/path/to/chat-widget/dist/assets/main.js"
+  data-chat-widget
+  data-api-url="http://localhost:3000"
+  data-agent="lead-intake-agent"
+  data-parameters='{"tone":"friendly"}'
+  data-theme="light"
+  data-position="bottom-right"
+  data-width="400"
+  data-height="600">
+</script>
+```
+
+- Or initialize programmatically:
+
+```html
+<script type="module" src="/path/to/chat-widget/dist/assets/main.js"></script>
+<script>
+  window.initializeChatWidget({
+    apiUrl: 'http://localhost:3000',
+    agent: 'lead-intake-agent',
+    parameters: { tone: 'friendly' },
+    theme: 'light', // 'light' | 'dark'
+    position: 'bottom-right', // 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'
+    width: 400,
+    height: 600,
+  });
+  // Re‑initialize with new settings later by calling initializeChatWidget again
+</script>
+```
+
+Notes:
+- The widget expects the API from this repo running at `data-api-url`.
+- The test page includes a Reset button. In the widget, the header “×” removes the element from the DOM.
