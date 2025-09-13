@@ -242,3 +242,10 @@ Embed options:
 Notes:
 - The widget expects the API from this repo running at `data-api-url`.
 - The test page includes a Reset button. In the widget, the header “×” removes the element from the DOM.
+
+### What's next
+
+Ready to practice? Browse the take‑home exercises in `take-home-labs/`.
+
+- Start with `take-home-labs/week-1.md` for a guided assignment that uses the API and chat widget.
+- Each lab describes objectives, required behaviors, and acceptance criteria you can verify locally.
