@@ -84,7 +84,7 @@ Create a new agent in the API and exercise it from the chat‑widget test page. 
    - `npm run api:dev`
 2) Chat widget
    - `npm run chat:dev`
-   - Open `http://localhost:5173/public/test.html`
+   - Open `http://localhost:5175/public/test.html`
    - Enter `API URL: http://localhost:3000`, `Agent: maintenance-agent`
    - Provide Parameters (JSON), for example:
      ```json
