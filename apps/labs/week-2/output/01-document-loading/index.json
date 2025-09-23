@@ -1,0 +1,88 @@
+[
+  {
+    "id": ".DS_Store",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/.DS_Store",
+    "mimeType": "application/octet-stream",
+    "metadata": {}
+  },
+  {
+    "id": "fast_casual_descriptions.pdf:p1",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1,
+    "metadata": {
+      "source": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+      "pdf": {
+        "version": "1.10.100",
+        "info": {
+          "PDFFormatVersion": "1.4",
+          "IsAcroFormPresent": false,
+          "IsXFAPresent": false,
+          "Title": "(anonymous)",
+          "Author": "(anonymous)",
+          "Subject": "(unspecified)",
+          "Keywords": "",
+          "Creator": "(unspecified)",
+          "Producer": "ReportLab PDF Library - www.reportlab.com",
+          "CreationDate": "D:20250923165216+00'00'",
+          "ModDate": "D:20250923165216+00'00'",
+          "Trapped": {
+            "name": "False"
+          }
+        },
+        "metadata": null,
+        "totalPages": 2
+      },
+      "loc": {
+        "pageNumber": 1
+      }
+    }
+  },
+  {
+    "id": "fast_casual_descriptions.pdf:p2",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2,
+    "metadata": {
+      "source": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+      "pdf": {
+        "version": "1.10.100",
+        "info": {
+          "PDFFormatVersion": "1.4",
+          "IsAcroFormPresent": false,
+          "IsXFAPresent": false,
+          "Title": "(anonymous)",
+          "Author": "(anonymous)",
+          "Subject": "(unspecified)",
+          "Keywords": "",
+          "Creator": "(unspecified)",
+          "Producer": "ReportLab PDF Library - www.reportlab.com",
+          "CreationDate": "D:20250923165216+00'00'",
+          "ModDate": "D:20250923165216+00'00'",
+          "Trapped": {
+            "name": "False"
+          }
+        },
+        "metadata": null,
+        "totalPages": 2
+      },
+      "loc": {
+        "pageNumber": 2
+      }
+    }
+  },
+  {
+    "id": "fast_casual_locations.txt:0",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "metadata": {}
+  },
+  {
+    "id": "fast_casual_menus.docx:0",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "metadata": {
+      "source": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx"
+    }
+  }
+]

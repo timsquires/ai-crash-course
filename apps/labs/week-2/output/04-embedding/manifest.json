@@ -1,0 +1,7 @@
+{
+  "model": "text-embedding-3-small",
+  "total": 30,
+  "dimension": 1536,
+  "elapsedMs": 1266,
+  "notes": "Use this file for in-memory retrieval: load vectors, embed query, compute cosine similarity, take top-k."
+}

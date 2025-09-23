@@ -1,0 +1,31 @@
+{
+  "lab": "03-custom-chunking",
+  "totals": {
+    "docsProcessed": 5,
+    "chunks": 30
+  },
+  "restaurants": [
+    "Chipotle Mexican Grill",
+    "Panera Bread",
+    "Shake Shack",
+    "Chick-fil-A",
+    "Five Guys",
+    "Firehouse Subs",
+    "MOD Pizza",
+    "Qdoba Mexican Eats",
+    "Jersey Mike's Subs",
+    "Noodles & Company"
+  ],
+  "countsByRestaurant": {
+    "Chipotle Mexican Grill": 3,
+    "Panera Bread": 3,
+    "Shake Shack": 3,
+    "Chick-fil-A": 3,
+    "Five Guys": 3,
+    "Firehouse Subs": 3,
+    "MOD Pizza": 3,
+    "Qdoba Mexican Eats": 3,
+    "Jersey Mike's Subs": 3,
+    "Noodles & Company": 3
+  }
+}

@@ -1,0 +1,272 @@
+Fast Casual Restaurant Locations (Varied)
+
+Chipotle Mexican Grill
+  Northeast:
+    - Boston, MA
+    - Philadelphia, PA
+    - Baltimore, MD
+    - Pittsburgh, PA
+  South:
+    - Dallas, TX
+    - Houston, TX
+    - Tampa, FL
+    - Atlanta, GA
+  Midwest:
+    - Kansas City, MO
+    - Chicago, IL
+    - Columbus, OH
+    - Minneapolis, MN
+  West Coast:
+    - Seattle, WA
+    - San Diego, CA
+    - Portland, OR
+    - San Jose, CA
+  Mountain & Southwest:
+    - Albuquerque, NM
+    - Tucson, AZ
+    - Boise, ID
+    - Colorado Springs, CO
+
+Panera Bread
+  Northeast:
+    - Baltimore, MD
+    - Pittsburgh, PA
+    - Providence, RI
+    - Newark, NJ
+  South:
+    - Tampa, FL
+    - Atlanta, GA
+    - Orlando, FL
+    - Charlotte, NC
+  Midwest:
+    - Columbus, OH
+    - Minneapolis, MN
+    - Detroit, MI
+    - Cleveland, OH
+  West Coast:
+    - Portland, OR
+    - San Jose, CA
+    - Oakland, CA
+    - Irvine, CA
+  Mountain & Southwest:
+    - Boise, ID
+    - Colorado Springs, CO
+    - Denver, CO
+    - Phoenix, AZ
+
+Shake Shack
+  Northeast:
+    - Providence, RI
+    - Newark, NJ
+    - Hartford, CT
+    - New York, NY
+  South:
+    - Orlando, FL
+    - Charlotte, NC
+    - Nashville, TN
+    - Miami, FL
+  Midwest:
+    - Detroit, MI
+    - Cleveland, OH
+    - Indianapolis, IN
+    - Milwaukee, WI
+  West Coast:
+    - Oakland, CA
+    - Irvine, CA
+    - Los Angeles, CA
+    - San Francisco, CA
+  Mountain & Southwest:
+    - Denver, CO
+    - Phoenix, AZ
+    - Salt Lake City, UT
+    - Las Vegas, NV
+
+Chick-fil-A
+  Northeast:
+    - Hartford, CT
+    - New York, NY
+    - Boston, MA
+    - Philadelphia, PA
+  South:
+    - Nashville, TN
+    - Miami, FL
+    - Dallas, TX
+    - Houston, TX
+  Midwest:
+    - Indianapolis, IN
+    - Milwaukee, WI
+    - Kansas City, MO
+    - Chicago, IL
+  West Coast:
+    - Los Angeles, CA
+    - San Francisco, CA
+    - Seattle, WA
+    - San Diego, CA
+  Mountain & Southwest:
+    - Salt Lake City, UT
+    - Las Vegas, NV
+    - Albuquerque, NM
+    - Tucson, AZ
+
+Five Guys
+  Northeast:
+    - Boston, MA
+    - Philadelphia, PA
+    - Baltimore, MD
+    - Pittsburgh, PA
+  South:
+    - Dallas, TX
+    - Houston, TX
+    - Tampa, FL
+    - Atlanta, GA
+  Midwest:
+    - Kansas City, MO
+    - Chicago, IL
+    - Columbus, OH
+    - Minneapolis, MN
+  West Coast:
+    - Seattle, WA
+    - San Diego, CA
+    - Portland, OR
+    - San Jose, CA
+  Mountain & Southwest:
+    - Albuquerque, NM
+    - Tucson, AZ
+    - Boise, ID
+    - Colorado Springs, CO
+
+Firehouse Subs
+  Northeast:
+    - Baltimore, MD
+    - Pittsburgh, PA
+    - Providence, RI
+    - Newark, NJ
+  South:
+    - Tampa, FL
+    - Atlanta, GA
+    - Orlando, FL
+    - Charlotte, NC
+  Midwest:
+    - Columbus, OH
+    - Minneapolis, MN
+    - Detroit, MI
+    - Cleveland, OH
+  West Coast:
+    - Portland, OR
+    - San Jose, CA
+    - Oakland, CA
+    - Irvine, CA
+  Mountain & Southwest:
+    - Boise, ID
+    - Colorado Springs, CO
+    - Denver, CO
+    - Phoenix, AZ
+
+MOD Pizza
+  Northeast:
+    - Providence, RI
+    - Newark, NJ
+    - Hartford, CT
+    - New York, NY
+  South:
+    - Orlando, FL
+    - Charlotte, NC
+    - Nashville, TN
+    - Miami, FL
+  Midwest:
+    - Detroit, MI
+    - Cleveland, OH
+    - Indianapolis, IN
+    - Milwaukee, WI
+  West Coast:
+    - Oakland, CA
+    - Irvine, CA
+    - Los Angeles, CA
+    - San Francisco, CA
+  Mountain & Southwest:
+    - Denver, CO
+    - Phoenix, AZ
+    - Salt Lake City, UT
+    - Las Vegas, NV
+
+Qdoba Mexican Eats
+  Northeast:
+    - Hartford, CT
+    - New York, NY
+    - Boston, MA
+    - Philadelphia, PA
+  South:
+    - Nashville, TN
+    - Miami, FL
+    - Dallas, TX
+    - Houston, TX
+  Midwest:
+    - Indianapolis, IN
+    - Milwaukee, WI
+    - Kansas City, MO
+    - Chicago, IL
+  West Coast:
+    - Los Angeles, CA
+    - San Francisco, CA
+    - Seattle, WA
+    - San Diego, CA
+  Mountain & Southwest:
+    - Salt Lake City, UT
+    - Las Vegas, NV
+    - Albuquerque, NM
+    - Tucson, AZ
+
+Jersey Mike’s Subs
+  Northeast:
+    - Boston, MA
+    - Philadelphia, PA
+    - Baltimore, MD
+    - Pittsburgh, PA
+  South:
+    - Dallas, TX
+    - Houston, TX
+    - Tampa, FL
+    - Atlanta, GA
+  Midwest:
+    - Kansas City, MO
+    - Chicago, IL
+    - Columbus, OH
+    - Minneapolis, MN
+  West Coast:
+    - Seattle, WA
+    - San Diego, CA
+    - Portland, OR
+    - San Jose, CA
+  Mountain & Southwest:
+    - Albuquerque, NM
+    - Tucson, AZ
+    - Boise, ID
+    - Colorado Springs, CO
+
+Noodles & Company
+  Northeast:
+    - Baltimore, MD
+    - Pittsburgh, PA
+    - Providence, RI
+    - Newark, NJ
+  South:
+    - Tampa, FL
+    - Atlanta, GA
+    - Orlando, FL
+    - Charlotte, NC
+  Midwest:
+    - Columbus, OH
+    - Minneapolis, MN
+    - Detroit, MI
+    - Cleveland, OH
+  West Coast:
+    - Portland, OR
+    - San Jose, CA
+    - Oakland, CA
+    - Irvine, CA
+  Mountain & Southwest:
+    - Boise, ID
+    - Colorado Springs, CO
+    - Denver, CO
+    - Phoenix, AZ
+

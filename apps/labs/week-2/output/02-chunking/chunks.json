@@ -1,0 +1,350 @@
+[
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "chunkIndex": 0,
+    "content": "Chipotle Mexican Grill\n\nChipotle Mexican Grill is a well-known fast casual chain recognized for its emphasis on quality\n\ningredients and a dining experience that balances speed with authenticity. Customers are often drawn\n\nto Chipotle Mexican Grill because of its consistent focus on freshness, transparency in sourcing, and\n\nthe ability to customize meals. Like many in the segment, Chipotle Mexican Grill blends quick service\n\nwith higher quality offerings compared to traditional fast food.\n\nPanera Bread\n\nPanera Bread is a well-known fast casual chain recognized for its emphasis on quality ingredients and\n\na dining experience that balances speed with authenticity. Customers are often drawn to Panera Bread\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Panera Bread blends quick service with higher quality offerings\n\ncompared to traditional fast food.\n\nShake Shack\n\nShake Shack is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that",
+    "tokenCount": 200,
+    "charCount": 1089,
+    "startToken": 0,
+    "endToken": 200,
+    "contentHash": "aa910a926b896a58996837590a3450c4cd5785e8",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1,
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "chunkIndex": 1,
+    "content": " Shack\n\nShake Shack is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to Shake Shack\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Shake Shack blends quick service with higher quality offerings\n\ncompared to traditional fast food.\n\nChick-fil-A\n\nChick-fil-A is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to Chick-fil-A\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Chick-fil-A blends quick service with higher quality offerings\n\ncompared to traditional fast food.\n\nFive Guys\n\nFive Guys is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with",
+    "tokenCount": 200,
+    "charCount": 1052,
+    "startToken": 175,
+    "endToken": 375,
+    "contentHash": "8307597690fa0b12932ac18f9a86d3a10ed9ef5a",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1,
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "chunkIndex": 2,
+    "content": " Guys is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to Five Guys\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Five Guys blends quick service with higher quality offerings\n\ncompared to traditional fast food.\n\nFirehouse Subs\n\nFirehouse Subs is a well-known fast casual chain recognized for its emphasis on quality ingredients\n\nand a dining experience that balances speed with authenticity. Customers are often drawn to Firehouse\n\nSubs because of its consistent focus on freshness, transparency in sourcing, and the ability to\n\ncustomize meals. Like many in the segment, Firehouse Subs blends quick service with higher quality\n\nofferings compared to traditional fast food.",
+    "tokenCount": 165,
+    "charCount": 889,
+    "startToken": 350,
+    "endToken": 515,
+    "contentHash": "3c92af86b8bb83c71693213cc6c2d30d74439763",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1,
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "chunkIndex": 0,
+    "content": "MOD Pizza\n\nMOD Pizza is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to MOD Pizza\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, MOD Pizza blends quick service with higher quality offerings\n\ncompared to traditional fast food.\n\nQdoba Mexican Eats\n\nQdoba Mexican Eats is a well-known fast casual chain recognized for its emphasis on quality\n\ningredients and a dining experience that balances speed with authenticity. Customers are often drawn\n\nto Qdoba Mexican Eats because of its consistent focus on freshness, transparency in sourcing, and the\n\nability to customize meals. Like many in the segment, Qdoba Mexican Eats blends quick service with\n\nhigher quality offerings compared to traditional fast food.\n\nJersey Mike’s Subs\n\nJersey Mike’s Subs is a well-known fast casual chain recognized for its emphasis on quality ingredients",
+    "tokenCount": 200,
+    "charCount": 1045,
+    "startToken": 0,
+    "endToken": 200,
+    "contentHash": "1e06db66145b1aa88ad26dfce4936dbe419a3667",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2,
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "chunkIndex": 1,
+    "content": "Jersey Mike’s Subs\n\nJersey Mike’s Subs is a well-known fast casual chain recognized for its emphasis on quality ingredients\n\nand a dining experience that balances speed with authenticity. Customers are often drawn to Jersey\n\nMike’s Subs because of its consistent focus on freshness, transparency in sourcing, and the ability to\n\ncustomize meals. Like many in the segment, Jersey Mike’s Subs blends quick service with higher\n\nquality offerings compared to traditional fast food.\n\nNoodles & Company\n\nNoodles & Company is a well-known fast casual chain recognized for its emphasis on quality\n\ningredients and a dining experience that balances speed with authenticity. Customers are often drawn\n\nto Noodles & Company because of its consistent focus on freshness, transparency in sourcing, and the\n\nability to customize meals. Like many in the segment, Noodles & Company blends quick service with\n\nhigher quality offerings compared to traditional fast food.",
+    "tokenCount": 179,
+    "charCount": 952,
+    "startToken": 175,
+    "endToken": 354,
+    "contentHash": "3b20baeea5d3d313973088a2fdbcfe60dcbd6845",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2,
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "chunkIndex": 2,
+    "content": " traditional fast food.",
+    "tokenCount": 4,
+    "charCount": 23,
+    "startToken": 350,
+    "endToken": 354,
+    "contentHash": "be22b837c73c6b9a02965d1b3bdc5e77c3897adf",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2,
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 0,
+    "content": "Fast Casual Restaurant Locations (Varied)\n\nChipotle Mexican Grill\n  Northeast:\n    - Boston, MA\n    - Philadelphia, PA\n    - Baltimore, MD\n    - Pittsburgh, PA\n  South:\n    - Dallas, TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    - Kansas City, MO\n    - Chicago, IL\n    - Columbus, OH\n    - Minneapolis, MN\n  West Coast:\n    - Seattle, WA\n    - San Diego, CA\n    - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    - Tucson, AZ\n    - Boise, ID\n    - Colorado Springs, CO\n\nPanera Bread\n  Northeast:\n    - Baltimore, MD\n    - Pittsburgh, PA\n    - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA",
+    "tokenCount": 200,
+    "charCount": 674,
+    "startToken": 0,
+    "endToken": 200,
+    "contentHash": "249ca4e29cfd5a8995ba416b74bf032373e76473",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 1,
+    "content": " - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA\n    - Orlando, FL\n    - Charlotte, NC\n  Midwest:\n    - Columbus, OH\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    - Portland, OR\n    - San Jose, CA\n    - Oakland, CA\n    - Irvine, CA\n  Mountain & Southwest:\n    - Boise, ID\n    - Colorado Springs, CO\n    - Denver, CO\n    - Phoenix, AZ\n\nShake Shack\n  Northeast:\n    - Providence, RI\n    - Newark, NJ\n    - Hartford, CT\n    - New York, NY\n  South:\n    - Orlando, FL\n    - Charlotte, NC\n    - Nashville, TN\n    - Miami, FL\n  Midwest:\n    - Detroit, MI\n    - Cleveland, OH\n    - Indianapolis",
+    "tokenCount": 200,
+    "charCount": 647,
+    "startToken": 175,
+    "endToken": 375,
+    "contentHash": "359b7c76cb4e62526c20811c271a06e397ba36a2",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 2,
+    "content": "\n    - Miami, FL\n  Midwest:\n    - Detroit, MI\n    - Cleveland, OH\n    - Indianapolis, IN\n    - Milwaukee, WI\n  West Coast:\n    - Oakland, CA\n    - Irvine, CA\n    - Los Angeles, CA\n    - San Francisco, CA\n  Mountain & Southwest:\n    - Denver, CO\n    - Phoenix, AZ\n    - Salt Lake City, UT\n    - Las Vegas, NV\n\nChick-fil-A\n  Northeast:\n    - Hartford, CT\n    - New York, NY\n    - Boston, MA\n    - Philadelphia, PA\n  South:\n    - Nashville, TN\n    - Miami, FL\n    - Dallas, TX\n    - Houston, TX\n  Midwest:\n    - Indianapolis, IN\n    - Milwaukee, WI\n    - Kansas City, MO\n    - Chicago, IL\n  West Coast:\n    - Los Angeles, CA\n    - San Francisco,",
+    "tokenCount": 200,
+    "charCount": 642,
+    "startToken": 350,
+    "endToken": 550,
+    "contentHash": "96359b0118a5008a4929d0a0bc649939b712f403",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 3,
+    "content": ", MO\n    - Chicago, IL\n  West Coast:\n    - Los Angeles, CA\n    - San Francisco, CA\n    - Seattle, WA\n    - San Diego, CA\n  Mountain & Southwest:\n    - Salt Lake City, UT\n    - Las Vegas, NV\n    - Albuquerque, NM\n    - Tucson, AZ\n\nFive Guys\n  Northeast:\n    - Boston, MA\n    - Philadelphia, PA\n    - Baltimore, MD\n    - Pittsburgh, PA\n  South:\n    - Dallas, TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    - Kansas City, MO\n    - Chicago, IL\n    - Columbus, OH\n    - Minneapolis, MN\n  West Coast:\n    - Seattle, WA\n    - San Diego, CA\n    - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    -",
+    "tokenCount": 200,
+    "charCount": 645,
+    "startToken": 525,
+    "endToken": 725,
+    "contentHash": "26ca82c86518c129ce88bd3313fdb9707621a337",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 4,
+    "content": " - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    - Tucson, AZ\n    - Boise, ID\n    - Colorado Springs, CO\n\nFirehouse Subs\n  Northeast:\n    - Baltimore, MD\n    - Pittsburgh, PA\n    - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA\n    - Orlando, FL\n    - Charlotte, NC\n  Midwest:\n    - Columbus, OH\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    - Portland, OR\n    - San Jose, CA\n    - Oakland, CA\n    - Irvine, CA\n  Mountain & Southwest:\n    - Boise, ID\n    - Colorado Springs, CO\n    - Denver, CO\n    - Phoenix, AZ\n\nMOD Pizza\n  Northeast:\n    - Providence, RI\n    -",
+    "tokenCount": 200,
+    "charCount": 659,
+    "startToken": 700,
+    "endToken": 900,
+    "contentHash": "2bff725401663126341b14a61c9748473be9511b",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 5,
+    "content": " - Denver, CO\n    - Phoenix, AZ\n\nMOD Pizza\n  Northeast:\n    - Providence, RI\n    - Newark, NJ\n    - Hartford, CT\n    - New York, NY\n  South:\n    - Orlando, FL\n    - Charlotte, NC\n    - Nashville, TN\n    - Miami, FL\n  Midwest:\n    - Detroit, MI\n    - Cleveland, OH\n    - Indianapolis, IN\n    - Milwaukee, WI\n  West Coast:\n    - Oakland, CA\n    - Irvine, CA\n    - Los Angeles, CA\n    - San Francisco, CA\n  Mountain & Southwest:\n    - Denver, CO\n    - Phoenix, AZ\n    - Salt Lake City, UT\n    - Las Vegas, NV\n\nQdoba Mexican Eats\n  Northeast:\n    - Hartford, CT\n    - New York, NY\n    - Boston, MA\n    - Philadelphia, PA\n  South:\n    - Nashville, TN",
+    "tokenCount": 200,
+    "charCount": 645,
+    "startToken": 875,
+    "endToken": 1075,
+    "contentHash": "99ffdfbfcaedc82cedc781a16d73f645e0da9624",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 6,
+    "content": " New York, NY\n    - Boston, MA\n    - Philadelphia, PA\n  South:\n    - Nashville, TN\n    - Miami, FL\n    - Dallas, TX\n    - Houston, TX\n  Midwest:\n    - Indianapolis, IN\n    - Milwaukee, WI\n    - Kansas City, MO\n    - Chicago, IL\n  West Coast:\n    - Los Angeles, CA\n    - San Francisco, CA\n    - Seattle, WA\n    - San Diego, CA\n  Mountain & Southwest:\n    - Salt Lake City, UT\n    - Las Vegas, NV\n    - Albuquerque, NM\n    - Tucson, AZ\n\nJersey Mike’s Subs\n  Northeast:\n    - Boston, MA\n    - Philadelphia, PA\n    - Baltimore, MD\n    - Pittsburgh, PA\n  South:\n    - Dallas, TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    -",
+    "tokenCount": 200,
+    "charCount": 642,
+    "startToken": 1050,
+    "endToken": 1250,
+    "contentHash": "371b1d269f1c561bfd296834231849d767600430",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 7,
+    "content": " TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    - Kansas City, MO\n    - Chicago, IL\n    - Columbus, OH\n    - Minneapolis, MN\n  West Coast:\n    - Seattle, WA\n    - San Diego, CA\n    - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    - Tucson, AZ\n    - Boise, ID\n    - Colorado Springs, CO\n\nNoodles & Company\n  Northeast:\n    - Baltimore, MD\n    - Pittsburgh, PA\n    - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA\n    - Orlando, FL\n    - Charlotte, NC\n  Midwest:\n    - Columbus, OH\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    -",
+    "tokenCount": 200,
+    "charCount": 645,
+    "startToken": 1225,
+    "endToken": 1425,
+    "contentHash": "05551077f335f6c907925cb69e0a02a3f527efbd",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "chunkIndex": 8,
+    "content": "\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    - Portland, OR\n    - San Jose, CA\n    - Oakland, CA\n    - Irvine, CA\n  Mountain & Southwest:\n    - Boise, ID\n    - Colorado Springs, CO\n    - Denver, CO\n    - Phoenix, AZ",
+    "tokenCount": 77,
+    "charCount": 249,
+    "startToken": 1400,
+    "endToken": 1477,
+    "contentHash": "410f79bdf84f2375c23471eca86d85163858a8a3",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "chunkIndex": 0,
+    "content": "Fast Casual Restaurant Menus\n\nChipotle Mexican Grill\n\nChipotle Mexican Grill typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Chipotle Mexican Grill menu.\n\nPanera Bread\n\nPanera Bread typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Panera Bread menu.\n\nShake Shack\n\nShake Shack typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Shake Shack menu.\n\nChick-fil-A\n\nChick-fil-A typically offers a menu including popular signature items",
+    "tokenCount": 200,
+    "charCount": 1051,
+    "startToken": 0,
+    "endToken": 200,
+    "contentHash": "bc556a281af05e14984ee8ccd3e90c57bd8db435",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "chunkIndex": 1,
+    "content": " also common on the Shake Shack menu.\n\nChick-fil-A\n\nChick-fil-A typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Chick-fil-A menu.\n\nFive Guys\n\nFive Guys typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Five Guys menu.\n\nFirehouse Subs\n\nFirehouse Subs typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Firehouse Subs menu.\n\nMOD Pizza\n\nMOD Pizza typically offers a menu including popular signature items, customizable options",
+    "tokenCount": 200,
+    "charCount": 1045,
+    "startToken": 175,
+    "endToken": 375,
+    "contentHash": "2b85f33273a1af822301beb538445dce19119e76",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "chunkIndex": 2,
+    "content": " also common on the Firehouse Subs menu.\n\nMOD Pizza\n\nMOD Pizza typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the MOD Pizza menu.\n\nQdoba Mexican Eats\n\nQdoba Mexican Eats typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Qdoba Mexican Eats menu.\n\nJersey Mike’s Subs\n\nJersey Mike’s Subs typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Jersey Mike’s Subs menu.\n\nNoodles & Company\n\nN",
+    "tokenCount": 200,
+    "charCount": 1001,
+    "startToken": 350,
+    "endToken": 550,
+    "contentHash": "f0575067c205d623d57a65f55c7ad8180a075d4a",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "chunkIndex": 3,
+    "content": " Desserts, beverages, and seasonal specials are also common on the Jersey Mike’s Subs menu.\n\nNoodles & Company\n\nNoodles & Company typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Noodles & Company menu.",
+    "tokenCount": 81,
+    "charCount": 410,
+    "startToken": 525,
+    "endToken": 606,
+    "contentHash": "a5f09e89fcdf909ba71a52abc676dece9b070b08",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  }
+]

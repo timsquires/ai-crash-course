@@ -1,0 +1,101 @@
+Fast Casual Restaurant Menus (Enriched with Prices & Calories)
+
+Chipotle Mexican Grill
+
+- Chicken Burrito — cilantro-lime rice, black beans, pico, cheese [$9.95, ~720 kcal]
+
+- Barbacoa Bowl — brown rice, fajita veggies, tomatillo salsa, sour cream [$10.95, ~650 kcal]
+
+- Veggie Tacos (3) — guacamole, roasted chili-corn salsa, lettuce [$8.95, ~540 kcal]
+
+- Chips & Queso Blanco — tortilla chips with queso [$4.25, ~320 kcal]
+
+Panera Bread
+
+- Broccoli Cheddar Soup (Bread Bowl) — classic cheddar soup in sourdough bowl [$8.79, ~900 kcal]
+
+- Fuji Apple Chicken Salad — gorgonzola, apple chips, roasted pecans [$11.49, ~560 kcal]
+
+- Chipotle Chicken Avocado Melt — black pepper focaccia [$10.99, ~740 kcal]
+
+- Mediterranean Veggie Sandwich — hummus, cucumbers, peppers [$9.49, ~540 kcal]
+
+Shake Shack
+
+- ShackBurger — lettuce, tomato, ShackSauce [$6.89, ~530 kcal]
+
+- SmokeShack — bacon, cherry peppers, cheese [$8.99, ~610 kcal]
+
+- Crinkle-Cut Fries (Cheese) — classic fries with cheese sauce [$4.19, ~520 kcal]
+
+- Frozen Custard Concrete — vanilla custard with mix-ins [$5.79, ~680 kcal]
+
+Chick-fil-A
+
+- Original Chicken Sandwich — buttered bun, dill pickles [$4.69, ~440 kcal]
+
+- Spicy Deluxe Sandwich — pepper jack, lettuce, tomato [$5.69, ~570 kcal]
+
+- Waffle Potato Fries — medium size [$2.79, ~400 kcal]
+
+- Chick-n-Minis (4 ct) — breakfast, honey butter [$4.19, ~360 kcal]
+
+Five Guys
+
+- Bacon Cheeseburger — customizable toppings [$10.99, ~1060 kcal]
+
+- Little Hamburger — single patty, grilled onions & mushrooms [$6.99, ~540 kcal]
+
+- Cajun Style Fries (Regular) — cajun seasoning [$5.19, ~530 kcal]
+
+- Milkshake (Oreo) — hand-spun with mix-in [$5.79, ~670 kcal]
+
+Firehouse Subs
+
+- Hook & Ladder — turkey, ham, Monterey Jack [$8.99, ~720 kcal]
+
+- Italian — salami, pepperoni, provolone, Italian dressing [$9.29, ~850 kcal]
+
+- New York Steamer — corned beef brisket, pastrami [$9.69, ~900 kcal]
+
+- Firehouse Chili (Cup) — hearty beef chili [$3.99, ~280 kcal]
+
+MOD Pizza
+
+- Maddy Pizza — red sauce, mozzarella (11") [$9.49, ~710 kcal]
+
+- Caspian Pizza — BBQ chicken, gorgonzola, BBQ drizzle [$11.49, ~820 kcal]
+
+- Mad Dog Pizza — pepperoni, sausage, ground beef [$11.99, ~900 kcal]
+
+- Build-Your-Own — unlimited toppings (11") [$10.99, varies]
+
+Qdoba Mexican Eats
+
+- 3-Cheese Queso & Chips — signature queso [$4.49, ~450 kcal]
+
+- Grilled Chicken Quesadilla — pico de gallo, cheese blend [$8.99, ~690 kcal]
+
+- Smothered Burrito (Pork) — queso-smothered [$9.99, ~870 kcal]
+
+- Loaded Tortilla Soup (Beef) — toppings and tortilla strips [$7.99, ~520 kcal]
+
+Jersey Mike’s Subs
+
+- Original Italian (#13) — provolone, ham, prosciuttini, cappacuolo, salami, pepperoni [$9.95, ~920 kcal]
+
+- Club Sub (#8) — turkey, ham, provolone, bacon, mayo [$9.45, ~980 kcal]
+
+- Philly Cheese Steak — griddled onions & peppers [$9.89, ~840 kcal]
+
+- Veggie — Swiss, provolone, green peppers [$7.99, ~720 kcal]
+
+Noodles & Company
+
+- Wisconsin Mac & Cheese — cream sauce, cheddar-jack blend [$7.99, ~980 kcal]
+
+- Japanese Pan Noodles — udon, broccoli, carrots, shiitake [$8.79, ~640 kcal]
+
+- Penne Rosa — spicy tomato cream, spinach, mushrooms [$8.99, ~720 kcal]
+
+- Pad Thai — rice noodles, egg, peanuts, green onions [$9.49, ~740 kcal]

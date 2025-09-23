@@ -1,0 +1,41 @@
+{
+  "lab": "02-chunking",
+  "encoder": "gpt-4o-mini",
+  "config": {
+    "CHUNK_TOKENS": 200,
+    "OVERLAP_TOKENS": 25
+  },
+  "totals": {
+    "totalDocs": 4,
+    "totalChunks": 19,
+    "totalTokens": 2952,
+    "avgTokensPerDoc": 738,
+    "avgTokensPerChunk": 155
+  },
+  "perDoc": [
+    {
+      "id": "fast_casual_descriptions.pdf:p1",
+      "tokens": 515,
+      "chunks": 3,
+      "avgChunkTokens": 172
+    },
+    {
+      "id": "fast_casual_descriptions.pdf:p2",
+      "tokens": 354,
+      "chunks": 3,
+      "avgChunkTokens": 118
+    },
+    {
+      "id": "fast_casual_locations.txt:0",
+      "tokens": 1477,
+      "chunks": 9,
+      "avgChunkTokens": 164
+    },
+    {
+      "id": "fast_casual_menus.docx:0",
+      "tokens": 606,
+      "chunks": 4,
+      "avgChunkTokens": 152
+    }
+  ]
+}

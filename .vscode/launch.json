@@ -23,7 +23,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 01-message-basics",
+      "name": "Labs - Week 1: 01-message-basics",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -35,7 +35,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 02-tokens",
+      "name": "Labs - Week 1: 02-tokens",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -45,10 +45,9 @@
       "envFile": "${workspaceFolder}/apps/labs/.env",
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
-    }
-    ,
+    },
     {
-      "name": "Labs: Run 03-last-k-messages",
+      "name": "Labs - Week 1: 03-last-k-messages",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -60,7 +59,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 04-rolling-summaries",
+      "name": "Labs - Week 1: 04-rolling-summaries",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -72,7 +71,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 05-tool-calls",
+      "name": "Labs - Week 1: 05-tool-calls",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -84,7 +83,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 06-tool-calls-expanded",
+      "name": "Labs - Week 1: 06-tool-calls-expanded",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -96,7 +95,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 07-temperature",
+      "name": "Labs - Week 1: 07-temperature",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -108,7 +107,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 08-abstraction (provider prompt)",
+      "name": "Labs - Week 1: 08-abstraction (provider prompt)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -120,7 +119,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 08-abstraction (openai)",
+      "name": "Labs - Week 1: 08-abstraction (openai)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -132,7 +131,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 08-abstraction (claude)",
+      "name": "Labs - Week 1: 08-abstraction (claude)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -144,7 +143,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 08-abstraction (gemini)",
+      "name": "Labs - Week 1: 08-abstraction (gemini)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -156,7 +155,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 08-abstraction (grok)",
+      "name": "Labs - Week 1: 08-abstraction (grok)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -168,7 +167,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 09-prompt-management",
+      "name": "Labs - Week 1: 09-prompt-management",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -180,7 +179,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "name": "Labs: Run 10-prompt-management-protected",
+      "name": "Labs - Week 1: 10-prompt-management-protected",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -193,7 +192,7 @@
     }
     ,
     {
-      "name": "Labs: Run 11-structured-output",
+      "name": "Labs - Week 1: 11-structured-output",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -206,7 +205,7 @@
     }
     ,
     {
-      "name": "Labs: Run 12-streaming",
+      "name": "Labs - Week 1: 12-streaming",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
@@ -219,13 +218,73 @@
     }
     ,
     {
-      "name": "Labs: Run 13-contact-chatbot",
+      "name": "Labs - Week 1: 13-contact-chatbot",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
       "cwd": "${workspaceFolder}",
       "args": ["week-1/13-contact-chatbot"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 2: 01-document-loading",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-2/01-document-loading"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 2: 02-chunking",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-2/02-chunking"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 2: 03-custom-chunking",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-2/03-custom-chunking"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 2: 04-embedding",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-2/04-embedding"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 2: 05-retrieval-chat",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-2/05-retrieval-chat"],
       "envFile": "${workspaceFolder}/apps/labs/.env",
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]

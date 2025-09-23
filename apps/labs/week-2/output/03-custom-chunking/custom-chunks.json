@@ -1,0 +1,372 @@
+[
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "sectionIndex": 0,
+    "restaurant": "Chipotle Mexican Grill",
+    "aliasesMatched": [
+      "Chipotle Mexican Grill"
+    ],
+    "content": "Chipotle Mexican Grill\n\nChipotle Mexican Grill is a well-known fast casual chain recognized for its emphasis on quality\n\ningredients and a dining experience that balances speed with authenticity. Customers are often drawn\n\nto Chipotle Mexican Grill because of its consistent focus on freshness, transparency in sourcing, and\n\nthe ability to customize meals. Like many in the segment, Chipotle Mexican Grill blends quick service\n\nwith higher quality offerings compared to traditional fast food.",
+    "charCount": 493,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "sectionIndex": 1,
+    "restaurant": "Panera Bread",
+    "aliasesMatched": [
+      "Panera Bread"
+    ],
+    "content": "Panera Bread\n\nPanera Bread is a well-known fast casual chain recognized for its emphasis on quality ingredients and\n\na dining experience that balances speed with authenticity. Customers are often drawn to Panera Bread\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Panera Bread blends quick service with higher quality offerings\n\ncompared to traditional fast food.",
+    "charCount": 453,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "sectionIndex": 2,
+    "restaurant": "Shake Shack",
+    "aliasesMatched": [
+      "Shake Shack"
+    ],
+    "content": "Shake Shack\n\nShake Shack is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to Shake Shack\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Shake Shack blends quick service with higher quality offerings\n\ncompared to traditional fast food.",
+    "charCount": 449,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "sectionIndex": 3,
+    "restaurant": "Chick-fil-A",
+    "aliasesMatched": [
+      "Chick-fil-A"
+    ],
+    "content": "Chick-fil-A\n\nChick-fil-A is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to Chick-fil-A\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Chick-fil-A blends quick service with higher quality offerings\n\ncompared to traditional fast food.",
+    "charCount": 449,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "sectionIndex": 4,
+    "restaurant": "Five Guys",
+    "aliasesMatched": [
+      "Five Guys"
+    ],
+    "content": "Five Guys\n\nFive Guys is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to Five Guys\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, Five Guys blends quick service with higher quality offerings\n\ncompared to traditional fast food.",
+    "charCount": 441,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p1",
+    "sectionIndex": 5,
+    "restaurant": "Firehouse Subs",
+    "aliasesMatched": [
+      "Firehouse Subs"
+    ],
+    "content": "Firehouse Subs\n\nFirehouse Subs is a well-known fast casual chain recognized for its emphasis on quality ingredients\n\nand a dining experience that balances speed with authenticity. Customers are often drawn to Firehouse\n\nSubs because of its consistent focus on freshness, transparency in sourcing, and the ability to\n\ncustomize meals. Like many in the segment, Firehouse Subs blends quick service with higher quality\n\nofferings compared to traditional fast food.",
+    "charCount": 461,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 1
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "sectionIndex": 0,
+    "restaurant": "MOD Pizza",
+    "aliasesMatched": [
+      "MOD Pizza"
+    ],
+    "content": "MOD Pizza\n\nMOD Pizza is a well-known fast casual chain recognized for its emphasis on quality ingredients and a\n\ndining experience that balances speed with authenticity. Customers are often drawn to MOD Pizza\n\nbecause of its consistent focus on freshness, transparency in sourcing, and the ability to customize\n\nmeals. Like many in the segment, MOD Pizza blends quick service with higher quality offerings\n\ncompared to traditional fast food.",
+    "charCount": 441,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "sectionIndex": 1,
+    "restaurant": "Qdoba Mexican Eats",
+    "aliasesMatched": [
+      "Qdoba Mexican Eats"
+    ],
+    "content": "Qdoba Mexican Eats\n\nQdoba Mexican Eats is a well-known fast casual chain recognized for its emphasis on quality\n\ningredients and a dining experience that balances speed with authenticity. Customers are often drawn\n\nto Qdoba Mexican Eats because of its consistent focus on freshness, transparency in sourcing, and the\n\nability to customize meals. Like many in the segment, Qdoba Mexican Eats blends quick service with\n\nhigher quality offerings compared to traditional fast food.",
+    "charCount": 477,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "sectionIndex": 2,
+    "restaurant": "Jersey Mike's Subs",
+    "aliasesMatched": [
+      "Jersey Mike’s Subs"
+    ],
+    "content": "Jersey Mike's Subs\n\nJersey Mike’s Subs is a well-known fast casual chain recognized for its emphasis on quality ingredients\n\nand a dining experience that balances speed with authenticity. Customers are often drawn to Jersey\n\nMike’s Subs because of its consistent focus on freshness, transparency in sourcing, and the ability to\n\ncustomize meals. Like many in the segment, Jersey Mike’s Subs blends quick service with higher\n\nquality offerings compared to traditional fast food.",
+    "charCount": 477,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2
+  },
+  {
+    "docId": "fast_casual_descriptions.pdf:p2",
+    "sectionIndex": 3,
+    "restaurant": "Noodles & Company",
+    "aliasesMatched": [
+      "Noodles & Company"
+    ],
+    "content": "Noodles & Company\n\nNoodles & Company is a well-known fast casual chain recognized for its emphasis on quality\n\ningredients and a dining experience that balances speed with authenticity. Customers are often drawn\n\nto Noodles & Company because of its consistent focus on freshness, transparency in sourcing, and the\n\nability to customize meals. Like many in the segment, Noodles & Company blends quick service with\n\nhigher quality offerings compared to traditional fast food.",
+    "charCount": 473,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "mimeType": "application/pdf",
+    "page": 2
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 0,
+    "restaurant": "Chipotle Mexican Grill",
+    "aliasesMatched": [
+      "Chipotle Mexican Grill"
+    ],
+    "content": "Chipotle Mexican Grill\n\nNortheast:\n    - Boston, MA\n    - Philadelphia, PA\n    - Baltimore, MD\n    - Pittsburgh, PA\n  South:\n    - Dallas, TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    - Kansas City, MO\n    - Chicago, IL\n    - Columbus, OH\n    - Minneapolis, MN\n  West Coast:\n    - Seattle, WA\n    - San Diego, CA\n    - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    - Tucson, AZ\n    - Boise, ID\n    - Colorado Springs, CO",
+    "charCount": 481,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 1,
+    "restaurant": "Panera Bread",
+    "aliasesMatched": [
+      "Panera Bread"
+    ],
+    "content": "Panera Bread\n\nNortheast:\n    - Baltimore, MD\n    - Pittsburgh, PA\n    - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA\n    - Orlando, FL\n    - Charlotte, NC\n  Midwest:\n    - Columbus, OH\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    - Portland, OR\n    - San Jose, CA\n    - Oakland, CA\n    - Irvine, CA\n  Mountain & Southwest:\n    - Boise, ID\n    - Colorado Springs, CO\n    - Denver, CO\n    - Phoenix, AZ",
+    "charCount": 463,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 2,
+    "restaurant": "Shake Shack",
+    "aliasesMatched": [
+      "Shake Shack"
+    ],
+    "content": "Shake Shack\n\nNortheast:\n    - Providence, RI\n    - Newark, NJ\n    - Hartford, CT\n    - New York, NY\n  South:\n    - Orlando, FL\n    - Charlotte, NC\n    - Nashville, TN\n    - Miami, FL\n  Midwest:\n    - Detroit, MI\n    - Cleveland, OH\n    - Indianapolis, IN\n    - Milwaukee, WI\n  West Coast:\n    - Oakland, CA\n    - Irvine, CA\n    - Los Angeles, CA\n    - San Francisco, CA\n  Mountain & Southwest:\n    - Denver, CO\n    - Phoenix, AZ\n    - Salt Lake City, UT\n    - Las Vegas, NV",
+    "charCount": 473,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 3,
+    "restaurant": "Chick-fil-A",
+    "aliasesMatched": [
+      "Chick-fil-A"
+    ],
+    "content": "Chick-fil-A\n\nNortheast:\n    - Hartford, CT\n    - New York, NY\n    - Boston, MA\n    - Philadelphia, PA\n  South:\n    - Nashville, TN\n    - Miami, FL\n    - Dallas, TX\n    - Houston, TX\n  Midwest:\n    - Indianapolis, IN\n    - Milwaukee, WI\n    - Kansas City, MO\n    - Chicago, IL\n  West Coast:\n    - Los Angeles, CA\n    - San Francisco, CA\n    - Seattle, WA\n    - San Diego, CA\n  Mountain & Southwest:\n    - Salt Lake City, UT\n    - Las Vegas, NV\n    - Albuquerque, NM\n    - Tucson, AZ",
+    "charCount": 481,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 4,
+    "restaurant": "Five Guys",
+    "aliasesMatched": [
+      "Five Guys"
+    ],
+    "content": "Five Guys\n\nNortheast:\n    - Boston, MA\n    - Philadelphia, PA\n    - Baltimore, MD\n    - Pittsburgh, PA\n  South:\n    - Dallas, TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    - Kansas City, MO\n    - Chicago, IL\n    - Columbus, OH\n    - Minneapolis, MN\n  West Coast:\n    - Seattle, WA\n    - San Diego, CA\n    - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    - Tucson, AZ\n    - Boise, ID\n    - Colorado Springs, CO",
+    "charCount": 468,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 5,
+    "restaurant": "Firehouse Subs",
+    "aliasesMatched": [
+      "Firehouse Subs"
+    ],
+    "content": "Firehouse Subs\n\nNortheast:\n    - Baltimore, MD\n    - Pittsburgh, PA\n    - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA\n    - Orlando, FL\n    - Charlotte, NC\n  Midwest:\n    - Columbus, OH\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    - Portland, OR\n    - San Jose, CA\n    - Oakland, CA\n    - Irvine, CA\n  Mountain & Southwest:\n    - Boise, ID\n    - Colorado Springs, CO\n    - Denver, CO\n    - Phoenix, AZ",
+    "charCount": 465,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 6,
+    "restaurant": "MOD Pizza",
+    "aliasesMatched": [
+      "MOD Pizza"
+    ],
+    "content": "MOD Pizza\n\nNortheast:\n    - Providence, RI\n    - Newark, NJ\n    - Hartford, CT\n    - New York, NY\n  South:\n    - Orlando, FL\n    - Charlotte, NC\n    - Nashville, TN\n    - Miami, FL\n  Midwest:\n    - Detroit, MI\n    - Cleveland, OH\n    - Indianapolis, IN\n    - Milwaukee, WI\n  West Coast:\n    - Oakland, CA\n    - Irvine, CA\n    - Los Angeles, CA\n    - San Francisco, CA\n  Mountain & Southwest:\n    - Denver, CO\n    - Phoenix, AZ\n    - Salt Lake City, UT\n    - Las Vegas, NV",
+    "charCount": 471,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 7,
+    "restaurant": "Qdoba Mexican Eats",
+    "aliasesMatched": [
+      "Qdoba Mexican Eats"
+    ],
+    "content": "Qdoba Mexican Eats\n\nNortheast:\n    - Hartford, CT\n    - New York, NY\n    - Boston, MA\n    - Philadelphia, PA\n  South:\n    - Nashville, TN\n    - Miami, FL\n    - Dallas, TX\n    - Houston, TX\n  Midwest:\n    - Indianapolis, IN\n    - Milwaukee, WI\n    - Kansas City, MO\n    - Chicago, IL\n  West Coast:\n    - Los Angeles, CA\n    - San Francisco, CA\n    - Seattle, WA\n    - San Diego, CA\n  Mountain & Southwest:\n    - Salt Lake City, UT\n    - Las Vegas, NV\n    - Albuquerque, NM\n    - Tucson, AZ",
+    "charCount": 488,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 8,
+    "restaurant": "Jersey Mike's Subs",
+    "aliasesMatched": [
+      "Jersey Mike’s Subs"
+    ],
+    "content": "Jersey Mike's Subs\n\nNortheast:\n    - Boston, MA\n    - Philadelphia, PA\n    - Baltimore, MD\n    - Pittsburgh, PA\n  South:\n    - Dallas, TX\n    - Houston, TX\n    - Tampa, FL\n    - Atlanta, GA\n  Midwest:\n    - Kansas City, MO\n    - Chicago, IL\n    - Columbus, OH\n    - Minneapolis, MN\n  West Coast:\n    - Seattle, WA\n    - San Diego, CA\n    - Portland, OR\n    - San Jose, CA\n  Mountain & Southwest:\n    - Albuquerque, NM\n    - Tucson, AZ\n    - Boise, ID\n    - Colorado Springs, CO",
+    "charCount": 477,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_locations.txt:0",
+    "sectionIndex": 9,
+    "restaurant": "Noodles & Company",
+    "aliasesMatched": [
+      "Noodles & Company"
+    ],
+    "content": "Noodles & Company\n\nNortheast:\n    - Baltimore, MD\n    - Pittsburgh, PA\n    - Providence, RI\n    - Newark, NJ\n  South:\n    - Tampa, FL\n    - Atlanta, GA\n    - Orlando, FL\n    - Charlotte, NC\n  Midwest:\n    - Columbus, OH\n    - Minneapolis, MN\n    - Detroit, MI\n    - Cleveland, OH\n  West Coast:\n    - Portland, OR\n    - San Jose, CA\n    - Oakland, CA\n    - Irvine, CA\n  Mountain & Southwest:\n    - Boise, ID\n    - Colorado Springs, CO\n    - Denver, CO\n    - Phoenix, AZ",
+    "charCount": 468,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "mimeType": "text/plain"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 0,
+    "restaurant": "Chipotle Mexican Grill",
+    "aliasesMatched": [
+      "Chipotle Mexican Grill"
+    ],
+    "content": "Chipotle Mexican Grill\n\n- Chicken Burrito — cilantro-lime rice, black beans, pico, cheese [$9.95, ~720 kcal]\n\n- Barbacoa Bowl — brown rice, fajita veggies, tomatillo salsa, sour cream [$10.95, ~650 kcal]\n\n- Veggie Tacos (3) — guacamole, roasted chili-corn salsa, lettuce [$8.95, ~540 kcal]\n\n- Chips & Queso Blanco — tortilla chips with queso [$4.25, ~320 kcal]",
+    "charCount": 360,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 1,
+    "restaurant": "Panera Bread",
+    "aliasesMatched": [
+      "Panera Bread"
+    ],
+    "content": "Panera Bread\n\n- Broccoli Cheddar Soup (Bread Bowl) — classic cheddar soup in sourdough bowl [$8.79, ~900 kcal]\n\n- Fuji Apple Chicken Salad — gorgonzola, apple chips, roasted pecans [$11.49, ~560 kcal]\n\n- Chipotle Chicken Avocado Melt — black pepper focaccia [$10.99, ~740 kcal]\n\n- Mediterranean Veggie Sandwich — hummus, cucumbers, peppers [$9.49, ~540 kcal]",
+    "charCount": 358,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 2,
+    "restaurant": "Shake Shack",
+    "aliasesMatched": [
+      "Shake Shack"
+    ],
+    "content": "Shake Shack\n\n- ShackBurger — lettuce, tomato, ShackSauce [$6.89, ~530 kcal]\n\n- SmokeShack — bacon, cherry peppers, cheese [$8.99, ~610 kcal]\n\n- Crinkle-Cut Fries (Cheese) — classic fries with cheese sauce [$4.19, ~520 kcal]\n\n- Frozen Custard Concrete — vanilla custard with mix-ins [$5.79, ~680 kcal]",
+    "charCount": 300,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 3,
+    "restaurant": "Chick-fil-A",
+    "aliasesMatched": [
+      "Chick-fil-A"
+    ],
+    "content": "Chick-fil-A\n\n- Original Chicken Sandwich — buttered bun, dill pickles [$4.69, ~440 kcal]\n\n- Spicy Deluxe Sandwich — pepper jack, lettuce, tomato [$5.69, ~570 kcal]\n\n- Waffle Potato Fries — medium size [$2.79, ~400 kcal]\n\n- Chick-n-Minis (4 ct) — breakfast, honey butter [$4.19, ~360 kcal]",
+    "charCount": 288,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 4,
+    "restaurant": "Five Guys",
+    "aliasesMatched": [
+      "Five Guys"
+    ],
+    "content": "Five Guys\n\n- Bacon Cheeseburger — customizable toppings [$10.99, ~1060 kcal]\n\n- Little Hamburger — single patty, grilled onions & mushrooms [$6.99, ~540 kcal]\n\n- Cajun Style Fries (Regular) — cajun seasoning [$5.19, ~530 kcal]\n\n- Milkshake (Oreo) — hand-spun with mix-in [$5.79, ~670 kcal]",
+    "charCount": 289,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 5,
+    "restaurant": "Firehouse Subs",
+    "aliasesMatched": [
+      "Firehouse Subs"
+    ],
+    "content": "Firehouse Subs\n\n- Hook & Ladder — turkey, ham, Monterey Jack [$8.99, ~720 kcal]\n\n- Italian — salami, pepperoni, provolone, Italian dressing [$9.29, ~850 kcal]\n\n- New York Steamer — corned beef brisket, pastrami [$9.69, ~900 kcal]\n\n- Firehouse Chili (Cup) — hearty beef chili [$3.99, ~280 kcal]",
+    "charCount": 293,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 6,
+    "restaurant": "MOD Pizza",
+    "aliasesMatched": [
+      "MOD Pizza"
+    ],
+    "content": "MOD Pizza\n\n- Maddy Pizza — red sauce, mozzarella (11\") [$9.49, ~710 kcal]\n\n- Caspian Pizza — BBQ chicken, gorgonzola, BBQ drizzle [$11.49, ~820 kcal]\n\n- Mad Dog Pizza — pepperoni, sausage, ground beef [$11.99, ~900 kcal]\n\n- Build-Your-Own — unlimited toppings (11\") [$10.99, varies]",
+    "charCount": 282,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 7,
+    "restaurant": "Qdoba Mexican Eats",
+    "aliasesMatched": [
+      "Qdoba Mexican Eats"
+    ],
+    "content": "Qdoba Mexican Eats\n\n- 3-Cheese Queso & Chips — signature queso [$4.49, ~450 kcal]\n\n- Grilled Chicken Quesadilla — pico de gallo, cheese blend [$8.99, ~690 kcal]\n\n- Smothered Burrito (Pork) — queso-smothered [$9.99, ~870 kcal]\n\n- Loaded Tortilla Soup (Beef) — toppings and tortilla strips [$7.99, ~520 kcal]",
+    "charCount": 306,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 8,
+    "restaurant": "Jersey Mike's Subs",
+    "aliasesMatched": [
+      "Jersey Mike’s Subs"
+    ],
+    "content": "Jersey Mike's Subs\n\n- Original Italian (#13) — provolone, ham, prosciuttini, cappacuolo, salami, pepperoni [$9.95, ~920 kcal]\n\n- Club Sub (#8) — turkey, ham, provolone, bacon, mayo [$9.45, ~980 kcal]\n\n- Philly Cheese Steak — griddled onions & peppers [$9.89, ~840 kcal]\n\n- Veggie — Swiss, provolone, green peppers [$7.99, ~720 kcal]",
+    "charCount": 332,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "sectionIndex": 9,
+    "restaurant": "Noodles & Company",
+    "aliasesMatched": [
+      "Noodles & Company"
+    ],
+    "content": "Noodles & Company\n\n- Wisconsin Mac & Cheese — cream sauce, cheddar-jack blend [$7.99, ~980 kcal]\n\n- Japanese Pan Noodles — udon, broccoli, carrots, shiitake [$8.79, ~640 kcal]\n\n- Penne Rosa — spicy tomato cream, spinach, mushrooms [$8.99, ~720 kcal]\n\n- Pad Thai — rice noodles, egg, peanuts, green onions [$9.49, ~740 kcal]",
+    "charCount": 323,
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  }
+]

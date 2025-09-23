@@ -44,7 +44,7 @@ export default async function main() {
     'Some fans swear by Chick-fil-A—do you buy the hype or is it overrated?',
     'Between Sweetgreen and CAVA, which is the healthier pick and why?',
     'If you had to crown a winner overall today, which chain and your top item?',
-    'What was the first restaurant I brought up?'
+    'What was the second restaurant I brought up?'
   ];
 
   console.log(`Model: ${model}`);
