@@ -1,5 +1,8 @@
 // tools.ts - Maintenance Agent
 import { tool } from '@langchain/core/tools';
+import axios from 'axios';
+
+console.log('[fetchCompanyInfo] Tool file loaded');
 
 // --- Validation Helpers ---
 function normalizePhone(input: string): string {
@@ -47,6 +50,7 @@ function isValidPermissionToEnter(val: any): boolean {
 // --- Tools ---
 const submitWorkOrder = tool(
   async (input: any) => {
+    console.log('[submitWorkOrder] Tool invoked with input:', input);
     const { description, address, phone, permissionToEnter } = input || {};
     if (
       !description ||
@@ -118,6 +122,7 @@ const submitWorkOrder = tool(
 
 const notifyOfEmergency = tool(
   async (input: any) => {
+    console.log('[notifyOfEmergency] Tool invoked with input:', input);
     const { description, address, phone } = input || {};
     // Address and phone are now required
     if (!isValidAddress(address)) {
@@ -170,6 +175,7 @@ const notifyOfEmergency = tool(
 
 const endConversation = tool(
   async (input: any) => {
+    console.log('[endConversation] Tool invoked with input:', input);
     const reason = String(input?.reason || 'user requested to end');
     return { ok: true, reason };
   },
@@ -187,4 +193,62 @@ const endConversation = tool(
   },
 );
 
-export default [submitWorkOrder, notifyOfEmergency, endConversation];
+const fetchCompanyInfo = tool(
+  async (input: any) => {
+    console.log('[fetchCompanyInfo] Tool invoked with input:', input);
+    const { operatorId } = input || {};
+    if (typeof operatorId !== 'number' || isNaN(operatorId)) {
+      console.log('[fetchCompanyInfo] Invalid operatorId:', operatorId);
+      return {
+        ok: false,
+        error: 'missing_or_invalid_operatorId',
+        field: 'operatorId',
+      };
+    }
+    try {
+      console.log(
+        '[fetchCompanyInfo] Fetching company info for operatorId:',
+        operatorId,
+      );
+      const response = await axios.get(
+        `${process.env.COMMONAPI_BASEURL}v1.0/operators/${operatorId}/info`,
+        {
+          headers: {
+            'x-management-key': process.env.API_MANAGEMENT_KEY,
+            'X-FSP-APIKey': process.env.FSP_API_KEY,
+          },
+        },
+      );
+      const { companyName, logoUrl } = response.data;
+      console.log('[fetchCompanyInfo] API response:', response.data);
+      return { ok: true, companyName, logoUrl };
+    } catch (error) {
+      console.error('[fetchCompanyInfo] API call failed:', error);
+      return {
+        ok: false,
+        error: 'api_request_failed',
+        details: error?.message || String(error),
+      };
+    }
+  },
+  {
+    name: 'fetchCompanyInfo',
+    description:
+      'Fetch company info (name and logo) by operatorId (integer) using the Common API.',
+    schema: {
+      type: 'object',
+      properties: {
+        operatorId: { type: 'integer' },
+      },
+      required: ['operatorId'],
+      additionalProperties: false,
+    },
+  },
+);
+
+export default [
+  submitWorkOrder,
+  notifyOfEmergency,
+  endConversation,
+  fetchCompanyInfo,
+];

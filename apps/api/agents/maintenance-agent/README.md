@@ -14,7 +14,7 @@ If the agent is unsure, it will err on the side of caution and escalate.
 - The agent expects address input as structured fields: street, city, state, and zip. The LLM is responsible for clarifying and splitting free-form addresses with the user.
 - Phone numbers must be 10-15 digits (US/E.164 format, numbers only). The agent will ask for corrections if invalid.
 - Permission to enter must be one of: "Yes", "No", or "Call Before". Any other value will be rejected and clarified.
-- The agent uses the `companyName` parameter for personalized greetings and confirmations.
+- The agent uses the `operatorId` parameter (integer) to look up the company name and logo at the start of the conversation. If the lookup fails, it falls back to the provided `companyName` parameter for personalized greetings and confirmations.
 - The agent checks all requests against the `servicesNotProvided` list and refuses unsupported services with a clear message, offering supported alternatives when possible.
 - All tool outputs are deterministic and echo the input fields for traceability.
 
@@ -27,14 +27,16 @@ If the agent is unsure, it will err on the side of caution and escalate.
 
 ## Passing Input Parameters
 
-The maintenance agent requires two input parameters:
-- `companyName` (string): Used for personalized greetings and confirmations.
+The maintenance agent requires the following input parameters:
+- `operatorId` (integer, preferred): Used to look up the company name and logo at the start of the conversation.
+- `companyName` (string, optional): Used as a fallback for personalized greetings and confirmations if the company lookup fails.
 - `servicesNotProvided` (string[]): A list of services the maintenance team does NOT provide.
 
 ### 1. Using the Chat Widget
 In the chat widget's "Parameters" field, provide the parameters as JSON:
 ```json
 {
+  "operatorId": 10,
   "companyName": "Acme Property Management",
   "servicesNotProvided": ["appliance installation", "pest control", "landscaping"]
 }
@@ -46,6 +48,7 @@ When creating a thread via the API, include the parameters in the `parameters` f
 {
   "agent": "maintenance-agent",
   "parameters": {
+    "operatorId": 10,
     "companyName": "Acme Property Management",
     "servicesNotProvided": ["appliance installation", "pest control", "landscaping"]
   },
