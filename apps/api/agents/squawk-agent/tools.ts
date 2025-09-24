@@ -11,16 +11,31 @@ let aircraftCache: any[] | null = null;
 const fetchAircraft = tool(
   async (_input: any) => {
     console.log('[fetchAircraft] Tool invoked with input:', _input);
+    const { sessionToken, operatorId } = _input || {};
+    if (!sessionToken) {
+      return {
+        ok: false,
+        error: 'missing_sessionToken',
+        field: 'sessionToken',
+      };
+    }
+    if (!operatorId) {
+      return {
+        ok: false,
+        error: 'missing_operatorId',
+        field: 'operatorId',
+      };
+    }
     if (aircraftCache) {
       return { ok: true, aircraft: aircraftCache };
     }
     try {
       // todo - new endpoint that can fetch aircraft w/o auth token
       const response = await axios.get(
-        `https://api-feature-1.flightschedulepro.com/api/v3/operator/10/aircraft?status=1`,
+        `https://api-feature-1.flightschedulepro.com/api/v3/operator/${operatorId}/aircraft?status=1`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.SESSION_TOKEN}`,
+            Authorization: `Bearer ${sessionToken}`,
           },
         },
       );
@@ -41,7 +56,11 @@ const fetchAircraft = tool(
       'Fetch all aircraft for tail number matching. Returns an array of aircraft objects.',
     schema: {
       type: 'object',
-      properties: {},
+      properties: {
+        sessionToken: { type: 'string' },
+        operatorId: { type: 'number' },
+      },
+      required: ['sessionToken', 'operatorId'],
       additionalProperties: false,
     },
   },
@@ -51,8 +70,16 @@ const fetchAircraft = tool(
 const submitSquawk = tool(
   async (input: any) => {
     console.log('[submitSquawk] Tool invoked with input:', input);
-    const { operatorId, aircraftId, discrepancy, grounded } = input || {};
+    const { operatorId, aircraftId, discrepancy, grounded, sessionToken } =
+      input || {};
     // operatorId must come from the params, not user input, and is always included in the POST body
+    if (!sessionToken) {
+      return {
+        ok: false,
+        error: 'missing_sessionToken',
+        field: 'sessionToken',
+      };
+    }
     if (!aircraftId) {
       return { ok: false, error: 'missing_aircraftId', field: 'aircraftId' };
     }
@@ -82,7 +109,7 @@ const submitSquawk = tool(
         },
         {
           headers: {
-            Authorization: `Bearer ${process.env.SESSION_TOKEN}`,
+            Authorization: `Bearer ${sessionToken}`,
           },
           validateStatus: () => true, // allow handling of non-200s
         },
@@ -96,11 +123,16 @@ const submitSquawk = tool(
           grounded: grounded === 'Yes' ? true : false,
         };
       } else {
+        let errorMessage =
+          response.data?.message || response.statusText || 'Unknown error';
+        // If response.data is an array with a message property, use that message
+        if (Array.isArray(response.data) && response.data[0]?.message) {
+          errorMessage = response.data[0].message;
+        }
         return {
           ok: false,
           error: 'api_request_failed',
-          message:
-            response.data?.message || response.statusText || 'Unknown error',
+          message: errorMessage,
           status: response.status,
         };
       }
@@ -124,8 +156,9 @@ const submitSquawk = tool(
         discrepancy: { type: 'string' },
         grounded: { type: 'string', enum: ['Yes', 'No'], default: 'No' },
         operatorId: { type: 'number' },
+        sessionToken: { type: 'string' },
       },
-      required: ['aircraftId', 'discrepancy', 'operatorId'],
+      required: ['aircraftId', 'discrepancy', 'operatorId', 'sessionToken'],
       additionalProperties: false,
     },
   },

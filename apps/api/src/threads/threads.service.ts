@@ -106,9 +106,12 @@ export class ThreadsService {
         const entry = boundTools.find((t) => t.name === tc.name);
         if (!entry) continue;
         let toolArgs = tc.args;
-        // Inject operatorId for squawk-agent's submitSquawk tool
-        if (thread.agent === 'squawk-agent' && tc.name === 'submitSquawk') {
-          toolArgs = { ...toolArgs, operatorId: thread.parameters?.operatorId };
+        // Inject operatorId and sessionToken for squawk-agent tools
+        if (thread.agent === 'squawk-agent') {
+          toolArgs = { ...toolArgs, sessionToken: thread.parameters?.sessionToken };
+          if (tc.name === 'submitSquawk' || tc.name === 'fetchAircraft') {
+            toolArgs = { ...toolArgs, operatorId: thread.parameters?.operatorId };
+          }
         }
         const toolResult = await entry.invoke(toolArgs);
         await this.repo.appendMessage(threadId, makeToolResultMessage(tc.name, tc.id, JSON.stringify(toolResult)));

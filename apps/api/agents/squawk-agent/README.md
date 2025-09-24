@@ -19,14 +19,16 @@ The Squawk Agent helps pilots, crew, and staff report aircraft discrepancies (sq
 - **Grounded:** Whether the aircraft should be grounded (Yes/No, defaults to No).
 
 ## Parameterization
-- `operatorId` (integer, preferred): Used to look up the company name and logo at the start of the conversation.
-- `companyName` (string, optional): Used as a fallback for personalized greetings and confirmations if the company lookup fails.
+- `operatorId` (integer): Used in API calls.
+- `companyName` (string, optional): Used in initial greeting
+- `sessionToken` (string): Used in API calls.
 
 ### Example Parameters
 ```
 {
-  "operatorId": 42,
-  "companyName": "Skyward Aviation"
+  "operatorId": 10,
+  "companyName": "Skyward Aviation",
+  "sessionToken": "yourToken"
 }
 ```
 
