@@ -21,6 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@langchain/community": "^0.3.56",
     "@dqbd/tiktoken": "^1.0.22",
     "@langchain/anthropic": "^0.3.27",
     "@langchain/google-genai": "^0.2.17",
@@ -39,8 +40,10 @@
     "handlebars": "^4.7.8",
     "joi": "^18.0.1",
     "langchain": "^0.3.33",
+    "mammoth": "^1.6.0",
     "mongoose": "^8.18.1",
-    "openai": "^5.20.1",
+    "openai": "^4.73.0",
+    "pdf-parse": "^1.1.1",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
@@ -56,6 +59,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
+    "@types/multer": "^2.0.0",
     "@types/node": "^22.10.7",
     "@types/pg": "^8.15.5",
     "@types/supertest": "^6.0.2",

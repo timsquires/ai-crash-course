@@ -72,6 +72,9 @@ export class ThreadModel {
   @Prop({ type: Object, default: {} })
   parameters!: Record<string, unknown>;
 
+  @Prop({ type: Boolean, default: false })
+  ragEnabled!: boolean;
+
   @Prop({ default: 0 })
   inputTokenCount!: number;
 

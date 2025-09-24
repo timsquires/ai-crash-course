@@ -7,6 +7,7 @@ export interface ChatWidgetConfig {
   apiUrl: string;
   agent: string;
   parameters?: Record<string, unknown>;
+  ragEnabled?: boolean;
   theme?: 'light' | 'dark';
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
   width?: number;
@@ -23,6 +24,7 @@ export class ChatWidget extends LitElement {
   @property({ type: String }) apiUrl = '';
   @property({ type: String }) agent = '';
   @property({ type: Object }) threadParameters: Record<string, unknown> | null = null;
+  @property({ type: Boolean }) ragEnabled: boolean | null = null;
   @property({ type: String, reflect: true }) theme: 'light' | 'dark' = 'light';
   @property({ type: String, reflect: true }) position: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left' = 'bottom-right';
   @property({ type: Number }) width = 400;
@@ -142,7 +144,7 @@ export class ChatWidget extends LitElement {
   }
 
   private async ensureThread() {
-    this.threadId = await this.api!.createThread(this.agent, this.threadParameters || undefined);
+    this.threadId = await this.api!.createThread(this.agent, this.threadParameters || undefined, this.ragEnabled);
   }
 
   private async fetchGreeting() {

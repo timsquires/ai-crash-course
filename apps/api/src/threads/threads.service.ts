@@ -13,6 +13,8 @@ import type { Provider } from '../services/provider.service';
 import type { BaseChatModel } from '@langchain/core/language_models/chat_models';
 import { tool } from '@langchain/core/tools';
 import type { Runnable } from '@langchain/core/runnables';
+import { EmbeddingsService } from '../knowledge/embeddings.service';
+import { CHUNK_REPOSITORY, type ChunkRepository } from '../knowledge/ports/chunk.repository';
 
 type BoundTool = ReturnType<typeof tool>;
 type ToolCapable = BaseChatModel & { bindTools: (tools: BoundTool[], kwargs?: unknown) => BaseChatModel };
@@ -25,6 +27,8 @@ export class ThreadsService {
     private readonly prompts: PromptService,
     private readonly providers: ProviderService,
     private readonly agentTools: AgentToolsService,
+    private readonly embeddings: EmbeddingsService,
+    @Inject(CHUNK_REPOSITORY) private readonly chunksRepo: ChunkRepository,
   ) {}
 
   // Type guard method to check if the message has tool calls
@@ -49,6 +53,7 @@ export class ThreadsService {
       systemPromptTemplate,
       systemPrompt,
       parameters,
+      ragEnabled: dto.ragEnabled ?? false,
       seedMessages,
     });
   }
@@ -82,7 +87,30 @@ export class ThreadsService {
 
     // Convert the entire conversation to LangChain message objects.
     // We include the system prompt first, then all prior messages (now including the new user message).
-    const lcMessages = toLangChainMessages(afterUser.messages);
+    let lcMessages = toLangChainMessages(afterUser.messages);
+
+    // If RAG is enabled, retrieve top-k chunks and prepend a retrieval system prompt.
+    if (thread.ragEnabled) {
+      const [q] = await this.embeddings.embedMany([dto.message]);
+      const top = await this.chunksRepo.searchTopK(thread.accountId, q, 5);
+      const contextBlocks = top.map((e, idx) => `[#${idx + 1}] ${e.content}`).join('\n\n');
+      const retrievalPrompt = await this.prompts.render('retrieval-chat', { contextBlocks });
+
+
+      // Log retrieved chunks for observability
+      try {
+        console.log('\n[RAG] Retrieved chunks (top-5):');
+        top.forEach((e, i) => {
+          const preview = (e.content || '').replace(/\s+/g, ' ').slice(0, 200);
+          console.log(`  #${i + 1} len=${(e.content || '').length} doc=${e.documentId} meta=${JSON.stringify(e.metadata || {})}`);
+          console.log(`    "${preview}${e.content.length > 200 ? '…' : ''}"`);
+        });
+      } catch {}
+
+      
+      // Prepend a transient retrieval SystemMessage; preserve the full prior chain
+      lcMessages = [new SystemMessage(retrievalPrompt.rendered), ...lcMessages];
+    }
 
     // Resolve the agent's tool set, then build a provider-specific model
     // and bind tools (if any). bindTools returns a Runnable that we can invoke.

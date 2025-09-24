@@ -15,10 +15,14 @@ export class PromptService {
     const candidates = [
       // Preferred: when running in apps/api, resolve from source folder
       path.resolve(process.cwd(), `agents/${name}/prompt.md`),
+      // Shared prompts under apps/api/prompts
+      path.resolve(process.cwd(), `prompts/${name}.md`),
       // When executing from repo root (process.cwd() === repo root)
       path.resolve(process.cwd(), `apps/api/agents/${name}/prompt.md`),
+      path.resolve(process.cwd(), `apps/api/prompts/${name}.md`),
       // When built, try resolving relative to dist/services/
       path.resolve(__dirname, `../../agents/${name}/prompt.md`),
+      path.resolve(__dirname, `../../prompts/${name}.md`),
     ];
 
     for (const base of candidates) {

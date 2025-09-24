@@ -43,12 +43,48 @@ async function run() {
           "inputTokenCount" INTEGER NOT NULL DEFAULT 0,
           "outputTokenCount" INTEGER NOT NULL DEFAULT 0,
           "messages" JSONB NOT NULL DEFAULT '[]'::jsonb,
+          "ragEnabled" BOOLEAN NOT NULL DEFAULT FALSE,
           "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
           "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
         );
       `);
+      // Ensure new columns are added for existing databases
+      await client.query(`
+        ALTER TABLE threads
+          ADD COLUMN IF NOT EXISTS "ragEnabled" BOOLEAN NOT NULL DEFAULT FALSE;
+      `);
       await client.query(`
         CREATE INDEX IF NOT EXISTS idx_threads_account_created ON threads("accountId", "createdAt" DESC);
+      `);
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS documents (
+          id VARCHAR(64) PRIMARY KEY,
+          "accountId" VARCHAR(64) NOT NULL,
+          filename VARCHAR(256) NOT NULL,
+          "mimeType" VARCHAR(128) NOT NULL,
+          "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        );
+      `);
+      await client.query(`
+        CREATE EXTENSION IF NOT EXISTS vector;
+      `);
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS chunks (
+          id VARCHAR(64) PRIMARY KEY,
+          "documentId" VARCHAR(64) NOT NULL,
+          "accountId" VARCHAR(64) NOT NULL,
+          content TEXT NOT NULL,
+          metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+          embedding_vec VECTOR(1536) NULL,
+          "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        );
+      `);
+      await client.query(`
+        CREATE INDEX IF NOT EXISTS idx_chunks_account_created ON chunks("accountId", "createdAt" DESC);
+        CREATE INDEX IF NOT EXISTS idx_chunks_document ON chunks("documentId");
+        DO $$ BEGIN
+          CREATE INDEX idx_chunks_embedding ON chunks USING ivfflat (embedding_vec vector_cosine_ops) WITH (lists = 100);
+        EXCEPTION WHEN duplicate_table THEN NULL; END $$;
       `);
       console.log('Postgres migration complete.');
     } finally {

@@ -3,10 +3,10 @@ export class ApiService {
 
   private base() { return this.apiUrl.replace(/\/$/, ''); }
 
-  async createThread(agent: string, parameters?: Record<string, unknown>): Promise<string> {
+  async createThread(agent: string, parameters?: Record<string, unknown>, ragEnabled?: boolean | null): Promise<string> {
     const res = await fetch(`${this.base()}/threads`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ agent, parameters: parameters || undefined })
+      body: JSON.stringify({ agent, parameters: parameters || undefined, ragEnabled: typeof ragEnabled === 'boolean' ? ragEnabled : undefined })
     });
     const data = await res.json();
     return data.threadId || data.id || data._id;

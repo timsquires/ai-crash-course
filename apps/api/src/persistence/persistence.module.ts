@@ -20,6 +20,7 @@ import { MongooseModule } from '@nestjs/mongoose';
         ]
       : []),
   ],
+  providers: [],
 })
 export class PersistenceModule {}
 

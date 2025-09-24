@@ -7,6 +7,7 @@ import { PersistenceModule } from './persistence/persistence.module';
 import { ModelsModule } from './persistence/models.module';
 import { RepositoryModule } from './persistence/repository.module';
 import { ThreadsModule } from './threads/threads.module';
+import { KnowledgeModule } from './knowledge/knowledge.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ThreadsModule } from './threads/threads.module';
     ModelsModule,
     RepositoryModule,
     ThreadsModule,
+    KnowledgeModule,
   ],
   controllers: [AppController],
   providers: [AppService],

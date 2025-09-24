@@ -11,6 +11,7 @@ export function initializeChatWidget(config: ChatWidgetConfig): ChatWidget {
     existing.apiUrl = config.apiUrl;
     existing.agent = config.agent;
     existing.threadParameters = config.parameters ?? null;
+    if (typeof config.ragEnabled === 'boolean') existing.ragEnabled = config.ragEnabled;
     if (config.theme) existing.theme = config.theme;
     if (config.position) existing.position = config.position;
     if (config.width) existing.width = config.width;
@@ -23,6 +24,7 @@ export function initializeChatWidget(config: ChatWidgetConfig): ChatWidget {
   el.apiUrl = config.apiUrl;
   el.agent = config.agent;
   el.threadParameters = config.parameters ?? null;
+  if (typeof config.ragEnabled === 'boolean') el.ragEnabled = config.ragEnabled;
   if (config.theme) el.theme = config.theme;
   if (config.position) el.position = config.position;
   if (config.width) el.width = config.width;

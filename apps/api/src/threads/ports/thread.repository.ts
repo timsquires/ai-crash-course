@@ -11,6 +11,7 @@ export interface CreateThreadInput {
   systemPromptTemplate: string;
   systemPrompt: string;
   parameters: Record<string, unknown>;
+  ragEnabled?: boolean;
   seedMessages: ThreadMessage[];
 }
 

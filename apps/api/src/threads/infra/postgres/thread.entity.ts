@@ -26,6 +26,9 @@ export class ThreadEntity {
   @Column({ type: 'jsonb', default: {} })
   parameters!: Record<string, unknown>;
 
+  @Column({ type: 'boolean', default: false })
+  ragEnabled!: boolean;
+
   @Column({ type: 'integer', default: 0 })
   inputTokenCount!: number;
 

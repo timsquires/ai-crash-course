@@ -6,6 +6,7 @@ import { PromptService } from '../services/prompt.service';
 import { ProviderService } from '../services/provider.service';
 import { AgentToolsService } from '../services/agent-tools.service';
 import { RepositoryModule } from '../persistence/repository.module';
+import { EmbeddingsService } from '../knowledge/embeddings.service';
 
 @Module({
   imports: [RepositoryModule],
@@ -15,6 +16,7 @@ import { RepositoryModule } from '../persistence/repository.module';
     PromptService,
     ProviderService,
     AgentToolsService,
+    EmbeddingsService,
   ],
 })
 export class ThreadsModule {}

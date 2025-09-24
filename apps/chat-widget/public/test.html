@@ -63,7 +63,10 @@
               <input id="runInit" type="checkbox" role="switch" checked />
               Run LLM call on initialization
             </label>
-            <span></span>
+            <label>
+              <input id="ragEnabled" type="checkbox" role="switch" />
+              RAG enabled (thread parameter)
+            </label>
           </div>
           <label>Parameters (JSON)
             <textarea id="params">{}</textarea>
@@ -75,6 +78,21 @@
           </footer>
         </form>
       </article>
+      <article>
+        <header><h2>Documents</h2></header>
+        <div class="form-grid-two">
+          <label>Account ID
+            <input id="accountId" placeholder="1" value="1" />
+          </label>
+          <label>Upload Files
+            <input id="docs" type="file" multiple />
+          </label>
+        </div>
+        <footer class="grid">
+          <button id="uploadDocs" type="button">Upload Documents</button>
+          <button class="secondary" id="deleteDocs" type="button">Delete All Documents</button>
+        </footer>
+      </article>
     </main>
     <script type="module">
       import { initializeChatWidget } from '/src/main.ts';
@@ -83,10 +101,12 @@
         try { return JSON.parse($("params").value || '{}'); } catch { return {}; }
       }
       $("init").addEventListener('click', () => {
+        const rag = $("ragEnabled").checked;
         const widget = initializeChatWidget({
           apiUrl: $("apiUrl").value.trim(),
           agent: $("agent").value.trim(),
           parameters: parseParams(),
+          ragEnabled: rag,
           theme: $("theme").value,
           position: $("position").value,
           width: parseInt($("width").value || '500', 10),
@@ -99,6 +119,30 @@
         const el = document.querySelector('chat-widget');
         if (el) el.remove();
       });
+
+      async function uploadDocuments() {
+        const accountId = $("accountId").value.trim() || '1';
+        const files = $("docs").files;
+        if (!files || files.length === 0) return alert('Choose files first');
+        const form = new FormData();
+        for (const f of files) form.append('files', f);
+        const api = $("apiUrl").value.trim();
+        const res = await fetch(`${api}/documents/upload?accountId=${encodeURIComponent(accountId)}`, { method: 'POST', body: form });
+        const json = await res.json().catch(() => ({}));
+        alert('Upload result: ' + JSON.stringify(json));
+      }
+
+      async function deleteAllDocuments() {
+        const accountId = $("accountId").value.trim() || '1';
+        if (!confirm('Delete ALL documents for account ' + accountId + '?')) return;
+        const api = $("apiUrl").value.trim();
+        const res = await fetch(`${api}/documents?accountId=${encodeURIComponent(accountId)}`, { method: 'DELETE' });
+        const json = await res.json().catch(() => ({}));
+        alert('Delete result: ' + JSON.stringify(json));
+      }
+
+      $("uploadDocs").addEventListener('click', uploadDocuments);
+      $("deleteDocs").addEventListener('click', deleteAllDocuments);
     </script>
   </body>
   </html>

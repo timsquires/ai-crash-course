@@ -26,6 +26,7 @@ export interface ThreadAggregate {
   systemPromptTemplate: string;
   systemPrompt: string;
   parameters: Record<string, unknown>;
+  ragEnabled?: boolean;
   inputTokenCount: number;
   outputTokenCount: number;
   messages: ThreadMessage[];
