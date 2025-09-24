@@ -82,6 +82,14 @@ These use `npm --workspace=@repo/labs run lab` and load environment variables fr
 - 12-streaming: Streams output two ways (raw iterator and events), plus cancellation, using a menu copy optimizer prompt.
 - 13-contact-chatbot: Interactive console bot that collects first/last name, email, and phone; uses tools to create a contact or end the conversation.
 
+### What’s in Week 2
+
+- 01-document-loading: Load PDFs, DOCX, and TXT from `apps/labs/week-2/documents`, normalize content, and save text files + a JSON index to `apps/labs/week-2/output/01-document-loading`.
+- 02-chunking: Token-aware sliding window chunking using `@dqbd/tiktoken`.
+- 03-custom-chunking: Split documents into restaurant sections (Chipotle, Panera Bread, Shake Shack, MOD Pizza, Qdoba, Jersey Mike’s, Noodles & Company, etc.).
+- 04-embedding: Generate embeddings for the custom chunks using OpenAI (`text-embedding-3-small`).
+- 05-retrieval-chat: Console chatbot that embeds the user query, retrieves top‑k chunks by cosine similarity, and builds a RAG system prompt using Handlebars.
+
 ### Labs runner
 
 The Labs runner (`apps/labs/src/runner.ts`) loads `apps/labs/.env`, resolves the script based on the argument you pass, and dynamically imports the corresponding `week-x/<name>.ts` file. Each script exports a default async function and logs its own teaching output.
@@ -113,6 +121,39 @@ npm run api:dev
   - `POST /threads` { agent, parameters?, model?, userMessage? }
   - `POST /threads/:id/chat` { message, metadata? }
   - `GET /threads/:id`, `GET /threads?accountId=1`, `DELETE /threads/:id`
+
+RAG features (API):
+
+- RAG toggle on threads: `ragEnabled` is a first‑class boolean on the `Thread` entity/DTO and persisted in Postgres/Mongo.
+  - When true, each chat turn embeds the user query, retrieves top‑k relevant chunks, renders `apps/api/prompts/retrieval-chat.md` with those context blocks, and prepends that as an ephemeral system message to the existing message chain for that turn.
+  - Retrieved chunks and the final system prompt are logged to the console for visibility.
+- Document ingestion endpoints:
+  - `POST /documents/upload` — multipart file upload (PDF/DOCX/TXT). The API parses documents, chunks them (default: sliding window via `tiktoken`), embeds content, and persists documents + chunks.
+  - `DELETE /documents?accountId=...` — deletes all documents and chunks for an account.
+  - MongoDB: performs in‑memory cosine similarity for retrieval in this repo. For production, use MongoDB Atlas with a `$vectorSearch` index.
+  - Postgres: uses `pgvector` for storage and similarity search with the `<#>` operator and an IVFFLAT index.
+- Chunking strategy is swappable via DI (`CHUNKING_STRATEGY`). Default is a sliding window tokenizer; you can replace it with a custom strategy (e.g., restaurant‑section chunker).
+- New agent: `fast-casual-rag` with a minimal prompt that answers strictly from retrieved content.
+- Test page (`apps/chat-widget/public/test.html`): includes a "Delete All Documents" button and a "RAG enabled" checkbox that passes `ragEnabled` when creating a thread.
+
+Database and migrations:
+
+- Start local DBs with docker‑compose (see below). Then run the API migration:
+
+```sh
+npm run --workspace=@repo/api migrate
+```
+
+- The migration is idempotent and ensures:
+  - `threads` has `ragEnabled` (default false).
+  - `documents` and `chunks` tables exist.
+  - `vector` extension is enabled, and an IVFFLAT index is created on `chunks.embedding_vec`.
+  - `embedding_vec` is nullable to support a two‑step insert: first save the row, then update the vector.
+
+Notes on pgvector usage:
+
+- Writes: base row is saved via TypeORM, then `embedding_vec` is updated using a pgvector literal like `[0.1,0.2,...]::vector`.
+- Reads: similarity search uses `ORDER BY embedding_vec <#> $param::vector` with cosine distance and filters out null vectors.
 
 ### Local databases with Docker
 
