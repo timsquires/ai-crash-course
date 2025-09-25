@@ -16,14 +16,12 @@ import { ChunkModel, ChunkSchema } from '../knowledge/infra/mongo/chunk.schema';
 
 @Module({
   imports: [
-    [TypeOrmModule.forFeature([ThreadEntity, DocumentEntity, ChunkEntity])],
-    [
-      MongooseModule.forFeature([
-        { name: ThreadModel.name, schema: ThreadSchema },
-        { name: DocumentModel.name, schema: DocumentSchema },
-        { name: ChunkModel.name, schema: ChunkSchema },
-      ]),
-    ],
+    TypeOrmModule.forFeature([ThreadEntity, DocumentEntity, ChunkEntity]),
+    MongooseModule.forFeature([
+      { name: ThreadModel.name, schema: ThreadSchema },
+      { name: DocumentModel.name, schema: DocumentSchema },
+      { name: ChunkModel.name, schema: ChunkSchema },
+    ]),
   ],
   exports: [TypeOrmModule, MongooseModule],
 })
