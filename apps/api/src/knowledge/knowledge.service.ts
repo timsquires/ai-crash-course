@@ -19,7 +19,7 @@ export class KnowledgeService {
   ) {}
 
   async ingest(files: Express.Multer.File[], accountId: string) {
-    // Parse files (pdf/docx/txt), split via injected chunker, embed, then (TODO) persist via repositories.
+    // Parse files (pdf/docx/txt), split via injected chunker, embed, then persist via repositories.
     // NOTE: For Mongo (non-Atlas), similarity search must be in-memory; for production use MongoDB Atlas $vectorSearch.
     const texts: string[] = [];
     for (const f of files) {

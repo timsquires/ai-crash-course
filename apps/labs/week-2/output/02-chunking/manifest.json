@@ -7,10 +7,10 @@
   },
   "totals": {
     "totalDocs": 4,
-    "totalChunks": 19,
-    "totalTokens": 2952,
-    "avgTokensPerDoc": 738,
-    "avgTokensPerChunk": 155
+    "totalChunks": 21,
+    "totalTokens": 3312,
+    "avgTokensPerDoc": 828,
+    "avgTokensPerChunk": 158
   },
   "perDoc": [
     {
@@ -33,9 +33,9 @@
     },
     {
       "id": "fast_casual_menus.docx:0",
-      "tokens": 606,
-      "chunks": 4,
-      "avgChunkTokens": 152
+      "tokens": 966,
+      "chunks": 6,
+      "avgChunkTokens": 161
     }
   ]
 }
