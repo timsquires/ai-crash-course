@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import leadIntakeTools from '../../agents/lead-intake-agent/tools';
+import maintenanceTools from '../../agents/maintenance-agent/tools';
 import { tool } from '@langchain/core/tools';
 type BoundTool = ReturnType<typeof tool>;
 
@@ -9,10 +10,10 @@ export class AgentToolsService {
     switch (agent) {
       case 'lead-intake-agent':
         return leadIntakeTools as BoundTool[];
+      case 'maintenance-agent':
+        return maintenanceTools as BoundTool[];
       default:
         return [];
     }
   }
 }
-
-
