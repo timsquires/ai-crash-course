@@ -9,11 +9,18 @@ import {
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([ThreadEntity]),
-    MongooseModule.forFeature([
-      { name: ThreadModel.name, schema: ThreadSchema },
-    ]),
+    ...(process.env.PERSISTENCE === 'mongo'
+      ? [
+          MongooseModule.forFeature([
+            { name: ThreadModel.name, schema: ThreadSchema },
+          ]),
+        ]
+      : [TypeOrmModule.forFeature([ThreadEntity])]),
   ],
-  exports: [TypeOrmModule, MongooseModule],
+  exports: [
+    ...(process.env.PERSISTENCE === 'mongo'
+      ? [MongooseModule]
+      : [TypeOrmModule]),
+  ],
 })
 export class ModelsModule {}

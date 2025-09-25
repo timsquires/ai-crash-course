@@ -9,13 +9,12 @@ import { MongoThreadRepository } from '../threads/infra/mongo/thread.repository.
   providers: [
     {
       provide: THREAD_REPOSITORY,
-      useClass: ((process.env.PERSISTENCE || 'postgres') === 'postgres')
-        ? PgThreadRepository
-        : MongoThreadRepository,
+      useClass:
+        process.env.PERSISTENCE === 'mongo'
+          ? MongoThreadRepository
+          : PgThreadRepository,
     },
   ],
   exports: [THREAD_REPOSITORY],
 })
 export class RepositoryModule {}
-
-
