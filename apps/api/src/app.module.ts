@@ -35,7 +35,7 @@ import { MongooseModule } from '@nestjs/mongoose';
         type: 'postgres',
         url: process.env.POSTGRES_URL,
         autoLoadEntities: true,
-        synchronize: true,
+        synchronize: false,
       }),
     }),
     MongooseModule.forRoot(process.env.MONGO_URL || ''),
