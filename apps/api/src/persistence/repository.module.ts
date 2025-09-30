@@ -15,21 +15,26 @@ import { MongoChunkRepository } from '../knowledge/infra/mongo/chunk.repository.
   providers: [
     {
       provide: THREAD_REPOSITORY,
-      useClass: ((process.env.PERSISTENCE || 'postgres') === 'postgres')
-        ? PgThreadRepository
-        : MongoThreadRepository,
+      useClass:
+        (process.env.PERSISTENCE || 'postgres') === 'postgres'
+          ? PgThreadRepository
+          : MongoThreadRepository,
     },
     {
       provide: DOCUMENT_REPOSITORY,
-      useClass: ((process.env.PERSISTENCE || 'postgres') === 'postgres') ? PgDocumentRepository : MongoDocumentRepository,
+      useClass:
+        (process.env.PERSISTENCE || 'postgres') === 'postgres'
+          ? PgDocumentRepository
+          : MongoDocumentRepository,
     },
     {
       provide: CHUNK_REPOSITORY,
-      useClass: ((process.env.PERSISTENCE || 'postgres') === 'postgres') ? PgChunkRepository : MongoChunkRepository,
+      useClass:
+        (process.env.PERSISTENCE || 'postgres') === 'postgres'
+          ? PgChunkRepository
+          : MongoChunkRepository,
     },
   ],
   exports: [THREAD_REPOSITORY, DOCUMENT_REPOSITORY, CHUNK_REPOSITORY],
 })
 export class RepositoryModule {}
-
-

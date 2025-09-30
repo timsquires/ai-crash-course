@@ -15,10 +15,14 @@ function isValidPhone(phone: string): boolean {
 }
 
 const createContact = tool(
-  async (input: any) => {
+  (input: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const firstName = String(input?.firstName || '').trim();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const lastName = String(input?.lastName || '').trim();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const email = String(input?.email || '').trim();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const phone = String(input?.phone || '').trim();
 
     if (!firstName || !lastName || !email || !phone) {
@@ -32,11 +36,16 @@ const createContact = tool(
     }
 
     const id = 'contact_' + Math.random().toString(36).slice(2, 10);
-    return { ok: true, id, message: `Created contact for ${firstName} ${lastName}` };
+    return {
+      ok: true,
+      id,
+      message: `Created contact for ${firstName} ${lastName}`,
+    };
   },
   {
     name: 'create_contact',
-    description: 'Create a contact once firstName, lastName, email, and phone are all present and valid.',
+    description:
+      'Create a contact once firstName, lastName, email, and phone are all present and valid.',
     schema: {
       type: 'object',
       properties: {
@@ -48,11 +57,12 @@ const createContact = tool(
       required: ['firstName', 'lastName', 'email', 'phone'],
       additionalProperties: false,
     },
-  }
+  },
 );
 
 const endConversation = tool(
-  async (input: any) => {
+  (input: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const reason = String(input?.reason || 'user requested to end');
     return { ok: true, reason };
   },
@@ -67,7 +77,7 @@ const endConversation = tool(
       required: ['reason'],
       additionalProperties: false,
     },
-  }
+  },
 );
 
 export default [createContact, endConversation];

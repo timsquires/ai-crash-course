@@ -1,7 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-@Schema({ collection: 'documents', timestamps: { createdAt: 'createdAt', updatedAt: false } })
+@Schema({
+  collection: 'documents',
+  timestamps: { createdAt: 'createdAt', updatedAt: false },
+})
 export class DocumentModel {
   @Prop({ type: String, required: true })
   id!: string;
@@ -21,5 +24,3 @@ export class DocumentModel {
 
 export type DocumentDoc = HydratedDocument<DocumentModel>;
 export const DocumentSchema = SchemaFactory.createForClass(DocumentModel);
-
-

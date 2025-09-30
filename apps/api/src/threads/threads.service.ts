@@ -1,12 +1,25 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { randomUUID } from 'node:crypto';
-import { THREAD_REPOSITORY, type ThreadRepository } from './ports/thread.repository';
+import {
+  THREAD_REPOSITORY,
+  type ThreadRepository,
+} from './ports/thread.repository';
 import { ThreadAggregate, ThreadMessage } from './domain/thread.domain';
 import { CreateThreadDto } from './dto/create-thread.dto';
 import { ChatDto } from './dto/chat.dto';
 import { PromptService } from '../services/prompt.service';
-import { HumanMessage, SystemMessage, ToolMessage, AIMessage } from '@langchain/core/messages';
-import { toLangChainMessages, makeToolResultMessage, makeAssistantToolCallMessage, makeAssistantMessage } from './util/message-mapper';
+import {
+  HumanMessage,
+  SystemMessage,
+  ToolMessage,
+  AIMessage,
+} from '@langchain/core/messages';
+import {
+  toLangChainMessages,
+  makeToolResultMessage,
+  makeAssistantToolCallMessage,
+  makeAssistantMessage,
+} from './util/message-mapper';
 import { AgentToolsService } from '../services/agent-tools.service';
 import { ProviderService } from '../services/provider.service';
 import type { Provider } from '../services/provider.service';
@@ -14,11 +27,19 @@ import type { BaseChatModel } from '@langchain/core/language_models/chat_models'
 import { tool } from '@langchain/core/tools';
 import type { Runnable } from '@langchain/core/runnables';
 import { EmbeddingsService } from '../knowledge/embeddings.service';
-import { CHUNK_REPOSITORY, type ChunkRepository } from '../knowledge/ports/chunk.repository';
+import {
+  CHUNK_REPOSITORY,
+  type ChunkRepository,
+} from '../knowledge/ports/chunk.repository';
 
 type BoundTool = ReturnType<typeof tool>;
-type ToolCapable = BaseChatModel & { bindTools: (tools: BoundTool[], kwargs?: unknown) => BaseChatModel };
-type ChatRunnable = Runnable<(SystemMessage | HumanMessage | AIMessage | ToolMessage)[], AIMessage>;
+type ToolCapable = BaseChatModel & {
+  bindTools: (tools: BoundTool[], kwargs?: unknown) => BaseChatModel;
+};
+type ChatRunnable = Runnable<
+  (SystemMessage | HumanMessage | AIMessage | ToolMessage)[],
+  AIMessage
+>;
 
 @Injectable()
 export class ThreadsService {
@@ -32,17 +53,27 @@ export class ThreadsService {
   ) {}
 
   // Type guard method to check if the message has tool calls
-  private hasToolCalls(msg: AIMessage): msg is AIMessage & { tool_calls: { id?: string; name?: string; args?: unknown }[] } {
+  private hasToolCalls(
+    msg: AIMessage,
+  ): msg is AIMessage & {
+    tool_calls: { id?: string; name?: string; args?: unknown }[];
+  } {
     return Array.isArray((msg as any).tool_calls);
   }
 
   async create(dto: CreateThreadDto): Promise<ThreadAggregate> {
     const parameters = dto.parameters ?? {};
-    const { template: systemPromptTemplate, rendered: systemPrompt } = await this.prompts.render(dto.agent, parameters);
+    const { template: systemPromptTemplate, rendered: systemPrompt } =
+      await this.prompts.render(dto.agent, parameters);
     const threadId = randomUUID();
     const now = new Date();
     const seedMessages: ThreadMessage[] = [
-      { id: randomUUID(), role: 'system', content: systemPrompt, createdAt: now },
+      {
+        id: randomUUID(),
+        role: 'system',
+        content: systemPrompt,
+        createdAt: now,
+      },
     ];
     return this.repo.createThread({
       threadId,
@@ -80,7 +111,13 @@ export class ThreadsService {
     if (!thread) throw new Error('Thread not found');
 
     // Persist the user's input on the thread before calling the model.
-    const userMsg: ThreadMessage = { id: randomUUID(), role: 'user', content: dto.message, metadata: dto.metadata, createdAt: new Date() };
+    const userMsg: ThreadMessage = {
+      id: randomUUID(),
+      role: 'user',
+      content: dto.message,
+      metadata: dto.metadata,
+      createdAt: new Date(),
+    };
 
     // Add the user message to the thread
     const afterUser = await this.repo.appendMessage(threadId, userMsg);
@@ -93,21 +130,25 @@ export class ThreadsService {
     if (thread.ragEnabled) {
       const [q] = await this.embeddings.embedMany([dto.message]);
       const top = await this.chunksRepo.searchTopK(thread.accountId, q, 5);
-      const contextBlocks = top.map((e, idx) => `[#${idx + 1}] ${e.content}`).join('\n\n');
-      const retrievalPrompt = await this.prompts.render('retrieval-chat', { contextBlocks });
-
+      const contextBlocks = top
+        .map((e, idx) => `[#${idx + 1}] ${e.content}`)
+        .join('\n\n');
+      const retrievalPrompt = await this.prompts.render('retrieval-chat', {
+        contextBlocks,
+      });
 
       // Log retrieved chunks for observability
       try {
         console.log('\n[RAG] Retrieved chunks (top-5):');
         top.forEach((e, i) => {
           const preview = (e.content || '').replace(/\s+/g, ' ').slice(0, 200);
-          console.log(`  #${i + 1} len=${(e.content || '').length} doc=${e.documentId} meta=${JSON.stringify(e.metadata || {})}`);
+          console.log(
+            `  #${i + 1} len=${(e.content || '').length} doc=${e.documentId} meta=${JSON.stringify(e.metadata || {})}`,
+          );
           console.log(`    "${preview}${e.content.length > 200 ? '…' : ''}"`);
         });
       } catch {}
 
-      
       // Prepend a transient retrieval SystemMessage; preserve the full prior chain
       lcMessages = [new SystemMessage(retrievalPrompt.rendered), ...lcMessages];
     }
@@ -115,9 +156,11 @@ export class ThreadsService {
     // Resolve the agent's tool set, then build a provider-specific model
     // and bind tools (if any). bindTools returns a Runnable that we can invoke.
     const boundTools = await this.agentTools.load(thread.agent);
-    const provider = ((process.env.LLM_PROVIDER || 'openai') as Provider);
+    const provider = (process.env.LLM_PROVIDER || 'openai') as Provider;
     const base = this.providers.buildModel(provider);
-    const model = (boundTools.length > 0 ? (base as ToolCapable).bindTools(boundTools) : base) as ChatRunnable;
+    const model = (
+      boundTools.length > 0 ? (base as ToolCapable).bindTools(boundTools) : base
+    ) as ChatRunnable;
 
     // First model call: the assistant can either respond directly or request tool_calls.
     const resp: AIMessage = await model.invoke(lcMessages);
@@ -126,7 +169,10 @@ export class ThreadsService {
     const toolCalls = this.hasToolCalls(resp) ? resp.tool_calls : [];
     if (toolCalls.length > 0) {
       // Persist the assistant tool_calls message immediately so ordering is correct: user -> assistant(tool_calls) -> tool results
-      const assistantToolCallMsg = makeAssistantToolCallMessage(toolCalls, String(resp.content ?? ''));
+      const assistantToolCallMsg = makeAssistantToolCallMessage(
+        toolCalls,
+        String(resp.content ?? ''),
+      );
       await this.repo.appendMessage(threadId, assistantToolCallMsg);
 
       for (const tc of toolCalls) {
@@ -134,12 +180,17 @@ export class ThreadsService {
         const entry = boundTools.find((t) => t.name === tc.name);
         if (!entry) continue;
         const toolResult = await entry.invoke(tc.args);
-        await this.repo.appendMessage(threadId, makeToolResultMessage(tc.name, tc.id, JSON.stringify(toolResult)));
+        await this.repo.appendMessage(
+          threadId,
+          makeToolResultMessage(tc.name, tc.id, JSON.stringify(toolResult)),
+        );
       }
 
       // Rebuild from persisted state to ensure the second invoke includes assistant(tool_calls) and tool results
       const updatedAfterTools = await this.repo.getById(threadId);
-      const followUp: AIMessage = await model.invoke(toLangChainMessages(updatedAfterTools!.messages));
+      const followUp: AIMessage = await model.invoke(
+        toLangChainMessages(updatedAfterTools!.messages),
+      );
 
       // Persist the assistant's final response for this turn.
       const assistantMsg = makeAssistantMessage(String(followUp.content ?? ''));
@@ -157,5 +208,3 @@ export class ThreadsService {
     return this.repo.delete(threadId);
   }
 }
-
-

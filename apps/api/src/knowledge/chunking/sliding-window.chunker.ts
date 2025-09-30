@@ -31,10 +31,15 @@ export class SlidingWindowChunker implements ChunkingStrategy {
         const slice = tokens.slice(start, end);
         // Decode back to text. Some builds return Uint8Array; normalize to string.
         const decoded = enc.decode(slice as any) as unknown;
-        const content = typeof decoded === 'string'
-          ? decoded
-          : new TextDecoder('utf-8').decode(decoded as Uint8Array);
-        result.push({ content, charCount: content.length, tokenCount: slice.length });
+        const content =
+          typeof decoded === 'string'
+            ? decoded
+            : new TextDecoder('utf-8').decode(decoded as Uint8Array);
+        result.push({
+          content,
+          charCount: content.length,
+          tokenCount: slice.length,
+        });
         if (end >= tokens.length) break;
       }
       return result;
@@ -44,5 +49,3 @@ export class SlidingWindowChunker implements ChunkingStrategy {
     }
   }
 }
-
-

@@ -1,7 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-@Schema({ collection: 'chunks', timestamps: { createdAt: 'createdAt', updatedAt: false } })
+@Schema({
+  collection: 'chunks',
+  timestamps: { createdAt: 'createdAt', updatedAt: false },
+})
 export class ChunkModel {
   @Prop({ type: String, required: true })
   id!: string;
@@ -28,5 +31,3 @@ export class ChunkModel {
 
 export type ChunkDoc = HydratedDocument<ChunkModel>;
 export const ChunkSchema = SchemaFactory.createForClass(ChunkModel);
-
-

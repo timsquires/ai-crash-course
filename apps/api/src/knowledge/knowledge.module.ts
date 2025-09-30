@@ -7,7 +7,6 @@ import { CHUNKING_STRATEGY } from './chunking/chunking.strategy';
 import { DocumentLoaderService } from './document-loader.service';
 import { EmbeddingsService } from './embeddings.service';
 
-
 @Module({
   imports: [RepositoryModule],
   controllers: [KnowledgeController],
@@ -21,5 +20,3 @@ import { EmbeddingsService } from './embeddings.service';
   exports: [KnowledgeService, CHUNKING_STRATEGY],
 })
 export class KnowledgeModule {}
-
-

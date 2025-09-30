@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('threads')
 export class ThreadEntity {
@@ -44,5 +50,3 @@ export class ThreadEntity {
   @UpdateDateColumn({ type: 'timestamptz' })
   updatedAt!: Date;
 }
-
-

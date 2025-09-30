@@ -8,7 +8,9 @@ export class PromptService {
   constructor() {
     Handlebars.registerHelper('eq', (a: unknown, b: unknown) => a === b);
     Handlebars.registerHelper('ne', (a: unknown, b: unknown) => a !== b);
-    Handlebars.registerHelper('json', (ctx: unknown) => JSON.stringify(ctx, null, 2));
+    Handlebars.registerHelper('json', (ctx: unknown) =>
+      JSON.stringify(ctx, null, 2),
+    );
   }
 
   private async resolvePromptPath(name: string): Promise<string> {
@@ -27,14 +29,18 @@ export class PromptService {
 
     for (const base of candidates) {
       try {
-        const filePath = base.endsWith('.md') ? base : path.resolve(base, `${name}.md`);
+        const filePath = base.endsWith('.md')
+          ? base
+          : path.resolve(base, `${name}.md`);
         await fs.access(filePath);
         return filePath;
       } catch {
         // try next
       }
     }
-    throw new Error(`Prompt not found for '${name}'. Checked: ${candidates.join(', ')}`);
+    throw new Error(
+      `Prompt not found for '${name}'. Checked: ${candidates.join(', ')}`,
+    );
   }
 
   async load(name: string): Promise<string> {
@@ -42,12 +48,13 @@ export class PromptService {
     return fs.readFile(filePath, 'utf8');
   }
 
-  async render(name: string, data: Record<string, unknown> = {}): Promise<{ template: string; rendered: string }> {
+  async render(
+    name: string,
+    data: Record<string, unknown> = {},
+  ): Promise<{ template: string; rendered: string }> {
     const template = await this.load(name);
     const compiled = Handlebars.compile(template, { noEscape: true });
     const rendered = compiled(data);
     return { template, rendered };
   }
 }
-
-

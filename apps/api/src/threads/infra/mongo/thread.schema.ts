@@ -46,7 +46,10 @@ export class MessageModel {
 
 export const MessageSchema = SchemaFactory.createForClass(MessageModel);
 
-@Schema({ collection: 'threads', timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } })
+@Schema({
+  collection: 'threads',
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' },
+})
 export class ThreadModel {
   @Prop({ required: true, unique: true })
   threadId!: string;
@@ -92,5 +95,3 @@ export class ThreadModel {
 }
 
 export const ThreadSchema = SchemaFactory.createForClass(ThreadModel);
-
-

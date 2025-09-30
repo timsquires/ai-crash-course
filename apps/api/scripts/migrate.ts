@@ -11,7 +11,11 @@ if (!POSTGRES_URL) {
   process.exit(1);
 }
 
-async function withRetry<T>(fn: () => Promise<T>, retries = 30, delayMs = 1000): Promise<T> {
+async function withRetry<T>(
+  fn: () => Promise<T>,
+  retries = 30,
+  delayMs = 1000,
+): Promise<T> {
   // Simple retry helper to wait for the DB to accept connections after docker-compose up
   let lastErr: unknown;
   for (let i = 0; i < retries; i++) {
@@ -34,7 +38,9 @@ async function run() {
       try {
         await client.query(`CREATE EXTENSION IF NOT EXISTS vector;`);
       } catch (err) {
-        console.error('Failed to enable the vector extension. Please ensure you are using a Postgres instance with pgvector support.');
+        console.error(
+          'Failed to enable the vector extension. Please ensure you are using a Postgres instance with pgvector support.',
+        );
         throw err;
       }
       await client.query(`
@@ -106,5 +112,3 @@ run().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
-

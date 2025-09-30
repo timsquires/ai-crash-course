@@ -19,9 +19,14 @@ export interface ThreadRepository {
   createThread(input: CreateThreadInput): Promise<ThreadAggregate>;
   getById(threadId: string): Promise<ThreadAggregate | null>;
   listByAccount(accountId: string): Promise<ThreadAggregate[]>;
-  appendMessage(threadId: string, message: ThreadMessage): Promise<ThreadAggregate>;
-  updateTokenCounts(threadId: string, inputDelta: number, outputDelta: number): Promise<void>;
+  appendMessage(
+    threadId: string,
+    message: ThreadMessage,
+  ): Promise<ThreadAggregate>;
+  updateTokenCounts(
+    threadId: string,
+    inputDelta: number,
+    outputDelta: number,
+  ): Promise<void>;
   delete(threadId: string): Promise<void>;
 }
-
-

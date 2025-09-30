@@ -2,7 +2,6 @@
 
 This monorepo contains a hands-on set of small scripts for training a development team to build with LLMs. The primary focus for now is the Labs app under `apps/labs`. It includes progressively more advanced exercises demonstrating message construction, token usage, context management, summarization, and tool/function calling with LLM models.
 
-
 ### Prerequisites
 
 - Node.js >= 18
@@ -11,13 +10,13 @@ This monorepo contains a hands-on set of small scripts for training a developmen
 
 ### Quick start
 
-1) Install dependencies (from repo root):
+1. Install dependencies (from repo root):
 
 ```sh
 npm install
 ```
 
-2) Create an env file for Labs:
+2. Create an env file for Labs:
 
 ```sh
 cp apps/labs/.env.example apps/labs/.env # if present; otherwise create manually
@@ -31,7 +30,7 @@ OPENAI_API_KEY=sk-your-key
 OPENAI_MODEL=gpt-5-mini
 ```
 
-3) Run a lab script from the repo root specifying the path to the lab. 
+3. Run a lab script from the repo root specifying the path to the lab.
 
 ```sh
 npm run lab week-1/04-rolling-summaries
@@ -64,7 +63,6 @@ Launch configurations are provided in `.vscode/launch.json` for all Week 1 labs:
 - Labs: Run 13-contact-chatbot
 
 These use `npm --workspace=@repo/labs run lab` and load environment variables from `apps/labs/.env`.
-
 
 ### What’s in Week 1
 
@@ -100,11 +98,9 @@ The Labs runner (`apps/labs/src/runner.ts`) loads `apps/labs/.env`, resolves the
 - Some labs log full message chains and token usage for teaching clarity.
 - If a lab references tools, make sure your environment allows outgoing requests and your API key is valid.
 
-
-
 ### API (Nest.js)
 
-After you run through the labs, you can use the API project to test a more production-like application interacting with an LLM  See below and the README.md file in the api project for more detail
+After you run through the labs, you can use the API project to test a more production-like application interacting with an LLM See below and the README.md file in the api project for more detail
 
 - Location: `apps/api`
 - Purpose: Store chat threads (single aggregate with embedded/JSONB messages) with pluggable persistence (Postgres or Mongo).
@@ -159,17 +155,18 @@ Notes on pgvector usage:
 
 This repo includes a docker-compose for Postgres and Mongo so you can run either backend locally.
 
-1) Start databases:
+1. Start databases:
 
 ```sh
 npm run db:up
 ```
 
 This launches:
+
 - Postgres on `localhost:5432` (db `ai_crash_course`, user `postgres`, pass `postgres`)
 - MongoDB on `localhost:27017` (db name of your choice; example uses `ai_crash_course`)
 
-2) Configure `apps/api/.env` based on your choice:
+2. Configure `apps/api/.env` based on your choice:
 
 ```ini
 # Postgres
@@ -181,13 +178,13 @@ POSTGRES_URL=postgres://postgres:postgres@localhost:5432/ai_crash_course
 # MONGO_URL=mongodb://localhost:27017/ai_crash_course
 ```
 
-3) Run the API in dev mode:
+3. Run the API in dev mode:
 
 ```sh
 npm run api:dev
 ```
 
-4) Stop databases when done:
+4. Stop databases when done:
 
 ```sh
 npm run db:down
@@ -198,13 +195,15 @@ See more details in `apps/api/README.md`.
 ### Adding an agent (API)
 
 Agents live under `apps/api/agents/<agent-name>` and contain:
+
 - `prompt.md` — the system prompt (Handlebars helpers available: `eq`, `ne`, `json`)
 - `tools.ts` — exports an array of tools created via `tool(handler, { name, description, schema })`
 
 Steps:
-1) Create `apps/api/agents/your-agent/` with `prompt.md` and `tools.ts`.
-2) Start DBs (`npm run db:up`) and API (`npm run api:dev`).
-3) Create a thread:
+
+1. Create `apps/api/agents/your-agent/` with `prompt.md` and `tools.ts`.
+2. Start DBs (`npm run db:up`) and API (`npm run api:dev`).
+3. Create a thread:
 
 ```sh
 curl -X POST http://localhost:3000/threads \
@@ -212,7 +211,7 @@ curl -X POST http://localhost:3000/threads \
   -d '{ "agent": "your-agent", "parameters": { "tone": "friendly" } }'
 ```
 
-4) Chat on the thread:
+4. Chat on the thread:
 
 ```sh
 curl -X POST http://localhost:3000/threads/<threadId>/chat \
@@ -258,8 +257,8 @@ Embed options:
   data-theme="light"
   data-position="bottom-right"
   data-width="400"
-  data-height="600">
-</script>
+  data-height="600"
+></script>
 ```
 
 - Or initialize programmatically:
@@ -268,11 +267,11 @@ Embed options:
 <script type="module" src="/path/to/chat-widget/dist/assets/main.js"></script>
 <script>
   window.initializeChatWidget({
-    apiUrl: 'http://localhost:3000',
-    agent: 'lead-intake-agent',
-    parameters: { tone: 'friendly' },
-    theme: 'light', // 'light' | 'dark'
-    position: 'bottom-right', // 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'
+    apiUrl: "http://localhost:3000",
+    agent: "lead-intake-agent",
+    parameters: { tone: "friendly" },
+    theme: "light", // 'light' | 'dark'
+    position: "bottom-right", // 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'
     width: 400,
     height: 600,
   });
@@ -281,6 +280,7 @@ Embed options:
 ```
 
 Notes:
+
 - The widget expects the API from this repo running at `data-api-url`.
 - The test page includes a Reset button. In the widget, the header “×” removes the element from the DOM.
 

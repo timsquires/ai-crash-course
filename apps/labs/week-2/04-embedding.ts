@@ -10,11 +10,11 @@
 // - In the retrieval lab, we’ll load this JSON, embed a query, compute cosine similarity,
 //   sort, and select the top‑k chunks — no external vector DB required for small datasets.
 
-import fs from 'node:fs';
-import fsp from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { OpenAIEmbeddings } from '@langchain/openai';
+import fs from "node:fs";
+import fsp from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { OpenAIEmbeddings } from "@langchain/openai";
 
 type SectionChunk = {
   docId: string;
@@ -49,33 +49,38 @@ function ensureDirSync(dir: string) {
 
 async function loadCustomChunks(p: string): Promise<SectionChunk[]> {
   // Read Lab 3’s custom chunks as our embedding inputs.
-  const buf = await fsp.readFile(p, 'utf8');
+  const buf = await fsp.readFile(p, "utf8");
   const arr = JSON.parse(buf) as SectionChunk[];
-  return arr.filter((c) => c && typeof c.content === 'string' && c.content.trim().length > 0);
+  return arr.filter(
+    (c) => c && typeof c.content === "string" && c.content.trim().length > 0,
+  );
 }
 
 export default async function main() {
   const here = path.dirname(fileURLToPath(import.meta.url));
-  const inputPath = path.resolve(here, 'output/03-custom-chunking/custom-chunks.json');
-  const outDir = path.resolve(here, 'output/04-embedding');
+  const inputPath = path.resolve(
+    here,
+    "output/03-custom-chunking/custom-chunks.json",
+  );
+  const outDir = path.resolve(here, "output/04-embedding");
   ensureDirSync(outDir);
 
-  console.log('Week-2 / 04-embedding');
-  console.log('Reading:', path.relative(process.cwd(), inputPath));
+  console.log("Week-2 / 04-embedding");
+  console.log("Reading:", path.relative(process.cwd(), inputPath));
 
   if (!fs.existsSync(inputPath)) {
-    console.error('Missing Lab 3 output. Run week-2/03-custom-chunking first.');
+    console.error("Missing Lab 3 output. Run week-2/03-custom-chunking first.");
     return;
   }
 
   const chunks = await loadCustomChunks(inputPath);
   if (chunks.length === 0) {
-    console.log('No chunks to embed.');
+    console.log("No chunks to embed.");
     return;
   }
 
-  // Choose an embedding model. 
-  const model = process.env.OPENAI_EMBEDDING_MODEL || 'text-embedding-3-small';
+  // Choose an embedding model.
+  const model = process.env.OPENAI_EMBEDDING_MODEL || "text-embedding-3-small";
   const embedder = new OpenAIEmbeddings({ model });
 
   const t0 = Date.now();
@@ -99,11 +104,11 @@ export default async function main() {
     },
   }));
 
-  const embeddingsPath = path.join(outDir, 'embeddings.json');
-  const manifestPath = path.join(outDir, 'manifest.json');
+  const embeddingsPath = path.join(outDir, "embeddings.json");
+  const manifestPath = path.join(outDir, "manifest.json");
 
   // Plain JSON keeps it simple to read and load for the next lab.
-  await fsp.writeFile(embeddingsPath, JSON.stringify(out, null, 2), 'utf8');
+  await fsp.writeFile(embeddingsPath, JSON.stringify(out, null, 2), "utf8");
 
   const dimension = out.length > 0 ? out[0]!.embedding.length : 0;
   const manifest = {
@@ -111,13 +116,12 @@ export default async function main() {
     total: out.length,
     dimension,
     elapsedMs,
-    notes: 'Use this file for in-memory retrieval: load vectors, embed query, compute cosine similarity, take top-k.'
+    notes:
+      "Use this file for in-memory retrieval: load vectors, embed query, compute cosine similarity, take top-k.",
   };
-  await fsp.writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
+  await fsp.writeFile(manifestPath, JSON.stringify(manifest, null, 2), "utf8");
 
-  console.log('\nWrote:');
-  console.log(' -', path.relative(process.cwd(), embeddingsPath));
-  console.log(' -', path.relative(process.cwd(), manifestPath));
+  console.log("\nWrote:");
+  console.log(" -", path.relative(process.cwd(), embeddingsPath));
+  console.log(" -", path.relative(process.cwd(), manifestPath));
 }
-
-

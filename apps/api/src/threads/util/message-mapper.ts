@@ -1,4 +1,10 @@
-import { BaseMessage, HumanMessage, AIMessage, SystemMessage, ToolMessage } from '@langchain/core/messages';
+import {
+  BaseMessage,
+  HumanMessage,
+  AIMessage,
+  SystemMessage,
+  ToolMessage,
+} from '@langchain/core/messages';
 import { ThreadMessage } from '../domain/thread.domain';
 
 export function toLangChainMessages(messages: ThreadMessage[]): BaseMessage[] {
@@ -12,14 +18,22 @@ export function toLangChainMessages(messages: ThreadMessage[]): BaseMessage[] {
         {
           const calls = m.toolCalls;
           if (Array.isArray(calls) && calls.length > 0) {
-            lc.push(new AIMessage({ content: m.content, tool_calls: calls as any }));
+            lc.push(
+              new AIMessage({ content: m.content, tool_calls: calls as any }),
+            );
           } else {
             lc.push(new AIMessage(m.content));
           }
         }
         break;
       case 'tool':
-        lc.push(new ToolMessage({ content: m.content, tool_call_id: m.toolCallId, name: m.name } as any));
+        lc.push(
+          new ToolMessage({
+            content: m.content,
+            tool_call_id: m.toolCallId,
+            name: m.name,
+          } as any),
+        );
         break;
       case 'system':
       default:
@@ -30,7 +44,9 @@ export function toLangChainMessages(messages: ThreadMessage[]): BaseMessage[] {
   return lc;
 }
 
-export function fromAssistantToolCalls(toolCalls: { id?: string; name: string; args: unknown }[]): ThreadMessage[] {
+export function fromAssistantToolCalls(
+  toolCalls: { id?: string; name: string; args: unknown }[],
+): ThreadMessage[] {
   // Store assistant tool call requests as an assistant message with metadata for audit, if desired.
   // Typically, only tool result messages are appended; we expose this in case you want to log the request.
   const now = new Date();
@@ -45,7 +61,11 @@ export function fromAssistantToolCalls(toolCalls: { id?: string; name: string; a
   ];
 }
 
-export function makeToolResultMessage(toolName: string, toolCallId: string | undefined, content: string): ThreadMessage {
+export function makeToolResultMessage(
+  toolName: string,
+  toolCallId: string | undefined,
+  content: string,
+): ThreadMessage {
   return {
     id: `${Date.now()}-${toolName}-result`,
     role: 'tool',
@@ -77,5 +97,3 @@ export function makeAssistantMessage(content: string): ThreadMessage {
     createdAt: new Date(),
   };
 }
-
-

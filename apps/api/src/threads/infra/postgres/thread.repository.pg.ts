@@ -2,12 +2,18 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ThreadEntity } from './thread.entity';
-import { CreateThreadInput, ThreadRepository } from '../../ports/thread.repository';
+import {
+  CreateThreadInput,
+  ThreadRepository,
+} from '../../ports/thread.repository';
 import { ThreadAggregate, ThreadMessage } from '../../domain/thread.domain';
 
 @Injectable()
 export class PgThreadRepository implements ThreadRepository {
-  constructor(@InjectRepository(ThreadEntity) private readonly repo: Repository<ThreadEntity>) {}
+  constructor(
+    @InjectRepository(ThreadEntity)
+    private readonly repo: Repository<ThreadEntity>,
+  ) {}
 
   private toAggregate(row: ThreadEntity): ThreadAggregate {
     return {
@@ -53,24 +59,38 @@ export class PgThreadRepository implements ThreadRepository {
   }
 
   async listByAccount(accountId: string): Promise<ThreadAggregate[]> {
-    const rows = await this.repo.find({ where: { accountId }, order: { createdAt: 'DESC' } });
+    const rows = await this.repo.find({
+      where: { accountId },
+      order: { createdAt: 'DESC' },
+    });
     return rows.map((r) => this.toAggregate(r));
   }
 
-  async appendMessage(threadId: string, message: ThreadMessage): Promise<ThreadAggregate> {
+  async appendMessage(
+    threadId: string,
+    message: ThreadMessage,
+  ): Promise<ThreadAggregate> {
     const row = await this.repo.findOneOrFail({ where: { threadId } });
-    const messages = ([...(row.messages as ThreadMessage[] ?? [])] as ThreadMessage[]).concat(message);
+    const messages = (
+      [...((row.messages as ThreadMessage[]) ?? [])] as ThreadMessage[]
+    ).concat(message);
     row.messages = messages as unknown[];
     await this.repo.save(row);
     return this.toAggregate(row);
   }
 
-  async updateTokenCounts(threadId: string, inputDelta: number, outputDelta: number): Promise<void> {
-    await this.repo.createQueryBuilder()
+  async updateTokenCounts(
+    threadId: string,
+    inputDelta: number,
+    outputDelta: number,
+  ): Promise<void> {
+    await this.repo
+      .createQueryBuilder()
       .update(ThreadEntity)
       .set({
         inputTokenCount: () => `input_token_count + ${Math.max(0, inputDelta)}`,
-        outputTokenCount: () => `output_token_count + ${Math.max(0, outputDelta)}`,
+        outputTokenCount: () =>
+          `output_token_count + ${Math.max(0, outputDelta)}`,
       } as any)
       .where('thread_id = :threadId', { threadId })
       .execute();
@@ -80,5 +100,3 @@ export class PgThreadRepository implements ThreadRepository {
     await this.repo.delete({ threadId });
   }
 }
-
-

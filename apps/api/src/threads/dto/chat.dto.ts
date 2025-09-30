@@ -8,5 +8,3 @@ export class ChatDto {
   @IsObject()
   metadata?: Record<string, unknown>;
 }
-
-

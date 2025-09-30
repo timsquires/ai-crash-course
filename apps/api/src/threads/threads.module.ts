@@ -20,5 +20,3 @@ import { EmbeddingsService } from '../knowledge/embeddings.service';
   ],
 })
 export class ThreadsModule {}
-
-

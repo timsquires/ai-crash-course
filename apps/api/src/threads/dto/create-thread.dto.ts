@@ -20,5 +20,3 @@ export class CreateThreadDto {
   @IsBoolean()
   ragEnabled?: boolean;
 }
-
-

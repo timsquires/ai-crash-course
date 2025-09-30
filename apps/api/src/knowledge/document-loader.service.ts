@@ -8,7 +8,10 @@ import type { Document as LCDocument } from '@langchain/core/documents';
 
 @Injectable()
 export class DocumentLoaderService {
-  private async writeTempFile(filename: string, buffer: Buffer): Promise<string> {
+  private async writeTempFile(
+    filename: string,
+    buffer: Buffer,
+  ): Promise<string> {
     const ext = path.extname(filename).toLowerCase();
     const tmpPath = path.join(os.tmpdir(), `upload-${randomUUID()}${ext}`);
     await (await import('node:fs/promises')).writeFile(tmpPath, buffer);
@@ -20,11 +23,17 @@ export class DocumentLoaderService {
     if (ext === '.pdf') {
       const tmpPath = await this.writeTempFile(filename, buffer);
       try {
-        const loader = new PDFLoader(tmpPath, { parsedItemSeparator: '\n' } as any);
+        const loader = new PDFLoader(tmpPath, {
+          parsedItemSeparator: '\n',
+        } as any);
         const docs = await loader.load();
-        return docs.map((d: LCDocument) => String(d.pageContent || '')).join('\n\n');
+        return docs
+          .map((d: LCDocument) => String(d.pageContent || ''))
+          .join('\n\n');
       } finally {
-        await (await import('node:fs/promises')).unlink(tmpPath).catch(() => {});
+        await (await import('node:fs/promises'))
+          .unlink(tmpPath)
+          .catch(() => {});
       }
     }
     if (ext === '.docx') {
@@ -32,14 +41,16 @@ export class DocumentLoaderService {
       try {
         const loader = new DocxLoader(tmpPath);
         const docs = await loader.load();
-        return docs.map((d: LCDocument) => String(d.pageContent || '')).join('\n\n');
+        return docs
+          .map((d: LCDocument) => String(d.pageContent || ''))
+          .join('\n\n');
       } finally {
-        await (await import('node:fs/promises')).unlink(tmpPath).catch(() => {});
+        await (await import('node:fs/promises'))
+          .unlink(tmpPath)
+          .catch(() => {});
       }
     }
     // default: treat as UTF-8 text
     return buffer.toString('utf8');
   }
 }
-
-

@@ -13,5 +13,3 @@ export class EmbeddingsService {
     return embedder.embedDocuments(texts);
   }
 }
-
-

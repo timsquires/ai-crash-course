@@ -17,5 +17,3 @@ export class DocumentEntity {
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt!: Date;
 }
-
-

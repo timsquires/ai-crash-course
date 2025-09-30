@@ -22,5 +22,3 @@ export class ChunkEntity {
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt!: Date;
 }
-
-

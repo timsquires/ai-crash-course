@@ -1,4 +1,12 @@
-import { Controller, Delete, Post, UploadedFiles, UseInterceptors, BadRequestException, Query } from '@nestjs/common';
+import {
+  Controller,
+  Delete,
+  Post,
+  UploadedFiles,
+  UseInterceptors,
+  BadRequestException,
+  Query,
+} from '@nestjs/common';
 import { AnyFilesInterceptor } from '@nestjs/platform-express';
 import { KnowledgeService } from './knowledge.service';
 import type { Express } from 'express';
@@ -10,7 +18,10 @@ export class KnowledgeController {
 
   @Post('upload')
   @UseInterceptors(AnyFilesInterceptor())
-  async upload(@UploadedFiles() files: Express.Multer.File[], @Query('accountId') accountId?: string) {
+  async upload(
+    @UploadedFiles() files: Express.Multer.File[],
+    @Query('accountId') accountId?: string,
+  ) {
     if (!accountId) throw new BadRequestException('accountId is required');
     return this.svc.ingest(files ?? [], accountId);
   }
@@ -21,5 +32,3 @@ export class KnowledgeController {
     return this.svc.deleteAll(accountId);
   }
 }
-
-

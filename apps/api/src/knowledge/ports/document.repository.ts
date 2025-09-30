@@ -9,8 +9,10 @@ export interface DocumentRecord {
 }
 
 export interface DocumentRepository {
-  create(accountId: string, filename: string, mimeType: string): Promise<DocumentRecord>;
+  create(
+    accountId: string,
+    filename: string,
+    mimeType: string,
+  ): Promise<DocumentRecord>;
   deleteAll(accountId: string): Promise<void>;
 }
-
-

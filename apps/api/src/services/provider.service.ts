@@ -21,7 +21,10 @@ export type BuildModelOptions = {
 
 @Injectable()
 export class ProviderService {
-  buildModel(provider: Provider, options: BuildModelOptions = {}): BaseChatModel {
+  buildModel(
+    provider: Provider,
+    options: BuildModelOptions = {},
+  ): BaseChatModel {
     const {
       model,
       streaming,
@@ -66,5 +69,3 @@ export class ProviderService {
     }
   }
 }
-
-
