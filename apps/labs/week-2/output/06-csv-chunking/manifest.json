@@ -1,0 +1,27 @@
+{
+  "lab": "06-csv-chunking",
+  "sourceFile": "CheckrideTracking_Report (2).csv",
+  "totalRows": 13,
+  "chunkSizes": [
+    3,
+    5,
+    10
+  ],
+  "results": [
+    {
+      "chunkSize": "3",
+      "chunkCount": 13,
+      "totalRows": 13
+    },
+    {
+      "chunkSize": "5",
+      "chunkCount": 13,
+      "totalRows": 13
+    },
+    {
+      "chunkSize": "10",
+      "chunkCount": 13,
+      "totalRows": 13
+    }
+  ]
+}
