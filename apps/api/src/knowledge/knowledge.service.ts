@@ -13,6 +13,7 @@ import {
   CHUNK_REPOSITORY,
   type ChunkRepository,
 } from './ports/chunk.repository';
+import { HierarchicalChunker } from './chunking/hierarchical.chunker';
 
 @Injectable()
 export class KnowledgeService {
@@ -27,27 +28,37 @@ export class KnowledgeService {
   async ingest(files: Express.Multer.File[], accountId: string) {
     // Parse files (pdf/docx/txt), split via injected chunker, embed, then (TODO) persist via repositories.
     // NOTE: For Mongo (non-Atlas), similarity search must be in-memory; for production use MongoDB Atlas $vectorSearch.
-    const texts: string[] = [];
+    const allChunks: any[] = [];
     for (const f of files) {
-      const text = await this.loader.loadFromBuffer(f.originalname, f.buffer);
-      if (text && text.trim()) texts.push(text);
+      const { text, sections } = await this.loader.loadStructuredFromBuffer(
+        f.originalname,
+        f.buffer,
+      );
+      let chunks;
+      if (sections && Array.isArray(sections) && sections.length > 0) {
+        // Use structured chunking for PDFs
+        chunks = HierarchicalChunker.splitSections(sections, {
+          size: 400,
+          overlap: 60,
+        });
+      } else {
+        // Fallback for other types
+        chunks = this.chunker.split(text, { size: 400, overlap: 60 });
+      }
+      allChunks.push(...chunks);
     }
 
-    const chunks = texts.flatMap((t) =>
-      this.chunker.split(t, { size: 400, overlap: 60 }),
-    );
-
     if (process.env.DEBUG_RAG) {
-      console.log('[ingest] produced chunks:', chunks.length);
+      console.log('[ingest] produced chunks:', allChunks.length);
       // Peek at the first few paths to prove hierarchy is present
-      const samplePaths = chunks
+      const samplePaths = allChunks
         .slice(0, 5)
-        .map((c) => (c.metadata as any)?.path?.join?.(' > '))
+        .map((c) => c.metadata?.path?.join?.(' > '))
         .filter(Boolean);
       console.log('[ingest] sample paths:', samplePaths);
     }
 
-    const nonEmpty = chunks.filter(
+    const nonEmpty = allChunks.filter(
       (c) => typeof c.content === 'string' && c.content.trim().length > 0,
     );
     const vectors = await this.embeddings.embedMany(
@@ -69,10 +80,10 @@ export class KnowledgeService {
           charCount: c.charCount,
           tokenCount: c.tokenCount,
           // Normalize path to an array of strings for consistency
-          path: Array.isArray((md as any).path)
-            ? (md as any).path
-            : (md as any).path
-              ? [String((md as any).path)]
+          path: Array.isArray(md.path)
+            ? md.path
+            : md.path
+              ? [String(md.path)]
               : undefined,
         };
 

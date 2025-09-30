@@ -8,6 +8,7 @@ import type { Document as LCDocument } from '@langchain/core/documents';
 
 // NEW: normalization utilities
 import { normalizePages, normalizeText, type PageLike } from './tomb-normalize';
+import { extractPdfSections } from './pdf-heading-extractor';
 
 @Injectable()
 export class DocumentLoaderService {
@@ -45,6 +46,30 @@ export class DocumentLoaderService {
         const normalized = normalizePages(pages, {
           log: !!process.env.DEBUG_RAG,
         });
+
+        // Supplement: extract structured sections using pdfjs-dist
+        try {
+          const sections = await extractPdfSections(tmpPath);
+          if (process.env.DEBUG_RAG) {
+            console.log(
+              '[DocumentLoader] PDF extracted sections:',
+              sections.map((s) => ({
+                path: s.path,
+                pageStart: s.pageStart,
+                pageEnd: s.pageEnd,
+                textLen: s.text.length,
+              })),
+            );
+          }
+        } catch (err) {
+          if (process.env.DEBUG_RAG) {
+            console.warn(
+              '[DocumentLoader] PDF section extraction failed:',
+              err,
+            );
+          }
+        }
+
         if (process.env.DEBUG_RAG) {
           console.log(
             '[DocumentLoader] PDF normalized length:',
@@ -86,5 +111,75 @@ export class DocumentLoaderService {
       console.log('[DocumentLoader] TEXT normalized length:', clean.length);
     }
     return clean;
+  }
+
+  async loadStructuredFromBuffer(
+    filename: string,
+    buffer: Buffer,
+  ): Promise<{
+    text: string;
+    sections?: Array<{
+      path: string[];
+      pageStart: number;
+      pageEnd: number;
+      text: string;
+    }>;
+  }> {
+    const ext = path.extname(filename).toLowerCase();
+    if (ext === '.pdf') {
+      const tmpPath = await this.writeTempFile(filename, buffer);
+      try {
+        const loader = new PDFLoader(tmpPath, {
+          parsedItemSeparator: '\n',
+        } as any);
+        const docs = await loader.load();
+        const pages: PageLike[] = docs.map((d: LCDocument, i: number) => ({
+          pageNumber:
+            (d.metadata as any)?.loc?.pageNumber ??
+            (d.metadata as any)?.page ??
+            i + 1,
+          text: String(d.pageContent || ''),
+        }));
+        const normalized = normalizePages(pages, {
+          log: !!process.env.DEBUG_RAG,
+        });
+        let sections = undefined;
+        try {
+          sections = await extractPdfSections(tmpPath);
+          if (process.env.DEBUG_RAG) {
+            console.log(
+              '[DocumentLoader] PDF extracted sections:',
+              sections.map((s) => ({
+                path: s.path,
+                pageStart: s.pageStart,
+                pageEnd: s.pageEnd,
+                textLen: s.text.length,
+              })),
+            );
+          }
+        } catch (err) {
+          if (process.env.DEBUG_RAG) {
+            console.warn(
+              '[DocumentLoader] PDF section extraction failed:',
+              err,
+            );
+          }
+        }
+        if (process.env.DEBUG_RAG) {
+          console.log(
+            '[DocumentLoader] PDF normalized length:',
+            normalized.text.length,
+          );
+        }
+        return { text: normalized.text, sections };
+      } finally {
+        await (await import('node:fs/promises'))
+          .unlink(tmpPath)
+          .catch(() => {});
+      }
+    }
+    // fallback for other types
+    const text = await this.loadFromBuffer(filename, buffer);
+    return { text };
   }
 }

@@ -93,7 +93,7 @@ function parseChapterNum(raw: string): number | null {
 
 const RX_STATBLOCK_KEYS =
   /\b(Armor Class|Hit Points|Speed|STR|DEX|CON|INT|WIS|CHA|Actions?|Traits?)\b/i;
-const RX_READ_ALOUD = /^(read|boxed text)\s*[:\-]/i;
+const RX_READ_ALOUD = /^(read|boxed text)[:-]/i;
 const RX_TABLE = /(d\d+\s*table|random encounters?|roll\s*d\d+)/i;
 
 // crude token estimate (~4 chars per token)
@@ -120,6 +120,10 @@ function classifyPara(p: string): ContentType {
 }
 
 export class HierarchicalChunker implements ChunkingStrategy {
+  /**
+   * NOTE: For PDFs, use splitSections() with structured section input.
+   * This method is only recommended for plain text or non-PDF formats.
+   */
   split(text: string, options?: ChunkOptions): Chunk[] {
     const size = options?.size ?? 400;
     const overlap = options?.overlap ?? 60;
@@ -355,6 +359,96 @@ export class HierarchicalChunker implements ChunkingStrategy {
       log('WARNING: no chunks emitted; check input text for headers/markers.');
     }
 
+    return out;
+  }
+
+  static splitSections(
+    sections: Array<{
+      path: string[];
+      pageStart: number;
+      pageEnd: number;
+      text: string;
+    }>,
+    options?: ChunkOptions,
+  ): Chunk[] {
+    const size = options?.size ?? 400;
+    const overlap = options?.overlap ?? 60;
+    let order = 0;
+    const out: Chunk[] = [];
+    for (const sec of sections) {
+      const paras = splitParas(sec.text);
+      let buf: string[] = [];
+      let bufTokens = 0;
+      const flush = (force = false) => {
+        if (!buf.length) return;
+        if (!force && bufTokens < size * 0.65) return;
+        const content = buf.join('\n\n').trim();
+        if (!content) {
+          buf = [];
+          bufTokens = 0;
+          return;
+        }
+        const ct = classifyPara(content);
+        out.push({
+          content,
+          charCount: content.length,
+          tokenCount: estTokens(content),
+          metadata: {
+            path: sec.path,
+            contentType: ct,
+            pageStart: sec.pageStart,
+            pageEnd: sec.pageEnd,
+            order: order++,
+          },
+        });
+        // apply overlap as tail-carry (approximate by chars)
+        if (overlap > 0 && content.length > overlap * 4) {
+          const tail = content.slice(-(overlap * 4));
+          buf = [tail];
+          bufTokens = estTokens(tail);
+        } else {
+          buf = [];
+          bufTokens = 0;
+        }
+      };
+      for (const p of paras) {
+        const t = estTokens(p);
+        const atomic = classifyPara(p) !== 'generic';
+        if (atomic) {
+          flush(true);
+          out.push({
+            content: p,
+            charCount: p.length,
+            tokenCount: estTokens(p),
+            metadata: {
+              path: sec.path,
+              contentType: classifyPara(p),
+              pageStart: sec.pageStart,
+              pageEnd: sec.pageEnd,
+              order: order++,
+            },
+          });
+          continue;
+        }
+        buf.push(p);
+        bufTokens += t;
+        if (bufTokens >= size) flush();
+      }
+      flush(true);
+    }
+    log(
+      '[splitSections] Emitted chunks:',
+      out.length,
+      'from sections:',
+      sections.length,
+      'size=',
+      size,
+      'overlap=',
+      overlap,
+    );
+    if (!out.length) {
+      log('[splitSections] WARNING: no chunks emitted; check input sections.');
+    }
     return out;
   }
 }
