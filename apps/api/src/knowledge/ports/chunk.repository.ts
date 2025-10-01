@@ -13,7 +13,15 @@ export interface ChunkRecord {
 export interface ChunkRepository {
   bulkCreate(chunks: Omit<ChunkRecord, 'id' | 'createdAt'>[]): Promise<void>;
   deleteAll(accountId: string): Promise<void>;
-  searchTopK(accountId: string, queryEmbedding: number[], k: number): Promise<ChunkRecord[]>;
+  searchTopK(
+    accountId: string,
+    queryEmbedding: number[],
+    k: number,
+  ): Promise<ChunkRecord[]>;
+  searchTopKByRestaurant(
+    accountId: string,
+    restaurant: string,
+    queryEmbedding: number[],
+    k: number,
+  ): Promise<ChunkRecord[]>;
 }
-
-
