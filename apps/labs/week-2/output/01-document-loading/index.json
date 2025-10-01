@@ -1,17 +1,11 @@
 [
   {
-    "id": ".DS_Store",
-    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/.DS_Store",
-    "mimeType": "application/octet-stream",
-    "metadata": {}
-  },
-  {
     "id": "fast_casual_descriptions.pdf.p1",
-    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "sourcePath": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_descriptions.pdf",
     "mimeType": "application/pdf",
     "page": 1,
     "metadata": {
-      "source": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+      "source": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_descriptions.pdf",
       "pdf": {
         "version": "1.10.100",
         "info": {
@@ -40,11 +34,11 @@
   },
   {
     "id": "fast_casual_descriptions.pdf.p2",
-    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+    "sourcePath": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_descriptions.pdf",
     "mimeType": "application/pdf",
     "page": 2,
     "metadata": {
-      "source": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_descriptions.pdf",
+      "source": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_descriptions.pdf",
       "pdf": {
         "version": "1.10.100",
         "info": {
@@ -72,17 +66,17 @@
     }
   },
   {
-    "id": "fast_casual_locations.txt:0",
-    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_locations.txt",
+    "id": "fast_casual_locations.txt.0",
+    "sourcePath": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_locations.txt",
     "mimeType": "text/plain",
     "metadata": {}
   },
   {
-    "id": "fast_casual_menus.docx:0",
-    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "id": "fast_casual_menus.docx.0",
+    "sourcePath": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_menus.docx",
     "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "metadata": {
-      "source": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx"
+      "source": "C:\\dev\\ai-crash-course\\apps\\labs\\week-2\\documents\\fast_casual_menus.docx"
     }
   }
 ]
