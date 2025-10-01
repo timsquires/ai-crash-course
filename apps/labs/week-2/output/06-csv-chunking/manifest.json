@@ -11,17 +11,77 @@
     {
       "chunkSize": "3",
       "chunkCount": 13,
-      "totalRows": 13
+      "totalRows": 13,
+      "chunkSizes": {
+        "min": 366,
+        "max": 425,
+        "average": 395,
+        "all": [
+          366,
+          366,
+          369,
+          366,
+          418,
+          423,
+          395,
+          396,
+          413,
+          378,
+          408,
+          414,
+          425
+        ]
+      }
     },
     {
       "chunkSize": "5",
       "chunkCount": 13,
-      "totalRows": 13
+      "totalRows": 13,
+      "chunkSizes": {
+        "min": 366,
+        "max": 425,
+        "average": 395,
+        "all": [
+          366,
+          366,
+          369,
+          366,
+          418,
+          423,
+          395,
+          396,
+          413,
+          378,
+          408,
+          414,
+          425
+        ]
+      }
     },
     {
       "chunkSize": "10",
       "chunkCount": 13,
-      "totalRows": 13
+      "totalRows": 13,
+      "chunkSizes": {
+        "min": 366,
+        "max": 425,
+        "average": 395,
+        "all": [
+          366,
+          366,
+          369,
+          366,
+          418,
+          423,
+          395,
+          396,
+          413,
+          378,
+          408,
+          414,
+          425
+        ]
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 // Week 2 — 06: CSV Chunking with Checkride Data
 // Purpose: Demonstrate the CSV chunker with the checkride tracking report
-//          Shows how CSV data is chunked while preserving row integrity and adding metadata
+// Shows how CSV data is chunked while preserving row integrity and adding metadata
 
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
@@ -42,20 +42,20 @@ class CsvChunker {
       return [
         {
           chunkIndex: 0,
-          content: header,
-          charCount: header.length,
+          content: header || '',
+          charCount: (header || '').length,
           metadata: {
             type: 'csv',
             rows: 0,
             hasHeader: true,
-            columns: this.parseColumns(header),
+            columns: this.parseColumns(header || ''),
           },
         },
       ];
     }
 
     // Parse CSV columns from header
-    const columns = this.parseColumns(header);
+    const columns = this.parseColumns(header || '');
 
     // Determine chunk size based on options or default
     const maxRowsPerChunk = options?.size
@@ -133,7 +133,7 @@ class CsvChunker {
     if (rows.length === 0) return metadata;
 
     // Try to identify common patterns in the data
-    const firstRow = this.parseRow(rows[0]);
+    const firstRow = this.parseRow(rows[0] || '');
 
     // Look for common column patterns
     if (
@@ -314,11 +314,23 @@ export default async function main() {
     sourceFile: 'CheckrideTracking_Report (2).csv',
     totalRows: csvContent.split('\n').length - 1,
     chunkSizes: chunkSizes,
-    results: Object.keys(allResults).map(key => ({
-      chunkSize: key.replace('chunkSize_', ''),
-      chunkCount: allResults[key].length,
-      totalRows: allResults[key].reduce((sum, chunk) => sum + (chunk.metadata.rows as number), 0)
-    }))
+    results: Object.keys(allResults).map(key => {
+      const chunks = allResults[key] || [];
+      const chunkSizes = chunks.map(chunk => chunk.charCount);
+      const totalRows = chunks.reduce((sum, chunk) => sum + (chunk.metadata.rows as number), 0);
+      
+      return {
+        chunkSize: key.replace('chunkSize_', ''),
+        chunkCount: chunks.length,
+        totalRows: totalRows,
+        chunkSizes: {
+          min: chunkSizes.length > 0 ? Math.min(...chunkSizes) : 0,
+          max: chunkSizes.length > 0 ? Math.max(...chunkSizes) : 0,
+          average: chunkSizes.length > 0 ? Math.round(chunkSizes.reduce((sum, size) => sum + size, 0) / chunkSizes.length) : 0,
+          all: chunkSizes
+        }
+      };
+    })
   };
 
   const manifestPath = path.join(outDir, 'manifest.json');
@@ -332,6 +344,12 @@ export default async function main() {
   console.log('\nChunking Results:');
   Object.entries(allResults).forEach(([key, chunks]) => {
     const chunkSize = key.replace('chunkSize_', '');
+    const chunkSizes = chunks.map(chunk => chunk.charCount);
+    const minSize = Math.min(...chunkSizes);
+    const maxSize = Math.max(...chunkSizes);
+    const avgSize = Math.round(chunkSizes.reduce((sum, size) => sum + size, 0) / chunkSizes.length);
+    
     console.log(`  ${chunkSize} rows/chunk: ${chunks.length} chunks`);
+    console.log(`    Chunk sizes: ${minSize}-${maxSize} chars (avg: ${avgSize})`);
   });
 }
