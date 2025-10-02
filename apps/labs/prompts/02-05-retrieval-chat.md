@@ -15,4 +15,3 @@ Focus:
 
 ### Task
 Answer the user’s question based on the Context above. Include inline citations like [1], [2] next to claims you take from the context.
-

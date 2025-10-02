@@ -51,9 +51,9 @@ function cosineSimilarity(a: number[], b: number[]): number {
 }
 
 async function buildSystemPrompt(contextBlocks: string): Promise<string> {
-  // Load markdown prompt from apps/labs/prompts/retrieval-chat.md and inject blocks
+  // Load markdown prompt from apps/labs/prompts/02-05-retrieval-chat.md and inject blocks
   const promptService = new PromptService();
-  return await promptService.render('retrieval-chat', { contextBlocks });
+  return await promptService.render('02-05-retrieval-chat', { contextBlocks });
 }
 
 function formatContextBlock(idx: number, e: Embedded): string {

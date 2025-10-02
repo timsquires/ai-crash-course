@@ -21,7 +21,7 @@ export default async function main() {
     include_budget: true,
   } as const;
 
-  const compiledSystem = await promptService.render('food-critic', data);
+  const compiledSystem = await promptService.render('01-09-food-critic', data);
 
   // Build a running conversation and demonstrate injection attempts
   const messages: Array<SystemMessage | HumanMessage | AIMessage> = [];
