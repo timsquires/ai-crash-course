@@ -212,6 +212,9 @@ export default async function main() {
     .addEdge('recommend', END)
     .addEdge('restricted_notice', END)
     
+    // Pass in the checkpointer to persist the state across invocations
+    // MemorySaver is a simple in-memory checkpointer that persists the state across invocations
+    // Other options are available like PostgresSaver, MongoSaver, RedisSaver, etc.
     .compile({ checkpointer: new MemorySaver() });
 
     console.log('Mermaid graph:');
@@ -235,6 +238,7 @@ export default async function main() {
 
     turn += 1;
     console.log(`\n[driver] Turn ${turn}: invoking graph`);
+    // IMPORTANT: Pass in a thread_id to persist the state across invocations
     current = await graph.invoke({ messages: [{ role: 'user', content: user }] }, { configurable: { thread_id: threadId } });
 
     const lastAssistant = current.assistantText ?? current.messages.filter((m) => m.role === 'assistant').slice(-1)[0]?.content ?? '';

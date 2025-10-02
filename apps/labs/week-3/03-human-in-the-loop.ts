@@ -146,7 +146,7 @@ export default async function main() {
     // After revision, we ask for approval again
     .addEdge('revise', 'human_approval')
     .addEdge('finalize', END)
-    .compile({ checkpointer: new MemorySaver() });
+    .compile({ checkpointer: new MemorySaver() }); 
 
     console.log('Mermaid graph:');
     console.log((await graph.getGraphAsync()).drawMermaid());
