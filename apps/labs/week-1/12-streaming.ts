@@ -12,7 +12,7 @@ export default async function main() {
   const llm = ProviderService.buildModel('openai', { model: 'gpt-4o-mini', streaming: true });
   const promptService = new PromptService();
 
-  const compiledSystem = await promptService.render('menu-optimizer-stream', {
+  const compiledSystem = await promptService.render('01-12-menu-optimizer-stream', {
     tone: 'playful',
     region: 'Southwest',
     char_limit: 70,

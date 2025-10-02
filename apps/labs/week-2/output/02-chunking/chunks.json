@@ -278,12 +278,12 @@
   {
     "docId": "fast_casual_menus.docx:0",
     "chunkIndex": 0,
-    "content": "Fast Casual Restaurant Menus\n\nChipotle Mexican Grill\n\nChipotle Mexican Grill typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Chipotle Mexican Grill menu.\n\nPanera Bread\n\nPanera Bread typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Panera Bread menu.\n\nShake Shack\n\nShake Shack typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Shake Shack menu.\n\nChick-fil-A\n\nChick-fil-A typically offers a menu including popular signature items",
+    "content": "Fast Casual Restaurant Menus (Enriched with Prices & Calories)\n\nChipotle Mexican Grill\n\n- Chicken Burrito — cilantro-lime rice, black beans, pico, cheese [$9.95, ~720 kcal]\n\n- Barbacoa Bowl — brown rice, fajita veggies, tomatillo salsa, sour cream [$10.95, ~650 kcal]\n\n- Veggie Tacos (3) — guacamole, roasted chili-corn salsa, lettuce [$8.95, ~540 kcal]\n\n- Chips & Queso Blanco — tortilla chips with queso [$4.25, ~320 kcal]\n\nPanera Bread\n\n- Broccoli Cheddar Soup (Bread Bowl) — classic cheddar soup in sourdough bowl [$8.79, ~900 kcal]\n\n- Fuji Apple Chicken Salad — gorgonzola, apple chips, roasted pecans [$11.49, ~560 kcal]\n\n- Chipotle Chicken Avocado Melt — black pepper focaccia [$10.99, ~740 kcal]\n\n",
     "tokenCount": 200,
-    "charCount": 1051,
+    "charCount": 705,
     "startToken": 0,
     "endToken": 200,
-    "contentHash": "bc556a281af05e14984ee8ccd3e90c57bd8db435",
+    "contentHash": "884874c9f2243ff642e6379974574df4f876ff10",
     "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
     "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "version": {
@@ -296,12 +296,12 @@
   {
     "docId": "fast_casual_menus.docx:0",
     "chunkIndex": 1,
-    "content": " also common on the Shake Shack menu.\n\nChick-fil-A\n\nChick-fil-A typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Chick-fil-A menu.\n\nFive Guys\n\nFive Guys typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Five Guys menu.\n\nFirehouse Subs\n\nFirehouse Subs typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Firehouse Subs menu.\n\nMOD Pizza\n\nMOD Pizza typically offers a menu including popular signature items, customizable options",
+    "content": " ~560 kcal]\n\n- Chipotle Chicken Avocado Melt — black pepper focaccia [$10.99, ~740 kcal]\n\n- Mediterranean Veggie Sandwich — hummus, cucumbers, peppers [$9.49, ~540 kcal]\n\nShake Shack\n\n- ShackBurger — lettuce, tomato, ShackSauce [$6.89, ~530 kcal]\n\n- SmokeShack — bacon, cherry peppers, cheese [$8.99, ~610 kcal]\n\n- Crinkle-Cut Fries (Cheese) — classic fries with cheese sauce [$4.19, ~520 kcal]\n\n- Frozen Custard Concrete — vanilla custard with mix-ins [$5.79, ~680 kcal]\n\nChick-fil-A\n\n- Original Chicken Sandwich — buttered bun, dill pickles [$4.69, ~440 kcal]\n\n- Spicy Deluxe Sandwich — pepper jack, lettuce, tomato [$5.69, ~570 kcal]\n\n- Waffle Potato Fries — medium size [$2.79, ~400 kcal]\n\n",
     "tokenCount": 200,
-    "charCount": 1045,
+    "charCount": 694,
     "startToken": 175,
     "endToken": 375,
-    "contentHash": "2b85f33273a1af822301beb538445dce19119e76",
+    "contentHash": "f83ca16c9f697756870520930005f715d405f8e6",
     "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
     "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "version": {
@@ -314,12 +314,12 @@
   {
     "docId": "fast_casual_menus.docx:0",
     "chunkIndex": 2,
-    "content": " also common on the Firehouse Subs menu.\n\nMOD Pizza\n\nMOD Pizza typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the MOD Pizza menu.\n\nQdoba Mexican Eats\n\nQdoba Mexican Eats typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Qdoba Mexican Eats menu.\n\nJersey Mike’s Subs\n\nJersey Mike’s Subs typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Jersey Mike’s Subs menu.\n\nNoodles & Company\n\nN",
+    "content": "5.69, ~570 kcal]\n\n- Waffle Potato Fries — medium size [$2.79, ~400 kcal]\n\n- Chick-n-Minis (4 ct) — breakfast, honey butter [$4.19, ~360 kcal]\n\nFive Guys\n\n- Bacon Cheeseburger — customizable toppings [$10.99, ~1060 kcal]\n\n- Little Hamburger — single patty, grilled onions & mushrooms [$6.99, ~540 kcal]\n\n- Cajun Style Fries (Regular) — cajun seasoning [$5.19, ~530 kcal]\n\n- Milkshake (Oreo) — hand-spun with mix-in [$5.79, ~670 kcal]\n\nFirehouse Subs\n\n- Hook & Ladder — turkey, ham, Monterey Jack [$8.99, ~720 kcal]\n\n- Italian — salami, pepperoni, provolone, Italian dressing [$9.29, ~850 kcal]\n\n- New York Steamer — corned beef brisket, pastrami [$9.69",
     "tokenCount": 200,
-    "charCount": 1001,
+    "charCount": 651,
     "startToken": 350,
     "endToken": 550,
-    "contentHash": "f0575067c205d623d57a65f55c7ad8180a075d4a",
+    "contentHash": "18f5e6dc63432bb3d3720374522b1b4ca3abb7bf",
     "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
     "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "version": {
@@ -332,12 +332,48 @@
   {
     "docId": "fast_casual_menus.docx:0",
     "chunkIndex": 3,
-    "content": " Desserts, beverages, and seasonal specials are also common on the Jersey Mike’s Subs menu.\n\nNoodles & Company\n\nNoodles & Company typically offers a menu including popular signature items, customizable options, and sides. Customers can expect staples such as sandwiches, salads, bowls, or burgers depending on the brand. Desserts, beverages, and seasonal specials are also common on the Noodles & Company menu.",
-    "tokenCount": 81,
-    "charCount": 410,
+    "content": "29, ~850 kcal]\n\n- New York Steamer — corned beef brisket, pastrami [$9.69, ~900 kcal]\n\n- Firehouse Chili (Cup) — hearty beef chili [$3.99, ~280 kcal]\n\nMOD Pizza\n\n- Maddy Pizza — red sauce, mozzarella (11\") [$9.49, ~710 kcal]\n\n- Caspian Pizza — BBQ chicken, gorgonzola, BBQ drizzle [$11.49, ~820 kcal]\n\n- Mad Dog Pizza — pepperoni, sausage, ground beef [$11.99, ~900 kcal]\n\n- Build-Your-Own — unlimited toppings (11\") [$10.99, varies]\n\nQdoba Mexican Eats\n\n- 3-Cheese Queso & Chips — signature queso [$4.49, ~450 kcal]\n\n- Grilled Chicken Quesadilla — pico de gallo, cheese blend [$8.99, ~690 kcal]\n\n- Smothered Burrito (P",
+    "tokenCount": 200,
+    "charCount": 619,
     "startToken": 525,
-    "endToken": 606,
-    "contentHash": "a5f09e89fcdf909ba71a52abc676dece9b070b08",
+    "endToken": 725,
+    "contentHash": "180ba9deaad08886ae4f0e0e8223110dace8c7aa",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "chunkIndex": 4,
+    "content": " — pico de gallo, cheese blend [$8.99, ~690 kcal]\n\n- Smothered Burrito (Pork) — queso-smothered [$9.99, ~870 kcal]\n\n- Loaded Tortilla Soup (Beef) — toppings and tortilla strips [$7.99, ~520 kcal]\n\nJersey Mike’s Subs\n\n- Original Italian (#13) — provolone, ham, prosciuttini, cappacuolo, salami, pepperoni [$9.95, ~920 kcal]\n\n- Club Sub (#8) — turkey, ham, provolone, bacon, mayo [$9.45, ~980 kcal]\n\n- Philly Cheese Steak — griddled onions & peppers [$9.89, ~840 kcal]\n\n- Veggie — Swiss, provolone, green peppers [$7.99, ~720 kcal]\n\nNoodles & Company\n\n- Wisconsin Mac & Cheese — cream sauce, cheddar-jack blend [$7.99, ~980 kcal]\n\n- Japanese",
+    "tokenCount": 200,
+    "charCount": 639,
+    "startToken": 700,
+    "endToken": 900,
+    "contentHash": "941be908fa722b6bff5adf9cac30105cce1633f4",
+    "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
+    "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "version": {
+      "lab": "02-chunking",
+      "encoder": "gpt-4o-mini",
+      "chunkTokens": 200,
+      "overlapTokens": 25
+    }
+  },
+  {
+    "docId": "fast_casual_menus.docx:0",
+    "chunkIndex": 5,
+    "content": "\n\n- Wisconsin Mac & Cheese — cream sauce, cheddar-jack blend [$7.99, ~980 kcal]\n\n- Japanese Pan Noodles — udon, broccoli, carrots, shiitake [$8.79, ~640 kcal]\n\n- Penne Rosa — spicy tomato cream, spinach, mushrooms [$8.99, ~720 kcal]\n\n- Pad Thai — rice noodles, egg, peanuts, green onions [$9.49, ~740 kcal]",
+    "tokenCount": 91,
+    "charCount": 306,
+    "startToken": 875,
+    "endToken": 966,
+    "contentHash": "ece8d5fadeb3a9010a44dc2b7bdc151acca7b92c",
     "sourcePath": "/Users/nick/Code/ai-crash-course/apps/labs/week-2/documents/fast_casual_menus.docx",
     "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "version": {

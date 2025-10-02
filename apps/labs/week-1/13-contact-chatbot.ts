@@ -151,7 +151,7 @@ export default async function main() {
   const llm = llmBase.bindTools(Object.values(TOOL_REGISTRY).map((e) => e.tool));
 
   const promptService = new PromptService();
-  const systemPrompt = await promptService.render('lead-intake-agent');
+  const systemPrompt = await promptService.render('01-13-lead-intake-agent');
 
   const messages: Array<SystemMessage | HumanMessage | AIMessage | ToolMessage> = [
     new SystemMessage(systemPrompt),

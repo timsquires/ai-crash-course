@@ -289,6 +289,43 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
     }
+    ,
+    {
+      "name": "Labs - Week 3: 01-langgraph-food-critic",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-3/01-langgraph-food-critic"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 3: 02-checkpoints",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-3/02-checkpoints"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Labs - Week 3: 03-human-in-the-loop",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--workspace=@repo/labs", "run", "lab"],
+      "cwd": "${workspaceFolder}",
+      "args": ["week-3/03-human-in-the-loop"],
+      "envFile": "${workspaceFolder}/apps/labs/.env",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
   ],
   "compounds": [
     {

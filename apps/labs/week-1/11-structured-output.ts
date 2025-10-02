@@ -30,7 +30,7 @@ export default async function main() {
 
   // Load and render the system prompt
   const promptService = new PromptService();
-  const systemPrompt = await promptService.render('coa-mapping', {
+  const systemPrompt = await promptService.render('01-11-coa-mapping', {
     oldChartOfAccounts,
     newChartOfAccounts,
   });
