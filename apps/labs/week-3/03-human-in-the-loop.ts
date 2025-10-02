@@ -63,7 +63,7 @@ export default async function main() {
   // NODE: draft — produce a short draft recommendation
   const draftNode = async (s: typeof ReviewState.State) => {
     console.log('[generate_draft] Generating a draft recommendation');
-    const sys = await promptService.render('draft');
+    const sys = await promptService.render('03-03-draft');
     const msgs = toLangChainMessages(s.messages, sys);
     const ai = await model.invoke(msgs);
     const text = String(ai.content ?? '').trim();
@@ -89,7 +89,7 @@ export default async function main() {
   // NODE: revise — incorporate reviewer comment and produce a new draft
   const revise = async (s: typeof ReviewState.State) => {
     console.log('[revise] Revising draft based on reviewer feedback');
-    const sys = await promptService.render('revise', { draft: s.draft ?? '', comment: s.approval?.comment ?? '' });
+    const sys = await promptService.render('03-03-revise', { draft: s.draft ?? '', comment: s.approval?.comment ?? '' });
     const msgs = [new SystemMessage(sys), new HumanMessage('Revise the draft accordingly.')];
     const ai = await model.invoke(msgs);
     const text = String(ai.content ?? '').trim();

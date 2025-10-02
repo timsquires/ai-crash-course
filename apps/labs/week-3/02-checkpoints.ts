@@ -109,7 +109,7 @@ export default async function main() {
   // NODE: extract_details — LLM structured extraction
   const extractDetails = async (s: typeof ChatState.State) => {
     console.log('[extract_details] Starting details extraction');
-    const sys = await promptService.render('details-extractor');
+    const sys = await promptService.render('03-02-details-extractor');
     const transcript = s.messages.map((m) => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
     const msgs = [new SystemMessage(sys), new HumanMessage(transcript)];
     try {
@@ -134,7 +134,7 @@ export default async function main() {
   // NODE: ask_for_details — LLM asks only for missing fields, then END (pause)
   const askForDetails = async (s: typeof ChatState.State) => {
     console.log('[ask_for_details] Missing details detected:', s.missing ?? []);
-    const sys = await promptService.render('ask-for-details', { missing: s.missing ?? [] });
+    const sys = await promptService.render('03-02-ask-for-details', { missing: s.missing ?? [] });
     // We place the instruction in a system message and add a dummy human message
     // to trigger generation; the model should output a single assistant line.
     const msgs = [new SystemMessage(sys), new HumanMessage('Please ask succinctly.')];
@@ -150,7 +150,7 @@ export default async function main() {
   // NODE: qa_validate — LLM structured validation for California restriction
   const qaValidate = async (s: typeof ChatState.State) => {
     console.log('[qa_validate] Validating California restriction');
-    const sys = await promptService.render('qa-no-california');
+    const sys = await promptService.render('03-02-qa-no-california');
     const transcript = s.messages.map((m) => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
     const detailStr = JSON.stringify(s.details ?? {});
     const msgs = [new SystemMessage(sys), new HumanMessage(`Details: ${detailStr}\nTranscript:\n${transcript}`)];
@@ -168,7 +168,7 @@ export default async function main() {
   // NODE: recommend — LLM final recommendation
   const recommend = async (s: typeof ChatState.State) => {
     console.log('[recommend] Producing final recommendation');
-    const sys = await promptService.render('recommender');
+    const sys = await promptService.render('03-02-recommender');
     const msgs = toLangChainMessages(s.messages, sys);
     const ai = await model.invoke(msgs);
     const text = String(ai.content ?? '').trim();

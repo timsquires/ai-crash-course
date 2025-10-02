@@ -136,7 +136,7 @@ export default async function main() {
   // - Returns only the delta: the assistant's new message and assistantText
   const answerNode = async (s: typeof ChatState.State) => {
     // Render the system prompt
-    const renderedSystem = await promptService.render('food-critic-snarky');
+    const renderedSystem = await promptService.render('03-01-food-critic-snarky');
 
     // Convert the history to LangChain Messages
     const msgs = toLangChainMessages(s.messages, renderedSystem);
@@ -158,11 +158,12 @@ export default async function main() {
   // - Parses the JSON; on failure, marks off-topic to demonstrate deterministic fallback
   const qaNode = async (s: typeof ChatState.State) => {
     // Render the QA system prompt
-    const qaSystem = await promptService.render('qa-restaurant-only');
+    const qaSystem = await promptService.render('03-01-qa-restaurant-only');
 
-    // Convert the history to a string
-    const transcript = s.messages.map((m) => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
-    const evaluationInput = `Transcript (bounded):\n${transcript}\n\nLast assistant reply:\n${s.assistantText ?? ''}`;
+    // Only consider the latest exchange for QA: last user question and last assistant reply
+    const lastUser = [...s.messages].reverse().find((m) => m.role === 'user')?.content ?? '';
+    const lastAssistant = s.assistantText ?? [...s.messages].reverse().find((m) => m.role === 'assistant')?.content ?? '';
+    const evaluationInput = `USER: ${lastUser}\nASSISTANT: ${lastAssistant}`;
 
     // Convert the history to LangChain Messages
     const msgs = [new SystemMessage(qaSystem), new HumanMessage(evaluationInput)];
@@ -231,6 +232,8 @@ export default async function main() {
   const ask = (q: string) => new Promise<string>((resolve) => rl.question(q, resolve));
 
   console.log('Food Critic (type "bye" to exit)');
+  console.log('Instructions: Ask snarky, restaurant-related questions (e.g., compare chains, menu items, service).');
+  console.log('Note: A QA gate checks topic; off-topic replies are replaced with a fixed message.');
 
   let current = state;
   while (true) {
