@@ -15,8 +15,8 @@
     "chat:dev": "npm --workspace=@repo/chat-widget run dev",
     "chat:build": "npm --workspace=@repo/chat-widget run build",
     "chat:preview": "npm --workspace=@repo/chat-widget run preview",
-    "db:up": "docker compose up -d postgres mongo && npm --workspace=@repo/api run migrate",
-    "db:down": "docker compose down",
+    "db:up": "podman compose up -d postgres mongo && npm --workspace=@repo/api run migrate",
+    "db:down": "podman compose down",
     "dev:widget": "sh -c 'npm run api:debug & npm run chat:dev'"
   },
   "devDependencies": {
